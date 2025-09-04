@@ -267,7 +267,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("MainMenuLayer/SettingsText:visible_ratio")
+tracks/13/path = NodePath("MainMenuLayer/OptionsText:visible_ratio")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -293,40 +293,6 @@ tracks/14/keys = {
 _data = {
 &"main": SubResource("Animation_fpkve")
 }
-
-[sub_resource type="Animation" id="Animation_dxot6"]
-resource_name = "fade"
-length = 0.5
-step = 0.0333333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("OverlayLayer/BlackOverlay:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_c857x"]
-_data = {
-&"fade": SubResource("Animation_dxot6")
-}
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1u3bp"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0.101961, 0.101961, 0.101961, 0.313726)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
 
 [sub_resource type="Animation" id="Animation_c857x"]
 resource_name = "main"
@@ -371,7 +337,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("PauseLayer/PlayButton:size")
+tracks/3/path = NodePath("PauseLayer/ContinueButton:size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -383,7 +349,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("PauseLayer/PlayButton:position")
+tracks/4/path = NodePath("PauseLayer/ContinueButton:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -395,7 +361,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("PauseLayer/PlayButton:visible")
+tracks/5/path = NodePath("PauseLayer/ContinueButton:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -443,7 +409,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("PauseLayer/CreditsButton:size")
+tracks/9/path = NodePath("PauseLayer/QuitButton:size")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -455,7 +421,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("PauseLayer/CreditsButton:position")
+tracks/10/path = NodePath("PauseLayer/QuitButton:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -467,7 +433,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("PauseLayer/CreditsButton:visible")
+tracks/11/path = NodePath("PauseLayer/QuitButton:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -479,7 +445,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("PauseLayer/PlayText:visible_ratio")
+tracks/12/path = NodePath("PauseLayer/ContinueText:visible_ratio")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -491,7 +457,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("PauseLayer/SettingsText:visible_ratio")
+tracks/13/path = NodePath("PauseLayer/OptionsText:visible_ratio")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -503,7 +469,7 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("PauseLayer/CreditsText:visible_ratio")
+tracks/14/path = NodePath("PauseLayer/QuitText:visible_ratio")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -517,6 +483,40 @@ tracks/14/keys = {
 _data = {
 &"main": SubResource("Animation_c857x")
 }
+
+[sub_resource type="Animation" id="Animation_dxot6"]
+resource_name = "fade"
+length = 0.5
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OverlayLayer/BlackOverlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c857x"]
+_data = {
+&"fade": SubResource("Animation_dxot6")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1u3bp"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101961, 0.101961, 0.101961, 0.313726)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [node name="World" type="Node3D"]
 process_mode = 1
@@ -720,6 +720,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_fpkve")
 }
 
+[node name="PauseAnimation" type="AnimationPlayer" parent="Camera3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_dxot6")
+}
+
 [node name="FadeManager" type="AnimationPlayer" parent="Camera3D"]
 libraries = {
 &"": SubResource("AnimationLibrary_c857x")
@@ -828,7 +833,7 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="SettingsText" type="Label" parent="Camera3D/MainMenuLayer"]
+[node name="OptionsText" type="Label" parent="Camera3D/MainMenuLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -842,7 +847,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("27_1u3bp")
 theme_override_font_sizes/font_size = 20
-text = "SETTINGS"
+text = "OPTIONS"
 horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters = 0
@@ -868,12 +873,8 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="PauseAnimation" type="AnimationPlayer" parent="Camera3D"]
-libraries = {
-&"": SubResource("AnimationLibrary_dxot6")
-}
-
 [node name="PauseLayer" type="CanvasLayer" parent="Camera3D"]
+layer = 10
 
 [node name="BG" type="Panel" parent="Camera3D/PauseLayer"]
 anchors_preset = 8
@@ -882,7 +883,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -116.156
+offset_top = -114.437
 offset_right = 116.157
+offset_bottom = 111.001
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1u3bp")
@@ -901,23 +904,19 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("27_1u3bp")
 theme_override_font_sizes/font_size = 20
-text = "FIRE ON
-THE MOUNTAIN"
+text = "GAME PAUSED"
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
-[node name="PlayButton" type="Button" parent="Camera3D/PauseLayer"]
-visible = false
+[node name="ContinueButton" type="Button" parent="Camera3D/PauseLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.0
+offset_left = -102.625
 offset_top = -18.0
-offset_right = 4.0
+offset_right = 102.625
 offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -925,38 +924,36 @@ focus_mode = 0
 theme_override_fonts/font = ExtResource("27_1u3bp")
 
 [node name="OptionsButton" type="Button" parent="Camera3D/PauseLayer"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.0
+offset_left = -102.625
 offset_top = 22.0
-offset_right = 4.0
+offset_right = 102.625
 offset_bottom = 58.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("27_1u3bp")
 
-[node name="CreditsButton" type="Button" parent="Camera3D/PauseLayer"]
-visible = false
+[node name="QuitButton" type="Button" parent="Camera3D/PauseLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.0
+offset_left = -102.625
 offset_top = 62.0
-offset_right = 4.0
+offset_right = 102.625
 offset_bottom = 98.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("27_1u3bp")
 
-[node name="PlayText" type="Label" parent="Camera3D/PauseLayer"]
+[node name="ContinueText" type="Label" parent="Camera3D/PauseLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -970,13 +967,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("27_1u3bp")
 theme_override_font_sizes/font_size = 20
-text = "PLAY"
+text = "CONTINUE"
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
-[node name="SettingsText" type="Label" parent="Camera3D/PauseLayer"]
+[node name="OptionsText" type="Label" parent="Camera3D/PauseLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -990,13 +985,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("27_1u3bp")
 theme_override_font_sizes/font_size = 20
-text = "SETTINGS"
+text = "OPTIONS"
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
-[node name="CreditsText" type="Label" parent="Camera3D/PauseLayer"]
+[node name="QuitText" type="Label" parent="Camera3D/PauseLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1010,11 +1003,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("27_1u3bp")
 theme_override_font_sizes/font_size = 20
-text = "CREDITS"
+text = "QUIT"
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="OverlayLayer" type="CanvasLayer" parent="Camera3D"]
 layer = 128
@@ -1030,4 +1021,3 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="Camera3D/MainMenuLayer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="Camera3D/PauseLayer/PlayButton" to="." method="_on_play_button_pressed"]
