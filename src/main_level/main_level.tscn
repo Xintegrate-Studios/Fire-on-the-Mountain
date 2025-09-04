@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://biqj67tjrslek"]
+[gd_scene load_steps=43 format=3 uid="uid://biqj67tjrslek"]
 
 [ext_resource type="Script" uid="uid://dvav26tqc5pit" path="res://src/main_level/main_level.gd" id="1_fpkve"]
 [ext_resource type="PackedScene" uid="uid://bm3l1fnoqw1bx" path="res://ast/models/island/island.tscn" id="1_scctx"]
@@ -103,18 +103,6 @@ shader_parameter/cloud_color = Color(0.214997, 0.200652, 0.149769, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_lkofv"]
 material = SubResource("ShaderMaterial_qyt8b")
 size = Vector3(7, 1, 7)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1u3bp"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0.101961, 0.101961, 0.101961, 0.313726)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
 
 [sub_resource type="Animation" id="Animation_fpkve"]
 length = 0.001
@@ -490,6 +478,40 @@ _data = {
 &"main": SubResource("Animation_1u3bp")
 }
 
+[sub_resource type="Animation" id="Animation_dxot6"]
+resource_name = "fade"
+length = 0.5
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OverlayLayer/BlackOverlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c857x"]
+_data = {
+&"fade": SubResource("Animation_dxot6")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1u3bp"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101961, 0.101961, 0.101961, 0.313726)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [node name="World" type="Node3D"]
 script = ExtResource("1_fpkve")
 
@@ -686,6 +708,16 @@ mesh = SubResource("BoxMesh_lkofv")
 transform = Transform3D(0.034574, 0.0785157, -0.996313, 0.0234201, 0.996572, 0.0793488, 0.999128, -0.0260772, 0.0326166, -48.7406, 37.3539, 4.49816)
 current = true
 
+[node name="MenuAnimation" type="AnimationPlayer" parent="Camera3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_fpkve")
+}
+
+[node name="FadeManager" type="AnimationPlayer" parent="Camera3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_c857x")
+}
+
 [node name="MainMenuLayer" type="CanvasLayer" parent="Camera3D"]
 
 [node name="BG" type="Panel" parent="Camera3D/MainMenuLayer"]
@@ -817,11 +849,6 @@ theme_override_font_sizes/font_size = 20
 text = "CREDITS"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="MenuAnimation" type="AnimationPlayer" parent="Camera3D"]
-libraries = {
-&"": SubResource("AnimationLibrary_fpkve")
-}
 
 [node name="OverlayLayer" type="CanvasLayer" parent="Camera3D"]
 layer = 128
