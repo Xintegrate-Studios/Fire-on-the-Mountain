@@ -85,6 +85,7 @@ size = Vector2(0.3, 0.3)
 [node name="Flame" type="GPUParticles3D" parent="."]
 amount = 100
 lifetime = 1.2
+preprocess = 2.0
 process_material = SubResource("ParticleProcessMaterial_fu4e1")
 draw_pass_1 = SubResource("QuadMesh_fu4e1")
 
@@ -92,5 +93,6 @@ draw_pass_1 = SubResource("QuadMesh_fu4e1")
 transform = Transform3D(2.705, 0, 0, 0, 2.705, 0, 0, 0, 2.705, 0, -0.138882, 0)
 amount = 40
 lifetime = 1.5
+preprocess = 2.0
 process_material = SubResource("ParticleProcessMaterial_t11dk")
 draw_pass_1 = SubResource("QuadMesh_t11dk")

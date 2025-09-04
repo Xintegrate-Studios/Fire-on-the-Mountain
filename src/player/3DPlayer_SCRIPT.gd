@@ -69,25 +69,23 @@ func _unhandled_input(event):
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
-
 func _physics_process(delta):
 	if global.player_active:
 		# Crouching
 		if GAME_STATE != "DEAD" and is_on_floor():
-			if Input.is_action_pressed("Crouch"): # Check if the Crouch input is pressed
-				self.scale.y = lerp(self.scale.y, 0.5, CROUCH_INTERPOLATION * delta) # linearly interpolate the scale of the player on the y-axis to 0.5
+			if Input.is_action_pressed("Crouch"):
+				self.scale.y = lerp(self.scale.y, 0.5, CROUCH_INTERPOLATION * delta)
 			else: 
-				self.scale.y = lerp(self.scale.y, 1.0, CROUCH_INTERPOLATION * delta) # linearly interpolate the scale of the player on the y-axis to 1.0
+				self.scale.y = lerp(self.scale.y, 1.0, CROUCH_INTERPOLATION * delta)
 		else:
-			self.scale.y = lerp(self.scale.y, 1.0, CROUCH_INTERPOLATION * delta) # linearly interpolate the scale of the player on the y-axis to 1.0
+			self.scale.y = lerp(self.scale.y, 1.0, CROUCH_INTERPOLATION * delta)
 		
 		
 		if !GAME_STATE == "DEAD":
-			# Always apply gravity unless game state is DEAD
-			if not is_on_floor(): # Check if the player is not on the floor
-				velocity.y -= gravity * delta # apply gravity to the player
-
-
+			
+			if not is_on_floor():
+				velocity.y -= gravity * delta
+			
 			# Jumping
 			if Input.is_action_just_pressed("Jump") and is_on_floor() and !Input.is_action_pressed("Crouch"): # Check if the Jump input is pressed, the player is on the floor and the Crouch input is not pressed
 				velocity.y = JUMP_VELOCITY # set the player's velocity to the jump velocity
