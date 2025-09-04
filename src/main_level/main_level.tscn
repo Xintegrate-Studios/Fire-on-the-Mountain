@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://biqj67tjrslek"]
+[gd_scene load_steps=29 format=3 uid="uid://biqj67tjrslek"]
 
 [ext_resource type="PackedScene" uid="uid://bm3l1fnoqw1bx" path="res://ast/models/island/island.tscn" id="1_scctx"]
 [ext_resource type="PackedScene" uid="uid://ccvky0721knit" path="res://ast/models/Trees/Palm/Models/PalmTree1.blend" id="2_goh21"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://b6ijgxw1ym8h0" path="res://ast/models/rocks/Rock1.blend" id="15_ibte4"]
 [ext_resource type="PackedScene" uid="uid://d22xrpdo83kd6" path="res://ast/models/Trees/Pine/Models/PineTree3.blend" id="16_n0lbn"]
 [ext_resource type="PackedScene" uid="uid://d3ryqywu5nr0k" path="res://ast/models/Trees/Pine/Models/PineTree5.blend" id="17_ybo0d"]
+[ext_resource type="PackedScene" uid="uid://cdbylnsm71dkk" path="res://ast/models/Trees/Normal/Models/Tree3.blend" id="20_n0lbn"]
+[ext_resource type="PackedScene" uid="uid://15tqwjp0awjq" path="res://ast/models/Grass/glass_clump.tscn" id="21_ybo0d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_scctx"]
 sky_top_color = Color(0.410916, 0.656231, 0.959196, 1)
@@ -168,6 +170,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.4012, 6.50457, -7.50995)
 [node name="PineTree5" parent="IslandComponents" instance=ExtResource("17_ybo0d")]
 transform = Transform3D(0.720116, 0, 0, 0, 0.720116, 0, 0, 0, 0.720116, 26.6687, 8.37481, 2.05424)
 
+[node name="PalmTree4" parent="IslandComponents" instance=ExtResource("2_goh21")]
+transform = Transform3D(0.865092, 0, 0, 0, 0.865092, 0, 0, 0, 0.865092, 45.2892, 5.05202, 18.7067)
+
+[node name="PalmTree5" parent="IslandComponents" instance=ExtResource("2_goh21")]
+transform = Transform3D(-0.0347327, 0, -0.864394, 0, 0.865092, 0, 0.864394, 0, -0.0347327, 28.4767, 5.05202, 42.5383)
+
+[node name="PalmTree6" parent="IslandComponents" instance=ExtResource("2_goh21")]
+transform = Transform3D(-0.203644, 0.754055, -0.235374, 0.228444, 0.672192, 0.264039, 0.272668, -1.59267e-08, -0.397006, 34.5524, 4.32882, -34.3422)
+
+[node name="Stone3" parent="IslandComponents" instance=ExtResource("5_n7bfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8349, 4.01047, -32.5624)
+
+[node name="PalmTree7" parent="IslandComponents" instance=ExtResource("2_goh21")]
+transform = Transform3D(0.735527, 0.00185677, 0.230867, -0.00177155, 0.770908, -0.000556056, -0.230868, 5.30935e-09, 0.735529, 39.9648, 4.53391, -25.5923)
+
+[node name="Tree3" parent="IslandComponents" instance=ExtResource("20_n0lbn")]
+transform = Transform3D(0.488549, 0, 0, 0, 0.488549, 0, 0, 0, 0.488549, 19.0854, 3.45392, 33.8537)
+
+[node name="Stone4" parent="IslandComponents" instance=ExtResource("5_n7bfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.1587, 4.92066, 42.0227)
+
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.611401, 0.152959)
 mesh = SubResource("PlaneMesh_n4qwq")
@@ -179,11 +202,29 @@ mesh = SubResource("BoxMesh_scctx")
 [node name="3DPlayer" parent="." instance=ExtResource("3_tw2e2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.97217, 0)
 
-[node name="PalmTree1" parent="." instance=ExtResource("2_goh21")]
-transform = Transform3D(-0.203644, 0.754055, -0.235374, 0.228444, 0.672192, 0.264039, 0.272668, -1.59267e-08, -0.397006, 34.5524, 4.32882, -34.3422)
+[node name="GlassClump" parent="." instance=ExtResource("21_ybo0d")]
+transform = Transform3D(0.987982, -0.153682, -0.0165558, 0.152881, 0.987353, -0.0419627, 0.0227953, 0.0389274, 0.998982, 20.9159, 4.85915, 33.5163)
 
-[node name="Stone1" parent="." instance=ExtResource("5_n7bfk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8349, 4.01047, -32.5624)
+[node name="GlassClump2" parent="." instance=ExtResource("21_ybo0d")]
+transform = Transform3D(0.691937, -0.0928871, 0.715958, 0.0714037, 0.995632, 0.0601635, -0.718419, 0.00949262, 0.695546, 14.3029, 3.93968, 33.5163)
 
-[node name="PalmTree2" parent="." instance=ExtResource("2_goh21")]
-transform = Transform3D(0.735527, 0.00185677, 0.230867, -0.00177155, 0.770908, -0.000556056, -0.230868, 5.30935e-09, 0.735529, 39.9648, 4.53391, -25.5923)
+[node name="GlassClump3" parent="." instance=ExtResource("21_ybo0d")]
+transform = Transform3D(0.697865, -0.0198749, 0.715953, 0.0554133, 0.998117, -0.0263055, -0.714082, 0.0580309, 0.697653, 9.79622, 3.73092, 27.9899)
+
+[node name="GlassClump4" parent="." instance=ExtResource("21_ybo0d")]
+transform = Transform3D(0.995803, -0.091519, 0, 0.091519, 0.995803, 0, 0, 0, 1, 16.7815, 4.36129, 19.0606)
+
+[node name="GlassClump5" parent="." instance=ExtResource("21_ybo0d")]
+transform = Transform3D(-0.035713, -0.429909, 0.902166, 0.16605, 0.88764, 0.429561, -0.98547, 0.165146, 0.0396863, 25.5086, 5.96465, 12.6282)
+
+[node name="GlassClump6" parent="." instance=ExtResource("21_ybo0d")]
+transform = Transform3D(0.0304803, -0.0579116, 0.997856, 0.16709, 0.984568, 0.0520363, -0.98547, 0.165146, 0.0396863, 32.6695, 7.38493, 12.6282)
+
+[node name="GlassClump7" parent="." instance=ExtResource("21_ybo0d")]
+transform = Transform3D(0.483057, -0.0239054, 0.875262, 0.118094, 0.992273, -0.0380747, -0.867588, 0.121755, 0.482148, 32.6695, 6.62623, 19.633)
+
+[node name="GlassClump8" parent="." instance=ExtResource("21_ybo0d")]
+transform = Transform3D(0.989006, -0.147878, 0, 0.147878, 0.989006, 0, 0, 0, 1, 24.193, 5.71867, 22.3857)
+
+[node name="PineTree5" parent="." instance=ExtResource("17_ybo0d")]
+transform = Transform3D(0.873657, 0, 0, 0, 0.873657, 0, 0, 0, 0.873657, 23.2583, 6.26483, 13.9057)
