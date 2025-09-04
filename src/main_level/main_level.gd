@@ -2,9 +2,12 @@ extends Node3D
 
 func _ready() -> void:
 	global.world = self
+	global.player = $"3DPlayer"
+	global.pause_animation_player = $Camera3D/PauseAnimation
 	global.player_active = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	$"3DPlayer/Head/Camera3D/MainHUDLayer".hide()
+	
 	$Camera3D/FadeManager.play("fade", -1, -0.35, true)
 	
 	

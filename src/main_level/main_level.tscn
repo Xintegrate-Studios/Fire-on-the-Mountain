@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://biqj67tjrslek"]
+[gd_scene load_steps=45 format=3 uid="uid://biqj67tjrslek"]
 
 [ext_resource type="Script" uid="uid://dvav26tqc5pit" path="res://src/main_level/main_level.gd" id="1_fpkve"]
 [ext_resource type="PackedScene" uid="uid://bm3l1fnoqw1bx" path="res://ast/models/island/island.tscn" id="1_scctx"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://bsy8kgmvg8pwq" path="res://ast/particles/fire_particles/fire_particles.tscn" id="25_lkofv"]
 [ext_resource type="PackedScene" uid="uid://bhm7iy00ro65v" path="res://ast/models/structures/firepits/firepit1.blend" id="26_pmsjj"]
 [ext_resource type="FontFile" uid="uid://cmsnr0uluge1x" path="res://ast/fonts/times roman/times_roman.otf" id="27_1u3bp"]
+[ext_resource type="Script" uid="uid://dn4fav7k0mg0s" path="res://src/main_level/pause_layer.gd" id="29_dxot6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_scctx"]
 sky_top_color = Color(0.410916, 0.656231, 0.959196, 1)
@@ -305,7 +306,7 @@ tracks/0/path = NodePath("PauseLayer/Title:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.433333, 0.766667),
+"times": PackedFloat32Array(0.2, 0.533334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -317,7 +318,7 @@ tracks/1/path = NodePath("PauseLayer/BG:size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.266667, 0.433333),
+"times": PackedFloat32Array(0.033334, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(232.313, 0), Vector2(232.313, 225.438)]
@@ -329,7 +330,7 @@ tracks/2/path = NodePath("PauseLayer/BG:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.266667, 0.433333),
+"times": PackedFloat32Array(0.033334, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(459.844, 324), Vector2(459.844, 209.563)]
@@ -341,7 +342,7 @@ tracks/3/path = NodePath("PauseLayer/ContinueButton:size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.87, 0.97),
+"times": PackedFloat32Array(0.636667, 0.736667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(8, 36), Vector2(205.25, 36)]
@@ -353,7 +354,7 @@ tracks/4/path = NodePath("PauseLayer/ContinueButton:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.87, 0.97),
+"times": PackedFloat32Array(0.636667, 0.736667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(572, 306), Vector2(473.375, 306)]
@@ -365,7 +366,7 @@ tracks/5/path = NodePath("PauseLayer/ContinueButton:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.86, 0.87),
+"times": PackedFloat32Array(0, 0.626667, 0.636667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, false, true]
@@ -377,7 +378,7 @@ tracks/6/path = NodePath("PauseLayer/OptionsButton:size")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0.97, 1.07),
+"times": PackedFloat32Array(0.736667, 0.836667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(8, 36), Vector2(205.25, 36)]
@@ -389,7 +390,7 @@ tracks/7/path = NodePath("PauseLayer/OptionsButton:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.97, 1.07),
+"times": PackedFloat32Array(0.736667, 0.836667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(572, 346), Vector2(473.375, 346)]
@@ -401,7 +402,7 @@ tracks/8/path = NodePath("PauseLayer/OptionsButton:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.96, 0.97),
+"times": PackedFloat32Array(0, 0.726667, 0.736667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, false, true]
@@ -413,7 +414,7 @@ tracks/9/path = NodePath("PauseLayer/QuitButton:size")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(1.07, 1.17),
+"times": PackedFloat32Array(0.836667, 0.936667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(8, 36), Vector2(205.25, 36)]
@@ -425,7 +426,7 @@ tracks/10/path = NodePath("PauseLayer/QuitButton:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(1.07, 1.17),
+"times": PackedFloat32Array(0.836667, 0.936667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(572, 386), Vector2(473.375, 386)]
@@ -437,7 +438,7 @@ tracks/11/path = NodePath("PauseLayer/QuitButton:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 1.06, 1.07),
+"times": PackedFloat32Array(0, 0.826667, 0.836667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, false, true]
@@ -449,7 +450,7 @@ tracks/12/path = NodePath("PauseLayer/ContinueText:visible_ratio")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(1.07, 1.17),
+"times": PackedFloat32Array(0.836667, 0.936667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -461,7 +462,7 @@ tracks/13/path = NodePath("PauseLayer/OptionsText:visible_ratio")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(1.17, 1.27),
+"times": PackedFloat32Array(0.936667, 1.03667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -473,7 +474,7 @@ tracks/14/path = NodePath("PauseLayer/QuitText:visible_ratio")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(1.27, 1.37),
+"times": PackedFloat32Array(1.03667, 1.13667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -721,6 +722,7 @@ libraries = {
 }
 
 [node name="PauseAnimation" type="AnimationPlayer" parent="Camera3D"]
+process_mode = 3
 libraries = {
 &"": SubResource("AnimationLibrary_dxot6")
 }
@@ -742,6 +744,7 @@ offset_left = -116.156
 offset_right = 116.157
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1u3bp")
 
 [node name="Title" type="Label" parent="Camera3D/MainMenuLayer"]
@@ -756,6 +759,7 @@ offset_right = 211.056
 offset_bottom = -30.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_fonts/font = ExtResource("27_1u3bp")
 theme_override_font_sizes/font_size = 20
 text = "FIRE ON
@@ -779,6 +783,7 @@ offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
+mouse_filter = 1
 theme_override_fonts/font = ExtResource("27_1u3bp")
 
 [node name="OptionsButton" type="Button" parent="Camera3D/MainMenuLayer"]
@@ -795,6 +800,7 @@ offset_bottom = 58.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
+mouse_filter = 1
 theme_override_fonts/font = ExtResource("27_1u3bp")
 
 [node name="CreditsButton" type="Button" parent="Camera3D/MainMenuLayer"]
@@ -811,6 +817,7 @@ offset_bottom = 98.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
+mouse_filter = 1
 theme_override_fonts/font = ExtResource("27_1u3bp")
 
 [node name="PlayText" type="Label" parent="Camera3D/MainMenuLayer"]
@@ -874,7 +881,9 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="PauseLayer" type="CanvasLayer" parent="Camera3D"]
+process_mode = 3
 layer = 10
+script = ExtResource("29_dxot6")
 
 [node name="BG" type="Panel" parent="Camera3D/PauseLayer"]
 anchors_preset = 8
@@ -883,11 +892,10 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -116.156
-offset_top = -114.437
 offset_right = 116.157
-offset_bottom = 111.001
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1u3bp")
 
 [node name="Title" type="Label" parent="Camera3D/PauseLayer"]
@@ -907,50 +915,58 @@ theme_override_font_sizes/font_size = 20
 text = "GAME PAUSED"
 horizontal_alignment = 1
 vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="ContinueButton" type="Button" parent="Camera3D/PauseLayer"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -102.625
+offset_left = -4.0
 offset_top = -18.0
-offset_right = 102.625
+offset_right = 4.0
 offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
+mouse_filter = 1
 theme_override_fonts/font = ExtResource("27_1u3bp")
 
 [node name="OptionsButton" type="Button" parent="Camera3D/PauseLayer"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -102.625
+offset_left = -4.0
 offset_top = 22.0
-offset_right = 102.625
+offset_right = 4.0
 offset_bottom = 58.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
+mouse_filter = 1
 theme_override_fonts/font = ExtResource("27_1u3bp")
 
 [node name="QuitButton" type="Button" parent="Camera3D/PauseLayer"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -102.625
+offset_left = -4.0
 offset_top = 62.0
-offset_right = 102.625
+offset_right = 4.0
 offset_bottom = 98.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
+mouse_filter = 1
 theme_override_fonts/font = ExtResource("27_1u3bp")
 
 [node name="ContinueText" type="Label" parent="Camera3D/PauseLayer"]
@@ -970,6 +986,8 @@ theme_override_font_sizes/font_size = 20
 text = "CONTINUE"
 horizontal_alignment = 1
 vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="OptionsText" type="Label" parent="Camera3D/PauseLayer"]
 anchors_preset = 8
@@ -988,6 +1006,8 @@ theme_override_font_sizes/font_size = 20
 text = "OPTIONS"
 horizontal_alignment = 1
 vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="QuitText" type="Label" parent="Camera3D/PauseLayer"]
 anchors_preset = 8
@@ -1006,6 +1026,8 @@ theme_override_font_sizes/font_size = 20
 text = "QUIT"
 horizontal_alignment = 1
 vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="OverlayLayer" type="CanvasLayer" parent="Camera3D"]
 layer = 128

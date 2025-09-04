@@ -22,8 +22,7 @@ extends CharacterBody3D
 @export var ResetPOS := Vector3(0, 0, 0)
 
 @export_group("Input")
-@export var Reset := true
-@export var Quit := true
+@export var AllowQuitInput := true
 
 @export_group("View Bobbing")
 @export var BOB_FREQ := 3.0
@@ -51,21 +50,6 @@ extends CharacterBody3D
 
 @onready var head = $Head # reference to the head of the player scene. (used for mouse movement and looking around)
 @onready var camera = $Head/Camera3D # reference to the camera of the player (used for mouse movement and looking around)
-
-
-func _input(_event):
-	if OS.is_debug_build():
-		if Input.is_action_just_pressed("Quit") and Quit == true:
-			get_tree().quit() # quit
-		if Input.is_action_just_pressed("Reset") and Reset == true:
-			if ResetPOS == Vector3(999, 999, 999):
-				self.position = StartPOS
-			else:
-				self.position = ResetPOS
-	
-	if global.player_active:
-		if Input.is_action_just_pressed("Pause"):
-			global.pause()
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
