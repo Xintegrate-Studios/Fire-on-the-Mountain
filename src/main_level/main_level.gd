@@ -1,6 +1,7 @@
 extends Node3D
 
 func _ready() -> void:
+	global.world = self
 	global.player_active = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	$"3DPlayer/Head/Camera3D/MainHUDLayer".hide()

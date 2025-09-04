@@ -62,6 +62,10 @@ func _input(_event):
 				self.position = StartPOS
 			else:
 				self.position = ResetPOS
+	
+	if global.player_active:
+		if Input.is_action_just_pressed("Pause"):
+			global.pause()
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
