@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsy8kgmvg8pwq"]
+
+[sub_resource type="Curve" id="Curve_py7r6"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.417949, 0.51751), -4.17315, -4.17315, 0, 0, Vector2(0.802564, 0.0194553), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_py7r6"]
+curve = SubResource("Curve_py7r6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fu4e1"]
+emission_shape = 1
+emission_sphere_radius = 0.2
+spread = 0.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = 90.0
+gravity = Vector3(0, 4, 0)
+scale_curve = SubResource("CurveTexture_py7r6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_py7r6"]
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_fu4e1"]
+material = SubResource("StandardMaterial3D_py7r6")
+size = Vector2(0.3, 0.3)
+
+[node name="FireParticles" type="Node3D"]
+
+[node name="Flame" type="GPUParticles3D" parent="."]
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_fu4e1")
+draw_pass_1 = SubResource("QuadMesh_fu4e1")
