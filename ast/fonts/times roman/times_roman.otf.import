@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://biiuqyp1dgd8d"
-path="res://.godot/imported/Gildeon.otf-31e2a9417487f6a90ca5a5127305a983.fontdata"
+uid="uid://cmsnr0uluge1x"
+path="res://.godot/imported/times_roman.otf-c46bd89b67113dc539be6d35b0588157.fontdata"
 
 [deps]
 
-source_file="res://ast/fonts/gildeon/Gildeon.otf"
-dest_files=["res://.godot/imported/Gildeon.otf-31e2a9417487f6a90ca5a5127305a983.fontdata"]
+source_file="res://ast/fonts/times roman/times_roman.otf"
+dest_files=["res://.godot/imported/times_roman.otf-c46bd89b67113dc539be6d35b0588157.fontdata"]
 
 [params]
 
