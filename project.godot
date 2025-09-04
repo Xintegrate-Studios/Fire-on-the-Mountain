@@ -23,6 +23,10 @@ config/icon="res://icon.svg"
 window/size/mode=4
 window/stretch/mode="canvas_items"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg")
+
 [input]
 
 Crouch={

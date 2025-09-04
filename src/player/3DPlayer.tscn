@@ -129,6 +129,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.66439, 0)
 fov = 100.0
 
 [node name="MainHUDLayer" type="CanvasLayer" parent="Head/Camera3D"]
+visible = false
 
 [node name="Crosshair" type="TextureRect" parent="Head/Camera3D/MainHUDLayer"]
 anchors_preset = 8
