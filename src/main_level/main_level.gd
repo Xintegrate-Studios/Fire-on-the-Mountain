@@ -3,8 +3,12 @@ extends Node3D
 func _ready() -> void:
 	global.player_active = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	$Camera3D/MenuAnimation.play("main")
 	$"3DPlayer/Head/Camera3D/MainHUDLayer".hide()
+	$Camera3D/FadeManager.play("fade", -1, -0.35, true)
+	
+	
+	await get_tree().create_timer(0.5).timeout
+	$Camera3D/MenuAnimation.play("main")
 
 
 func _on_play_button_pressed() -> void:
