@@ -28,6 +28,9 @@ func _on_play_button_pressed() -> void:
 	$"3DPlayer/Head/Camera3D/MainHUDLayer".show()
 	
 	$Camera3D/FadeManager.play("fade", -1, -0.35, true)
+	
+	await get_tree().create_timer(5.0).timeout
+	$Camera3D/TutorialLayer/ToastAnimation.play("main")
 
 
 
