@@ -24,7 +24,6 @@ global="*res://src/globals/global.gd"
 
 [display]
 
-window/size/mode=4
 window/stretch/mode="canvas_items"
 
 [editor_plugins]

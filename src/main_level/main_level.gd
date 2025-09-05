@@ -10,7 +10,6 @@ func _ready() -> void:
 	
 	$Camera3D/FadeManager.play("fade", -1, -0.35, true)
 	
-	
 	await get_tree().create_timer(0.5).timeout
 	$Camera3D/MenuAnimation.play("main")
 
@@ -29,3 +28,14 @@ func _on_play_button_pressed() -> void:
 	$"3DPlayer/Head/Camera3D/MainHUDLayer".show()
 	
 	$Camera3D/FadeManager.play("fade", -1, -0.35, true)
+
+
+
+func _on_continue_button_pressed() -> void:
+	global.pause()
+
+func _on_options_button_pressed() -> void:
+	pass
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()

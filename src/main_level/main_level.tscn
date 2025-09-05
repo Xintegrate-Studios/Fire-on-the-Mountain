@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://biqj67tjrslek"]
+[gd_scene load_steps=51 format=3 uid="uid://biqj67tjrslek"]
 
 [ext_resource type="Script" uid="uid://dvav26tqc5pit" path="res://src/main_level/main_level.gd" id="1_fpkve"]
 [ext_resource type="PackedScene" uid="uid://bm3l1fnoqw1bx" path="res://ast/models/island/island.tscn" id="1_scctx"]
@@ -28,7 +28,9 @@
 [ext_resource type="PackedScene" uid="uid://bsy8kgmvg8pwq" path="res://ast/particles/fire_particles/fire_particles.tscn" id="25_lkofv"]
 [ext_resource type="PackedScene" uid="uid://bhm7iy00ro65v" path="res://ast/models/structures/firepits/firepit1.blend" id="26_pmsjj"]
 [ext_resource type="FontFile" uid="uid://cmsnr0uluge1x" path="res://ast/fonts/times roman/times_roman.otf" id="27_1u3bp"]
+[ext_resource type="Material" uid="uid://bpmb5m7ax5tp7" path="res://res/shader mat/bg_blur_panel.tres" id="28_c857x"]
 [ext_resource type="Script" uid="uid://dn4fav7k0mg0s" path="res://src/main_level/pause_layer.gd" id="29_dxot6"]
+[ext_resource type="Shader" uid="uid://dybcq1k81ja1a" path="res://res/shaders/blur.gdshader" id="31_cfln1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_scctx"]
 sky_top_color = Color(0.410916, 0.656231, 0.959196, 1)
@@ -519,6 +521,101 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xgma8"]
+shader = ExtResource("31_cfln1")
+shader_parameter/blur_radius = 8
+shader_parameter/blur_scale = 7.228
+shader_parameter/darkness = 0.0
+shader_parameter/fade_direction = 1
+shader_parameter/fade_cutoff = 0.0
+shader_parameter/fade_intensity = 3.677
+
+[sub_resource type="Animation" id="Animation_cfln1"]
+resource_name = "main"
+length = 0.5
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ToastBG:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 36), Vector2(237, 36)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ToastBG:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1019, 602), Vector2(907, 602)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ToastText:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_xgma8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ToastText:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ToastBG:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 36)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ToastBG:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1019, 602)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xgma8"]
+_data = {
+&"RESET": SubResource("Animation_xgma8"),
+&"main": SubResource("Animation_cfln1")
+}
+
 [node name="World" type="Node3D"]
 process_mode = 1
 script = ExtResource("1_fpkve")
@@ -706,7 +803,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.611401, 0.152959)
 mesh = SubResource("PlaneMesh_n4qwq")
 
 [node name="3DPlayer" parent="." instance=ExtResource("3_tw2e2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.97217, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.423, 8.38549, 0)
 
 [node name="Clouds" type="MeshInstance3D" parent="."]
 transform = Transform3D(500, 0, 0, 0, 128, 0, 0, 0, 500, 0, 128.812, 0)
@@ -735,6 +832,7 @@ libraries = {
 [node name="MainMenuLayer" type="CanvasLayer" parent="Camera3D"]
 
 [node name="BG" type="Panel" parent="Camera3D/MainMenuLayer"]
+material = ExtResource("28_c857x")
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -745,7 +843,6 @@ offset_right = 116.157
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_1u3bp")
 
 [node name="Title" type="Label" parent="Camera3D/MainMenuLayer"]
 anchors_preset = 8
@@ -886,6 +983,7 @@ layer = 10
 script = ExtResource("29_dxot6")
 
 [node name="BG" type="Panel" parent="Camera3D/PauseLayer"]
+material = ExtResource("28_c857x")
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1042,4 +1140,34 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
+[node name="TutorialLayer" type="CanvasLayer" parent="Camera3D"]
+
+[node name="ToastBG" type="Panel" parent="Camera3D/TutorialLayer"]
+material = SubResource("ShaderMaterial_xgma8")
+offset_left = 1019.0
+offset_top = 602.0
+offset_right = 1019.0
+offset_bottom = 638.0
+
+[node name="ToastText" type="Label" parent="Camera3D/TutorialLayer"]
+offset_left = 908.0
+offset_top = 604.0
+offset_right = 1144.0
+offset_bottom = 633.0
+theme_override_fonts/font = ExtResource("27_1u3bp")
+text = "Press   [H]   for a quick tutorial"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="ToastAnimation" type="AnimationPlayer" parent="Camera3D/TutorialLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_xgma8")
+}
+autoplay = "main"
+
 [connection signal="pressed" from="Camera3D/MainMenuLayer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Camera3D/PauseLayer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Camera3D/PauseLayer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Camera3D/PauseLayer/QuitButton" to="." method="_on_quit_button_pressed"]
