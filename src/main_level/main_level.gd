@@ -32,7 +32,9 @@ func _on_play_button_pressed() -> void:
 	await get_tree().create_timer(5.0).timeout
 	$Camera3D/TutorialLayer/ToastAnimation.play("main")
 
-
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("Tutorial"):
+		pass
 
 func _on_continue_button_pressed() -> void:
 	global.pause()

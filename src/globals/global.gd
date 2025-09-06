@@ -3,6 +3,8 @@ extends Node
 var player_active : bool = true
 var paused : bool = false
 
+var did_tutorial : bool = false
+
 var world
 var player
 var pause_animation_player
