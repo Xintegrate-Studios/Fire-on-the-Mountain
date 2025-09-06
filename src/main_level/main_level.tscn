@@ -1207,6 +1207,30 @@ transform = Transform3D(0.496978, 0, 0, 0, 0.496978, 0, 0, 0, 0.496978, 9.49547,
 [node name="Tree4" parent="." instance=ExtResource("3_n4qwq")]
 transform = Transform3D(0.810194, 0, 0, 0, 0.810194, 0, 0, 0, 0.810194, -6.99188, 4.28139, 40.3825)
 
+[node name="GlassClump11" parent="." instance=ExtResource("21_ybo0d")]
+transform = Transform3D(0.963798, 0.263945, -0.0377624, -0.266633, 0.954083, -0.1365, -9.26687e-10, 0.141627, 0.98992, 0.167473, 4.58265, 26.3332)
+
+[node name="GlassClump12" parent="." instance=ExtResource("21_ybo0d")]
+transform = Transform3D(0.991646, 0.128986, 0, -0.128422, 0.987314, 0.0933785, 0.0120445, -0.0925984, 0.995631, 3.46437, 3.99497, 35.4407)
+
+[node name="GlassClump13" parent="." instance=ExtResource("21_ybo0d")]
+transform = Transform3D(0.996924, -0.0783721, 0, 0.0783721, 0.996924, 0, 0, 0, 1, 5.32944, 5.12505, 49.3278)
+
+[node name="PineTree1" parent="." instance=ExtResource("15_b4j44")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5351, 4.00048, -19.804)
+
+[node name="PineTree3" parent="." instance=ExtResource("16_n0lbn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5929, 2.75619, -25.1425)
+
+[node name="PineTree4" parent="." instance=ExtResource("32_xgma8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9327, 6.42062, -34.9478)
+
+[node name="PineTree5" parent="." instance=ExtResource("32_xgma8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.7616, 7.01628, -33.5938)
+
+[node name="PineTree6" parent="." instance=ExtResource("17_ybo0d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.6721, 6.10466, -42.8509)
+
 [connection signal="pressed" from="Camera3D/MainMenuLayer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Camera3D/PauseLayer/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="Camera3D/PauseLayer/OptionsButton" to="." method="_on_options_button_pressed"]
