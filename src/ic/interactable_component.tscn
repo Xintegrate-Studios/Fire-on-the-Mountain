@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbmsf23ymvvw2"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lutt7"]
+viewport_path = NodePath("Contents/UI/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nyf0v"]
+size = Vector3(7, 5, 7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lutt7"]
+size = Vector3(0.460693, 0.741821, 0.463135)
+
+[node name="InteractableComponent" type="Node3D"]
+
+[node name="Contents" type="Node3D" parent="."]
+
+[node name="UI" type="Sprite3D" parent="Contents"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+billboard = 1
+no_depth_test = true
+render_priority = 1
+texture = SubResource("ViewportTexture_lutt7")
+
+[node name="SubViewport" type="SubViewport" parent="Contents/UI"]
+transparent_bg = true
+gui_disable_input = true
+size = Vector2i(1150, 1150)
+
+[node name="Key" type="Label" parent="Contents/UI/SubViewport"]
+offset_left = 500.0
+offset_top = 500.0
+offset_right = 629.0
+offset_bottom = 646.0
+theme_override_font_sizes/font_size = 106
+text = "[E]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerAreaBox" type="Area3D" parent="Contents"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Contents/PlayerAreaBox"]
+shape = SubResource("BoxShape3D_nyf0v")
+
+[node name="MimicRaycastBox" type="Area3D" parent="Contents"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Contents/MimicRaycastBox"]
+shape = SubResource("BoxShape3D_lutt7")
+
+[connection signal="body_entered" from="Contents/PlayerAreaBox" to="." method="_on_player_area_box_body_entered"]
+[connection signal="body_exited" from="Contents/PlayerAreaBox" to="." method="_on_player_area_box_body_exited"]
+[connection signal="area_entered" from="Contents/MimicRaycastBox" to="." method="_on_mimic_raycast_box_area_entered"]
+[connection signal="area_exited" from="Contents/MimicRaycastBox" to="." method="_on_mimic_raycast_box_area_exited"]
