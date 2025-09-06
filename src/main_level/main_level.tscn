@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://biqj67tjrslek"]
+[gd_scene load_steps=61 format=3 uid="uid://biqj67tjrslek"]
 
 [ext_resource type="Script" uid="uid://dvav26tqc5pit" path="res://src/main_level/main_level.gd" id="1_fpkve"]
 [ext_resource type="PackedScene" uid="uid://bm3l1fnoqw1bx" path="res://ast/models/island/island.tscn" id="1_scctx"]
@@ -82,6 +82,18 @@ material = SubResource("ShaderMaterial_scctx")
 size = Vector2(5000, 5000)
 subdivide_width = 1000
 subdivide_depth = 1000
+
+[sub_resource type="InputEventAction" id="InputEventAction_5soda"]
+action = &"Interact"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_44kkc"]
+viewport_path = NodePath("conch/ConchInteractableComponent/Contents/UI/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nyf0v"]
+size = Vector3(7, 5, 7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lutt7"]
+size = Vector3(0.460693, 0.443054, 0.463135)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qyt8b"]
 render_priority = 0
@@ -581,17 +593,63 @@ _data = {
 &"main": SubResource("Animation_cfln1")
 }
 
-[sub_resource type="InputEventAction" id="InputEventAction_5soda"]
-action = &"Interact"
+[sub_resource type="Animation" id="Animation_44kkc"]
+resource_name = "main"
+length = 30.0
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ConchUseCutscene/Camera3D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.70037, 3.73888, 4.16667, 5.01602, 7.63333, 11.5333, 11.9667, 12.3333, 12.7, 14.0486),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(34.0194, 10.1239, -0.458998), Vector3(33.519, 9.9433, -0.924451), Vector3(33.2709, 9.5554, -1.33124), Vector3(33.271, 9.455, -1.331), Vector3(33.271, 9.89334, -1.331), Vector3(34.0287, 10.0006, -1.331), Vector3(34.0287, 10.0006, -1.331), Vector3(34.1283, 9.99356, -1.35579), Vector3(34.028, 9.994, -1.356), Vector3(34.028, 9.994, -1.356), Vector3(34.028, 9.994, -1.356)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ConchUseCutscene/Camera3D:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.566667, 1.70037, 3.73888, 4.16667, 7.63333, 10.7667, 11.5333, 11.9667, 12.3333, 12.6231, 12.7667, 13.3333, 13.7333, 14.0333, 14.4333, 15.6, 17.7333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, -1.46409, -1.93187, 1),
+"update": 0,
+"values": [Vector3(-0.0337341, 0.59709, -0.126403), Vector3(-0.371724, 0.838074, -0.140117), Vector3(-0.686733, 0.894693, -0.169066), Vector3(-0.686733, 0.894693, -0.169066), Vector3(-0.689405, 0.895354, -0.169297), Vector3(-0.689405, 0.895354, -0.169297), Vector3(0, 0, 0), Vector3(-0.27578, 0, 0), Vector3(-0.26676, 0.262821, -0.0708035), Vector3(-0.26676, 0.0453531, -0.0708035), Vector3(-0.267035, -0.289725, -0.0715585), Vector3(-0.465299, -0.313451, -0.00563639), Vector3(0.13507, -0.263875, -0.0330309), Vector3(-0.466003, -0.624828, 0.150098), Vector3(-0.466003, -0.624828, 0.150098), Vector3(-0.305778, -0.504793, -0.0388598), Vector3(-0.661331, -0.663502, 0.232275), Vector3(0.588462, -0.368297, 0.04894)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("conch:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4, 6.73739, 8.77341, 11.5333, 12.6, 12.9333, 13.3333, 13.8333, 14.2667, 15, 15.5667, 17.7271),
+"transitions": PackedFloat32Array(1, -2.21914, -3.73213, 1, 1, -1.86607, -2.54912, -2.63902, -2.14355, -2.14355, -2.14355, -2.14355, 1),
+"update": 0,
+"values": [Vector3(33.2969, 9.04649, -1.36873), Vector3(33.2969, 9.04649, -1.36873), Vector3(33.975, 9.686, -1.218), Vector3(34.0675, 9.69741, -1.56332), Vector3(34.0675, 9.69741, -1.56332), Vector3(34.0675, 9.69741, -1.56332), Vector3(34.133, 9.697, -1.441), Vector3(34.133, 10.326, -1.791), Vector3(34.133, 9.697, -1.441), Vector3(34.133, 9.727, -1.441), Vector3(34.083, 9.932, -1.621), Vector3(34.083, 9.942, -1.621), Vector3(34.113, 10.152, -1.591)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("conch:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4, 6.73739, 8.77341, 11.5333, 11.9667, 12.3387, 12.5667, 12.9333, 13.8333, 14.2667, 15, 15.5667, 17.7271),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.711062, -1.29636, 1.64913), Vector3(-0.711062, -1.29636, 1.64913), Vector3(-0.711062, -1.29636, 1.64913), Vector3(-0.0650311, 0.319003, 0.858626), Vector3(-0.0650311, 0.319003, 0.858626), Vector3(-0.0645772, -0.020944, 0.858702), Vector3(-0.0645772, 0.476475, 0.858702), Vector3(-0.0645772, 0.476475, 0.858702), Vector3(0.0718551, 0.0954998, 0.595785), Vector3(-0.00349066, -1.04894, -3.49066), Vector3(-0.00349066, -0.87441, -3.49066), Vector3(-0.143117, -1.67028, -3.80133), Vector3(-0.143117, -1.67028, -3.8502), Vector3(-0.143117, -1.67028, -4.7089)]
+}
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_44kkc"]
-viewport_path = NodePath("conch/ConchInteractableComponent/Contents/UI/SubViewport")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_nyf0v"]
-size = Vector3(7, 5, 7)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_lutt7"]
-size = Vector3(0.460693, 0.443054, 0.463135)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tchnu"]
+_data = {
+&"main": SubResource("Animation_44kkc")
+}
 
 [node name="World" type="Node3D"]
 process_mode = 1
@@ -611,6 +669,53 @@ mesh = SubResource("PlaneMesh_n4qwq")
 
 [node name="Player" parent="." instance=ExtResource("3_tw2e2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.423, 8.38549, 0)
+
+[node name="conch" parent="." instance=ExtResource("35_63h44")]
+transform = Transform3D(0.118787, -0.0626903, -0.143176, 0.148286, -0.01164, 0.128123, -0.0494032, -0.185673, 0.0403095, 33.2969, 9.04649, -1.36873)
+
+[node name="ConchInteractableComponent" type="Node3D" parent="conch" node_paths=PackedStringArray("Contents_Node", "UI_Sprite_Node", "SubViewport_Node")]
+transform = Transform3D(3.08219, 3.84761, -1.28187, -1.62663, -0.302021, -4.81767, -3.71502, 3.32444, 1.04592, 2.44716, -0.900589, 2.58077)
+script = ExtResource("36_44kkc")
+Contents_Node = NodePath("Contents")
+UI_Sprite_Node = NodePath("Contents/UI")
+SubViewport_Node = NodePath("Contents/UI/SubViewport")
+ActionToPress = SubResource("InputEventAction_5soda")
+
+[node name="Contents" type="Node3D" parent="conch/ConchInteractableComponent"]
+
+[node name="UI" type="Sprite3D" parent="conch/ConchInteractableComponent/Contents"]
+transform = Transform3D(0.105, -6.25349e-24, 0, 6.25349e-24, 0.105, -9.99201e-16, 5.95094e-38, 9.99201e-16, 0.105, 0.112873, -0.648659, -0.157279)
+billboard = 1
+no_depth_test = true
+render_priority = 1
+texture = SubResource("ViewportTexture_44kkc")
+
+[node name="SubViewport" type="SubViewport" parent="conch/ConchInteractableComponent/Contents/UI"]
+transparent_bg = true
+gui_disable_input = true
+size = Vector2i(1150, 1150)
+
+[node name="Key" type="Label" parent="conch/ConchInteractableComponent/Contents/UI/SubViewport"]
+offset_left = 500.0
+offset_top = 500.0
+offset_right = 629.0
+offset_bottom = 646.0
+theme_override_fonts/font = ExtResource("27_1u3bp")
+theme_override_font_sizes/font_size = 106
+text = "[E]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerAreaBox" type="Area3D" parent="conch/ConchInteractableComponent/Contents"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="conch/ConchInteractableComponent/Contents/PlayerAreaBox"]
+shape = SubResource("BoxShape3D_nyf0v")
+
+[node name="MimicRaycastBox" type="Area3D" parent="conch/ConchInteractableComponent/Contents"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="conch/ConchInteractableComponent/Contents/MimicRaycastBox"]
+transform = Transform3D(1, -2.61569e-13, 0, 5.9557e-23, 1, 0, 0, 1.77636e-15, 1, 0.0497284, -0.705292, -0.138511)
+shape = SubResource("BoxShape3D_lutt7")
 
 [node name="Clouds" type="MeshInstance3D" parent="."]
 transform = Transform3D(500, 0, 0, 0, 128, 0, 0, 0, 500, 0, 128.812, 0)
@@ -1266,59 +1371,22 @@ transform = Transform3D(0.425574, 0, -0.904924, 0, 1, 0, 0.904924, 0, 0.425574, 
 [node name="GlassClump29" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.425574, 0, -0.904924, 0, 1, 0, 0.904924, 0, 0.425574, -1.92181, 6.12681, 19.1854)
 
-[node name="conch" parent="." instance=ExtResource("35_63h44")]
-transform = Transform3D(0.118787, -0.0626902, -0.143176, 0.148286, -0.0116399, 0.128123, -0.0494032, -0.185673, 0.0403097, 33.2969, 9.04649, -1.36873)
+[node name="ConchUseCutscene" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_tchnu")
+}
 
-[node name="ConchInteractableComponent" type="Node3D" parent="conch" node_paths=PackedStringArray("Contents_Node", "UI_Sprite_Node", "SubViewport_Node")]
-transform = Transform3D(3.08219, 3.84761, -1.28187, -1.62663, -0.302021, -4.81767, -3.71502, 3.32444, 1.04592, 2.44716, -0.900589, 2.58077)
-script = ExtResource("36_44kkc")
-Contents_Node = NodePath("Contents")
-UI_Sprite_Node = NodePath("Contents/UI")
-SubViewport_Node = NodePath("Contents/UI/SubViewport")
-ActionToPress = SubResource("InputEventAction_5soda")
+[node name="Camera3D" type="Camera3D" parent="ConchUseCutscene"]
+transform = Transform3D(0.822768, 0.0854425, 0.561918, -0.125995, 0.991457, 0.0337277, -0.554236, -0.098549, 0.826505, 34.0194, 10.1239, -0.458998)
+fov = 100.0
+near = 0.001
 
-[node name="Contents" type="Node3D" parent="conch/ConchInteractableComponent"]
-
-[node name="UI" type="Sprite3D" parent="conch/ConchInteractableComponent/Contents"]
-transform = Transform3D(0.105, -6.25349e-24, 0, 6.25349e-24, 0.105, -9.99201e-16, 5.95094e-38, 9.99201e-16, 0.105, 0.112873, -0.648659, -0.157279)
-billboard = 1
-no_depth_test = true
-render_priority = 1
-texture = SubResource("ViewportTexture_44kkc")
-
-[node name="SubViewport" type="SubViewport" parent="conch/ConchInteractableComponent/Contents/UI"]
-transparent_bg = true
-gui_disable_input = true
-size = Vector2i(1150, 1150)
-
-[node name="Key" type="Label" parent="conch/ConchInteractableComponent/Contents/UI/SubViewport"]
-offset_left = 500.0
-offset_top = 500.0
-offset_right = 629.0
-offset_bottom = 646.0
-theme_override_fonts/font = ExtResource("27_1u3bp")
-theme_override_font_sizes/font_size = 106
-text = "[E]"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PlayerAreaBox" type="Area3D" parent="conch/ConchInteractableComponent/Contents"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="conch/ConchInteractableComponent/Contents/PlayerAreaBox"]
-shape = SubResource("BoxShape3D_nyf0v")
-
-[node name="MimicRaycastBox" type="Area3D" parent="conch/ConchInteractableComponent/Contents"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="conch/ConchInteractableComponent/Contents/MimicRaycastBox"]
-transform = Transform3D(1, -2.61569e-13, 0, 5.9557e-23, 1, 0, 0, 1.77636e-15, 1, 0.0497284, -0.705292, -0.138511)
-shape = SubResource("BoxShape3D_lutt7")
-
-[connection signal="pressed" from="Camera3D/MainMenuLayer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="Camera3D/PauseLayer/ContinueButton" to="." method="_on_continue_button_pressed"]
-[connection signal="pressed" from="Camera3D/PauseLayer/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="Camera3D/PauseLayer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="action_triggered" from="conch/ConchInteractableComponent" to="." method="_on_conch_used"]
 [connection signal="body_entered" from="conch/ConchInteractableComponent/Contents/PlayerAreaBox" to="conch/ConchInteractableComponent" method="_on_player_area_box_body_entered"]
 [connection signal="body_exited" from="conch/ConchInteractableComponent/Contents/PlayerAreaBox" to="conch/ConchInteractableComponent" method="_on_player_area_box_body_exited"]
 [connection signal="area_entered" from="conch/ConchInteractableComponent/Contents/MimicRaycastBox" to="conch/ConchInteractableComponent" method="_on_mimic_raycast_box_area_entered"]
 [connection signal="area_exited" from="conch/ConchInteractableComponent/Contents/MimicRaycastBox" to="conch/ConchInteractableComponent" method="_on_mimic_raycast_box_area_exited"]
+[connection signal="pressed" from="Camera3D/MainMenuLayer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Camera3D/PauseLayer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Camera3D/PauseLayer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Camera3D/PauseLayer/QuitButton" to="." method="_on_quit_button_pressed"]

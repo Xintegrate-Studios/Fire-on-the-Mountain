@@ -47,4 +47,15 @@ func _on_quit_button_pressed() -> void:
 
 
 func _on_conch_used() -> void:
-	print("conch used!")
+	global.player_active = false
+	$Camera3D/FadeManager.play("fade")
+	
+	
+	await get_tree().create_timer(0.5).timeout
+	
+	$Player/Head/Camera3D/MainHUDLayer.hide()
+	
+	$ConchUseCutscene/Camera3D.make_current()
+	$Camera3D/FadeManager.play("fade", -1, -1, true)
+	$ConchUseCutscene.play("main")
+	$conch/ConchInteractableComponent.hide()
