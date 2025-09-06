@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dxgwehy46e5q6"
-path="res://.godot/imported/Bush3.blend-e175fb54754063d3496d9aa11556ab59.scn"
+uid="uid://dtj463jopf55k"
+path="res://.godot/imported/tinder.blend-08931a8ae2ba60122cda829a7c765fd8.scn"
 
 [deps]
 
-source_file="res://ast/models/Bushes/Bush3.blend"
-dest_files=["res://.godot/imported/Bush3.blend-e175fb54754063d3496d9aa11556ab59.scn"]
+source_file="res://ast/models/Decoration1/tinder.blend"
+dest_files=["res://.godot/imported/tinder.blend-08931a8ae2ba60122cda829a7c765fd8.scn"]
 
 [params]
 

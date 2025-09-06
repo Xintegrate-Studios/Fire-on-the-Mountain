@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://yj3vlvxpxn8m"
-path="res://.godot/imported/Bush1.blend-30c05f5462e791476db02a80280c7a45.scn"
+uid="uid://ckfjl3iew6fk3"
+path="res://.godot/imported/Bush5.blend-092d810a73b97cdd4775fe37338ef89e.scn"
 
 [deps]
 
-source_file="res://ast/models/Bushes/Bush1.blend"
-dest_files=["res://.godot/imported/Bush1.blend-30c05f5462e791476db02a80280c7a45.scn"]
+source_file="res://ast/models/Bushes1/Bush5.blend"
+dest_files=["res://.godot/imported/Bush5.blend-092d810a73b97cdd4775fe37338ef89e.scn"]
 
 [params]
 
