@@ -44,3 +44,7 @@ func _on_options_button_pressed() -> void:
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_conch_used() -> void:
+	print("conch used!")
