@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ccvky0721knit" path="res://ast/models/Trees/Palm/Models/PalmTree1.blend" id="2_goh21"]
 [ext_resource type="Shader" uid="uid://d2jmsgygcdag8" path="res://res/shaders/low_poly_water.gdshader" id="2_tw2e2"]
 [ext_resource type="PackedScene" uid="uid://c83ij1khevxpc" path="res://ast/models/Trees/Normal/Models/Tree4.blend" id="3_n4qwq"]
-[ext_resource type="PackedScene" uid="uid://bsljbif1rji7e" path="res://src/player/3DPlayer.tscn" id="3_tw2e2"]
+[ext_resource type="PackedScene" uid="uid://bsljbif1rji7e" path="res://src/player/Player.tscn" id="3_tw2e2"]
 [ext_resource type="PackedScene" uid="uid://c2vb563dpgipc" path="res://ast/models/Trees/Normal/Models/Tree8.blend" id="4_mbfot"]
 [ext_resource type="PackedScene" uid="uid://hp6koxjebkch" path="res://ast/models/stones/Stone1.blend" id="5_n7bfk"]
 [ext_resource type="PackedScene" uid="uid://c855wuotwp7n7" path="res://ast/models/grass/Grass1.blend" id="6_hnkfv"]

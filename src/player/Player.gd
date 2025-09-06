@@ -37,16 +37,16 @@ extends CharacterBody3D
 
 @export_group("Physics")
 
-@export_subgroup("Movement") ## A subgroup for movement variables.
-@export var WALK_SPEED = 5.0 ## The normal speed at which the player moves.
-@export var SPRINT_SPEED = 8.0 ## The speed of the player when the user is pressing/holding the Sprint input.
-@export var JUMP_VELOCITY = 4.5 ## How much velocity the player has when jumping. The more this value is, the higher the player can jump.
-@export_subgroup("Crouching") ## A subgroup for crouching variables.
-@export var CROUCH_JUMP_VELOCITY = 4.5 ## How much velocity the player has when jumping. The more this value is, the higher the player can jump.
-@export var CROUCH_SPEED := 3.0 ## The speed of the player when the user is pressing/holding the Crouch input.
-@export var CROUCH_INTERPOLATION := 6.0 ## How long it takes to go to the crouching stance or return to normal stance.
-@export_subgroup("Gravity") ## A subgroup for gravity variables.
-@export var gravity = 12.0 ## Was originally 9.8 (Earth's gravitational pull) but I felt it to be too unrealistic. This is the gravity of the player. The higher this value is, the faster the player falls.
+@export_subgroup("Movement")
+@export var WALK_SPEED = 5.0
+@export var SPRINT_SPEED = 8.0
+@export var JUMP_VELOCITY = 4.5
+@export_subgroup("Crouching")
+@export var CROUCH_JUMP_VELOCITY = 4.5
+@export var CROUCH_SPEED := 3.0
+@export var CROUCH_INTERPOLATION := 6.0
+@export_subgroup("Gravity")
+@export var gravity = 12.0
 
 @onready var head = $Head # reference to the head of the player scene. (used for mouse movement and looking around)
 @onready var camera = $Head/Camera3D # reference to the camera of the player (used for mouse movement and looking around)
