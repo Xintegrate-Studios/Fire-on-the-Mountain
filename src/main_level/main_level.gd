@@ -1,6 +1,9 @@
 extends Node3D
 
+var default_conch_transform
+
 func _ready() -> void:
+	default_conch_transform = $conch.transform
 	global.world = self
 	global.player = $"Player"
 	global.pause_animation_player = $Camera3D/PauseAnimation
@@ -59,3 +62,14 @@ func _on_conch_used() -> void:
 	$Camera3D/FadeManager.play("fade", -1, -1, true)
 	$ConchUseCutscene.play("main")
 	$conch/ConchInteractableComponent.hide()
+
+
+func _on_conch_use_cutscene_animation_finished(_anim_name: StringName) -> void:
+	
+	await get_tree().create_timer(0.7).timeout
+	
+	$conch.transform = default_conch_transform
+	$Player/Head/Camera3D.make_current()
+	$Player/Head/Camera3D/MainHUDLayer.show()
+	global.player_active = true
+	$Camera3D/FadeManager.play("fade", -1, -1, true)

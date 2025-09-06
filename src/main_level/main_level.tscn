@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://biqj67tjrslek"]
+[gd_scene load_steps=61 format=3 uid="uid://biqj67tjrslek"]
 
 [ext_resource type="Script" uid="uid://dvav26tqc5pit" path="res://src/main_level/main_level.gd" id="1_fpkve"]
 [ext_resource type="PackedScene" uid="uid://bm3l1fnoqw1bx" path="res://ast/models/island/island.tscn" id="1_scctx"]
@@ -595,7 +595,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_44kkc"]
 resource_name = "main"
-length = 30.0
+length = 22.0
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -645,61 +645,23 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector3(-0.711062, -1.29636, 1.64913), Vector3(-0.711062, -1.29636, 1.64913), Vector3(-0.711062, -1.29636, 1.64913), Vector3(-0.0650311, 0.319003, 0.858626), Vector3(-0.0650311, 0.319003, 0.858626), Vector3(-0.0645772, -0.020944, 0.858702), Vector3(-0.0645772, 0.476475, 0.858702), Vector3(-0.0645772, 0.476475, 0.858702), Vector3(0.0718551, 0.0954998, 0.595785), Vector3(-0.00349066, -1.04894, -3.49066), Vector3(-0.00349066, -0.87441, -3.49066), Vector3(-0.143117, -1.67028, -3.80133), Vector3(-0.143117, -1.67028, -3.8502), Vector3(-0.143117, -1.67028, -4.7089), Vector3(-0.143117, -1.67028, -4.7089), Vector3(-0.492183, -1.50971, -4.54833)]
 }
-
-[sub_resource type="Animation" id="Animation_tchnu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("conch:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera3D/FadeManager")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(21.6),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(34.113, 10.152, -1.591)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ConchUseCutscene/Camera3D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(34.028, 9.994, -1.356)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ConchUseCutscene/Camera3D:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.138436, -0.348561, 0.0324728)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("conch:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.143117, -1.67028, -4.7089)]
+"values": [{
+"args": [&"fade", -1, 1.0, false],
+"method": &"play"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tchnu"]
 _data = {
-&"RESET": SubResource("Animation_tchnu"),
 &"main": SubResource("Animation_44kkc")
 }
 
@@ -723,7 +685,7 @@ mesh = SubResource("PlaneMesh_n4qwq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.423, 8.38549, 0)
 
 [node name="conch" parent="." instance=ExtResource("35_63h44")]
-transform = Transform3D(0.0279297, 0.0194007, -0.193348, 0.194307, -0.000678222, 0.0280003, 0.00209913, -0.195354, -0.0192987, 34.113, 10.152, -1.591)
+transform = Transform3D(0.120623, -0.136783, 0.0726659, 0.144885, 0.132206, 0.00835316, -0.0547559, 0.0484967, 0.18218, 34.0675, 9.69741, -1.56332)
 
 [node name="ConchInteractableComponent" type="Node3D" parent="conch" node_paths=PackedStringArray("Contents_Node", "UI_Sprite_Node", "SubViewport_Node")]
 transform = Transform3D(3.08219, 3.84761, -1.28187, -1.62663, -0.302021, -4.81767, -3.71502, 3.32444, 1.04592, 2.44716, -0.900589, 2.58077)
@@ -1429,7 +1391,7 @@ libraries = {
 }
 
 [node name="Camera3D" type="Camera3D" parent="ConchUseCutscene"]
-transform = Transform3D(0.937839, -0.0776212, -0.338278, 0.0321565, 0.989911, -0.137994, 0.345577, 0.118539, 0.930873, 34.028, 9.994, -1.356)
+transform = Transform3D(0.878258, -0.066669, 0.473517, -0.0935614, 0.947136, 0.306886, -0.468945, -0.313828, 0.825592, 34.0707, 10.0188, -1.31653)
 fov = 100.0
 near = 0.001
 
@@ -1442,3 +1404,4 @@ near = 0.001
 [connection signal="pressed" from="Camera3D/PauseLayer/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="Camera3D/PauseLayer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Camera3D/PauseLayer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="animation_finished" from="ConchUseCutscene" to="." method="_on_conch_use_cutscene_animation_finished"]
