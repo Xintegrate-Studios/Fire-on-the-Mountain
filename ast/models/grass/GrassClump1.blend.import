@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bogx2vkhic3aw"
-path="res://.godot/imported/Flower_Red.blend-89f962990577eabe4db4745bfe2270b9.scn"
+uid="uid://exmlfia43n4n"
+path="res://.godot/imported/GrassClump1.blend-e05f20aee4d21c2a2eb5ec4fac465f62.scn"
 
 [deps]
 
-source_file="res://ast/models/Flowers/Flower_Red.blend"
-dest_files=["res://.godot/imported/Flower_Red.blend-89f962990577eabe4db4745bfe2270b9.scn"]
+source_file="res://ast/models/grass/GrassClump1.blend"
+dest_files=["res://.godot/imported/GrassClump1.blend-e05f20aee4d21c2a2eb5ec4fac465f62.scn"]
 
 [params]
 

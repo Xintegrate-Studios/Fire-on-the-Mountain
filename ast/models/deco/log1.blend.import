@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://boti1b2ycjrlk"
-path="res://.godot/imported/Flower_Blank.blend-0a4a6d5cd888804d6079e36621d46bab.scn"
+uid="uid://cl7ub1w20hgbk"
+path="res://.godot/imported/log1.blend-449ac65c53d69d11fb8875a1d30e3ecc.scn"
 
 [deps]
 
-source_file="res://ast/models/Flowers/Flower_Blank.blend"
-dest_files=["res://.godot/imported/Flower_Blank.blend-0a4a6d5cd888804d6079e36621d46bab.scn"]
+source_file="res://ast/models/deco/log1.blend"
+dest_files=["res://.godot/imported/log1.blend-449ac65c53d69d11fb8875a1d30e3ecc.scn"]
 
 [params]
 

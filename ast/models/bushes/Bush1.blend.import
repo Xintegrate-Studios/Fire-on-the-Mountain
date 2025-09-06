@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://csvssolx4cw4h"
-path="res://.godot/imported/Flower_Yellow.blend-340b505cc0182a5c477f87cb2297d8bf.scn"
+uid="uid://yj3vlvxpxn8m"
+path="res://.godot/imported/Bush1.blend-2efad7df001bd3222e32911c9b84c41f.scn"
 
 [deps]
 
-source_file="res://ast/models/Flowers/Flower_Yellow.blend"
-dest_files=["res://.godot/imported/Flower_Yellow.blend-340b505cc0182a5c477f87cb2297d8bf.scn"]
+source_file="res://ast/models/bushes/Bush1.blend"
+dest_files=["res://.godot/imported/Bush1.blend-2efad7df001bd3222e32911c9b84c41f.scn"]
 
 [params]
 

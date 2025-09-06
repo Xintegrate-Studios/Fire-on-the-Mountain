@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://rhsd3pbxyvi3" path="res://ast/textures/Expland_Crosshair.png" id="1_0mcnq"]
 [ext_resource type="Script" uid="uid://1cvtdgkq7sng" path="res://src/player/3DPlayer_SCRIPT.gd" id="1_r5cts"]
-[ext_resource type="Texture2D" uid="uid://bye5c2hqbg0k8" path="res://ast/particles/fire_particles/white_ham.png" id="3_f51xu"]
-[ext_resource type="Texture2D" uid="uid://cygobwdrjojf0" path="res://ast/particles/fire_particles/firepit.png" id="4_t0sa8"]
-[ext_resource type="Texture2D" uid="uid://bst5yhieyewfu" path="res://ast/particles/fire_particles/conch.png" id="5_u2a3t"]
+[ext_resource type="Texture2D" uid="uid://bye5c2hqbg0k8" path="res://ast/textures/white_ham.png" id="3_f51xu"]
+[ext_resource type="Texture2D" uid="uid://cygobwdrjojf0" path="res://ast/textures/firepit.png" id="4_t0sa8"]
+[ext_resource type="Texture2D" uid="uid://bst5yhieyewfu" path="res://ast/textures/conch.png" id="5_u2a3t"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_e8ep2"]
 

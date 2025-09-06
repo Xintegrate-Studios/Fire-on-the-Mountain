@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cosnok2rety7e"
-path="res://.godot/imported/Bush2.blend-a5b9ad5e10a1eeb8ef8d19e7070126f6.scn"
+uid="uid://bv6liay2wclfc"
+path="res://.godot/imported/Shack1.blend-36f1aff3b4c9c557313ec02269f7b29b.scn"
 
 [deps]
 
-source_file="res://ast/models/Bushes1/Bush2.blend"
-dest_files=["res://.godot/imported/Bush2.blend-a5b9ad5e10a1eeb8ef8d19e7070126f6.scn"]
+source_file="res://ast/models/structures/shacks/shack1/Shack1.blend"
+dest_files=["res://.godot/imported/Shack1.blend-36f1aff3b4c9c557313ec02269f7b29b.scn"]
 
 [params]
 
@@ -33,7 +33,15 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"ShackColor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "",
+"use_external/path": "uid://d1q3trggohbjn"
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true

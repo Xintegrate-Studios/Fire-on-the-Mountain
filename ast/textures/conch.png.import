@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bst5yhieyewfu"
-path="res://.godot/imported/conch.png-b123399e1be9b1d187adfc7c49341eda.ctex"
+path="res://.godot/imported/conch.png-c3f1213e82d3de04a51cf97a746dcdee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ast/particles/fire_particles/conch.png"
-dest_files=["res://.godot/imported/conch.png-b123399e1be9b1d187adfc7c49341eda.ctex"]
+source_file="res://ast/textures/conch.png"
+dest_files=["res://.godot/imported/conch.png-c3f1213e82d3de04a51cf97a746dcdee.ctex"]
 
 [params]
 
