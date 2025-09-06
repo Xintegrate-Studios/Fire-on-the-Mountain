@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bv6liay2wclfc"
-path="res://.godot/imported/Shack1.blend-b89be32d938e689dea5da34c1302e2ef.scn"
+uid="uid://msjke6ojohhp"
+path="res://.godot/imported/Grass6.blend-6e31a8f7f115468b382a0daa0d746df3.scn"
 
 [deps]
 
-source_file="res://ast/models/structures/Shacks/Shack1/Shack1.blend"
-dest_files=["res://.godot/imported/Shack1.blend-b89be32d938e689dea5da34c1302e2ef.scn"]
+source_file="res://ast/models/Grass1/Grass6.blend"
+dest_files=["res://.godot/imported/Grass6.blend-6e31a8f7f115468b382a0daa0d746df3.scn"]
 
 [params]
 
@@ -33,15 +33,7 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"materials": {
-"ShackColor": {
-"use_external/enabled": true,
-"use_external/fallback_path": "",
-"use_external/path": "uid://d1q3trggohbjn"
-}
-}
-}
+_subresources={}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true

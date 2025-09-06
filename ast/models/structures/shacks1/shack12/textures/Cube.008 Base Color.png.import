@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmdtiq0l0qqg"
-path.s3tc="res://.godot/imported/Cube.008 Base Color.png-93b6540d3f05386d6dd2af29b1b92149.s3tc.ctex"
+path.s3tc="res://.godot/imported/Cube.008 Base Color.png-0894009bcb880d856ce87742b214675c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://ast/models/structures/Shacks/Shack1/textures/Cube.008 Base Color.png"
-dest_files=["res://.godot/imported/Cube.008 Base Color.png-93b6540d3f05386d6dd2af29b1b92149.s3tc.ctex"]
+source_file="res://ast/models/structures/shacks1/shack12/textures/Cube.008 Base Color.png"
+dest_files=["res://.godot/imported/Cube.008 Base Color.png-0894009bcb880d856ce87742b214675c.s3tc.ctex"]
 
 [params]
 
