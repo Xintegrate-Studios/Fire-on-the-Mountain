@@ -1104,9 +1104,9 @@ color = Color(0, 0, 0, 1)
 
 [node name="ToastBG" type="Panel" parent="Camera3D/TutorialLayer"]
 material = SubResource("ShaderMaterial_xgma8")
-offset_left = 1019.0
+offset_left = 907.0
 offset_top = 602.0
-offset_right = 1019.0
+offset_right = 1144.0
 offset_bottom = 638.0
 
 [node name="ToastText" type="Label" parent="Camera3D/TutorialLayer"]
@@ -1118,8 +1118,6 @@ theme_override_fonts/font = ExtResource("27_1u3bp")
 text = "Press   [H]   for a quick tutorial"
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="ToastAnimation" type="AnimationPlayer" parent="Camera3D/TutorialLayer"]
 libraries = {
