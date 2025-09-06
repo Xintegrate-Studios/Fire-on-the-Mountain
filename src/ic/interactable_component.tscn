@@ -1,4 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbmsf23ymvvw2"]
+[gd_scene load_steps=6 format=3 uid="uid://dbmsf23ymvvw2"]
+
+[ext_resource type="Script" uid="uid://b65j5em4lbmxs" path="res://src/ic/interactable_component.gd" id="1_5soda"]
+[ext_resource type="FontFile" uid="uid://cmsnr0uluge1x" path="res://ast/fonts/times roman/times_roman.otf" id="1_q2roa"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_lutt7"]
 viewport_path = NodePath("Contents/UI/SubViewport")
@@ -10,6 +13,7 @@ size = Vector3(7, 5, 7)
 size = Vector3(0.460693, 0.741821, 0.463135)
 
 [node name="InteractableComponent" type="Node3D"]
+script = ExtResource("1_5soda")
 
 [node name="Contents" type="Node3D" parent="."]
 
@@ -30,6 +34,7 @@ offset_left = 500.0
 offset_top = 500.0
 offset_right = 629.0
 offset_bottom = 646.0
+theme_override_fonts/font = ExtResource("1_q2roa")
 theme_override_font_sizes/font_size = 106
 text = "[E]"
 horizontal_alignment = 1

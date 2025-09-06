@@ -596,7 +596,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.611401, 0.152959)
 mesh = SubResource("PlaneMesh_n4qwq")
 
-[node name="3DPlayer" parent="." instance=ExtResource("3_tw2e2")]
+[node name="Player" parent="." instance=ExtResource("3_tw2e2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.423, 8.38549, 0)
 
 [node name="Clouds" type="MeshInstance3D" parent="."]
