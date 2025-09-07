@@ -13,7 +13,7 @@ fractal_gain = 1.0
 fractal_ping_pong_strength = 4.21
 
 [resource]
+noise = SubResource("FastNoiseLite_oe3r3")
+color_ramp = SubResource("Gradient_p1vek")
 seamless = true
 seamless_blend_skirt = 1.0
-color_ramp = SubResource("Gradient_p1vek")
-noise = SubResource("FastNoiseLite_oe3r3")
