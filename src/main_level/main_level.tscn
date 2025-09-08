@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://biqj67tjrslek"]
+[gd_scene load_steps=65 format=3 uid="uid://biqj67tjrslek"]
 
 [ext_resource type="Script" uid="uid://dvav26tqc5pit" path="res://src/main_level/main_level.gd" id="1_fpkve"]
 [ext_resource type="PackedScene" uid="uid://bm3l1fnoqw1bx" path="res://ast/models/island/island.tscn" id="1_scctx"]
@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://dxgwehy46e5q6" path="res://ast/models/bushes/Bush3.blend" id="12_hnkfv"]
 [ext_resource type="PackedScene" uid="uid://qyom2vll2mu4" path="res://ast/models/Trees/Normal/Models/Tree10.blend" id="13_yj2oh"]
 [ext_resource type="PackedScene" uid="uid://cl7ub1w20hgbk" path="res://ast/models/deco/log1.blend" id="14_4s85u"]
-[ext_resource type="PackedScene" uid="uid://bv6liay2wclfc" path="res://ast/models/structures/shacks/shack1/Shack1.blend" id="14_ysgfl"]
 [ext_resource type="PackedScene" uid="uid://cwu1exk1sgj4t" path="res://ast/models/Trees/Pine/Models/PineTree1.blend" id="15_b4j44"]
 [ext_resource type="PackedScene" uid="uid://b6ijgxw1ym8h0" path="res://ast/models/rocks/Rock1.blend" id="15_ibte4"]
 [ext_resource type="PackedScene" uid="uid://d22xrpdo83kd6" path="res://ast/models/Trees/Pine/Models/PineTree3.blend" id="16_n0lbn"]
@@ -28,6 +27,7 @@
 [ext_resource type="NoiseTexture3D" uid="uid://lbs4einhyocw" path="res://res/noise/CloudNoiseTexture.tres" id="23_sma3f"]
 [ext_resource type="NoiseTexture3D" uid="uid://budjcdnx2p8p8" path="res://res/noise/DetailNoiseTexture.tres" id="24_qyt8b"]
 [ext_resource type="PackedScene" uid="uid://bsy8kgmvg8pwq" path="res://ast/particles/fire_particles/fire_particles.tscn" id="25_lkofv"]
+[ext_resource type="PackedScene" uid="uid://bm5adlsl5lbot" path="res://ast/models/structures/shacks/shack1/shack_1.tscn" id="26_a77lo"]
 [ext_resource type="PackedScene" uid="uid://bhm7iy00ro65v" path="res://ast/models/structures/firepits/firepit1.blend" id="26_pmsjj"]
 [ext_resource type="FontFile" uid="uid://cmsnr0uluge1x" path="res://ast/fonts/times roman/times_roman.otf" id="27_1u3bp"]
 [ext_resource type="Material" uid="uid://bpmb5m7ax5tp7" path="res://res/shader mat/bg_blur_panel.tres" id="28_c857x"]
@@ -38,6 +38,8 @@
 [ext_resource type="PackedScene" uid="uid://d0uinxy2wgtd3" path="res://ast/models/Trees/Normal/Models/Tree1.blend" id="34_4nspm"]
 [ext_resource type="PackedScene" uid="uid://bioisw42jq72y" path="res://ast/models/items/conch.blend" id="35_63h44"]
 [ext_resource type="Script" uid="uid://b65j5em4lbmxs" path="res://src/ic/interactable_component.gd" id="36_44kkc"]
+[ext_resource type="PackedScene" uid="uid://dec7f1mgec0mb" path="res://ast/models/characters/scenes/fallen_idle.tscn" id="39_3ngmi"]
+[ext_resource type="PackedScene" uid="uid://darbbw3k6n8gy" path="res://ast/models/characters/scenes/hanging_idle.tscn" id="40_a77lo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_scctx"]
 sky_top_color = Color(0.410916, 0.656231, 0.959196, 1)
@@ -1211,8 +1213,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.1349, 3.66128, -23.87)
 [node name="Tree10" parent="IslandComponents" instance=ExtResource("13_yj2oh")]
 transform = Transform3D(0.845206, 0, 0, 0, 0.845206, 0, 0, 0, 0.845206, -8.86057, 3.84376, -28.0837)
 
-[node name="Shack1" parent="IslandComponents" instance=ExtResource("14_ysgfl")]
-transform = Transform3D(0.161529, 0.0392259, 0.279777, -0.0524187, 0.320844, -0.0147199, -0.277608, -0.0377586, 0.165571, 31.9128, 8.27881, -5.47141)
+[node name="Shack2" parent="IslandComponents" instance=ExtResource("26_a77lo")]
+transform = Transform3D(0.16131492, 0.039173987, 0.2794063, -0.052349225, 0.3204192, -0.014700405, -0.27724004, -0.037708648, 0.16535115, 31.9128, 8.27881, -5.47141)
 
 [node name="Rock1" parent="IslandComponents" instance=ExtResource("15_ibte4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.0496, 8.33514, -1.41609)
@@ -1439,6 +1441,12 @@ libraries = {
 transform = Transform3D(0.8227679, 0.08544227, 0.5619184, -0.12599492, 0.99145705, 0.0337277, -0.5542363, -0.09854893, 0.8265047, 34.0194, 10.1239, -0.458998)
 fov = 100.0
 near = 0.001
+
+[node name="fallen_idle" parent="." instance=ExtResource("39_3ngmi")]
+transform = Transform3D(0.38495764, -0.0057113804, 0, 0.0057113804, 0.38495764, 0, 0, 0, 0.385, 35.349903, 8.172344, -4.619134)
+
+[node name="hanging_idle" parent="." instance=ExtResource("40_a77lo")]
+transform = Transform3D(0.22194786, -0.014530825, 0.25050554, -0.038592134, 0.32848206, 0.053246554, -0.24794114, -0.06413582, 0.21595554, 33.60109, 8.576118, -3.6739302)
 
 [connection signal="timeout" from="Timeline/ConchTask" to="." method="_on_conch_task_timeout"]
 [connection signal="action_triggered" from="conch/ConchInteractableComponent" to="." method="_on_conch_used"]
