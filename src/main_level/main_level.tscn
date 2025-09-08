@@ -739,8 +739,8 @@ transform = Transform3D(0.15245186, 0, 0.31505308, 0, 0.35, 0, -0.31505308, 0, 0
 [node name="6" parent="Characters" instance=ExtResource("9_w3ep2")]
 transform = Transform3D(-0.13255374, 0.014881663, 0.22898261, -0.060561355, 0.2527971, -0.051487204, -0.22132969, -0.07808423, -0.12304888, 38.641888, 7.5859284, -2.8385782)
 
-[node name="sad_idle" parent="Characters" instance=ExtResource("10_bvxkv")]
-transform = Transform3D(0.485, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 36.895527, 8.018336, -4.501088)
+[node name="7" parent="Characters" instance=ExtResource("10_bvxkv")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 36.895527, 8.018336, -4.501088)
 
 [node name="Player" parent="." instance=ExtResource("3_tw2e2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.423, 8.38549, 0)
