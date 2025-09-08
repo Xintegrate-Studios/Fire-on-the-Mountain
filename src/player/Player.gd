@@ -48,8 +48,11 @@ extends CharacterBody3D
 @export_subgroup("Gravity")
 @export var gravity = 12.0
 
-@onready var head = $Head # reference to the head of the player scene. (used for mouse movement and looking around)
-@onready var camera = $Head/Camera3D # reference to the camera of the player (used for mouse movement and looking around)
+@export_group("Node Refs")
+
+@export var head : Node3D
+@export var camera : Camera3D
+@export var task_ui_layer : CanvasLayer
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -59,6 +62,7 @@ func _unhandled_input(event):
 
 func _physics_process(delta):
 	if global.player_active:
+		task_ui_layer.show()
 		# Crouching
 		if GAME_STATE != "DEAD" and is_on_floor():
 			if Input.is_action_pressed("Crouch"):
@@ -116,6 +120,8 @@ func _physics_process(delta):
 				# Smoothly return to original position when not moving
 				var target_pos = Vector3(camera.transform.origin.x, 0, camera.transform.origin.z) # get the target position
 				camera.transform.origin = camera.transform.origin.lerp(target_pos, delta * BOB_SMOOTHING_SPEED) # linearly interpolate the camera's origin to the target position
+	else:
+		task_ui_layer.hide()
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO

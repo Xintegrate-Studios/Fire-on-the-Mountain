@@ -34,6 +34,7 @@ func _on_play_button_pressed() -> void:
 	
 	await get_tree().create_timer(5.0).timeout
 	$Camera3D/TutorialLayer/ToastAnimation.play("main")
+	$Timeline/ConchTask.start()
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Tutorial"):
@@ -73,3 +74,8 @@ func _on_conch_use_cutscene_animation_finished(_anim_name: StringName) -> void:
 	$Player/Head/Camera3D/MainHUDLayer.show()
 	global.player_active = true
 	$Camera3D/FadeManager.play("fade", -1, -1, true)
+
+
+func _on_conch_task_timeout() -> void:
+	print("task: conch")
+	task_system.task("BLOW_CONCH")
