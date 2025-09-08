@@ -123,5 +123,11 @@ func _headbob(time) -> Vector3:
 	return pos
 
 
-func _ready(): # called when node enters scene tree, i.e when it has fully loaded
+func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # lock mouse
+
+
+
+func display_task(text : String):
+	$Head/Camera3D/TasksUILayer/Task.text = text
+	$Head/Camera3D/TasksUILayer/TaskAnimation.play("main")
