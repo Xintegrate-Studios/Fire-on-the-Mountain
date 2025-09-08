@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 global="*res://src/globals/global.gd"
+task_system="*res://src/globals/task_system.gd"
 
 [display]
 

@@ -203,3 +203,5 @@ modulate = Color(1, 1, 1, 0.392157)
 position = Vector2(17, 575)
 scale = Vector2(0.0429688, 0.0429688)
 texture = ExtResource("5_u2a3t")
+
+[node name="TasksUILayer" type="CanvasLayer" parent="Head/Camera3D"]
