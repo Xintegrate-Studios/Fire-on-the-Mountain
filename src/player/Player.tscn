@@ -159,6 +159,9 @@ task_ui_layer = NodePath("Head/Camera3D/TasksUILayer")
 [node name="SavegeryIncreaseTimer" type="Timer" parent="Timers"]
 wait_time = 30.0
 
+[node name="FireFuelDepletingTimer" type="Timer" parent="Timers"]
+wait_time = 20.0
+
 [node name="Body" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 visible = false
@@ -280,3 +283,4 @@ libraries = {
 }
 
 [connection signal="timeout" from="Timers/SavegeryIncreaseTimer" to="." method="_on_savegery_increase_timer_timeout"]
+[connection signal="timeout" from="Timers/FireFuelDepletingTimer" to="." method="_on_fire_fuel_depleting_timer_timeout"]

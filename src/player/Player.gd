@@ -54,6 +54,10 @@ extends CharacterBody3D
 @export var camera : Camera3D
 @export var task_ui_layer : CanvasLayer
 
+func start_timers():
+	$Timers/SavegeryIncreaseTimer.start()
+	$Timers/FireFuelDepletingTimer.start()
+
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
@@ -157,3 +161,8 @@ func display_task(text : String):
 func _on_savegery_increase_timer_timeout() -> void:
 	global.savagery_level += 7.0
 	update_bar("SAVAGERY", global.savagery_level)
+
+
+func _on_fire_fuel_depleting_timer_timeout() -> void:
+	global.fire_fuel -= 7
+	update_bar("FIRE_FUEL", global.fire_fuel)
