@@ -840,9 +840,6 @@ transform = Transform3D(0.22194786, -0.014530825, 0.25050554, -0.038592134, 0.32
 [node name="4" parent="Characters" instance=ExtResource("8_rk3wu")]
 transform = Transform3D(0.17151809, 0, 0.18188334, 0, 0.25, 0, -0.18188334, 0, 0.17151809, 33.61898, 8.526501, -2.6134217)
 
-[node name="8" parent="Characters" instance=ExtResource("8_rk3wu")]
-transform = Transform3D(0.19951412, 0.0027195055, -0.15062113, 0.0098552, 0.24918821, 0.017553441, 0.15032296, -0.019946238, 0.19875903, 38.3002, 8.273444, -2.1468306)
-
 [node name="5" parent="Characters" instance=ExtResource("39_dn03h")]
 transform = Transform3D(0.15245186, 0, 0.31505308, 0, 0.35, 0, -0.31505308, 0, 0.15245186, 34.164425, 8.474348, -1.3071709)
 
@@ -851,6 +848,15 @@ transform = Transform3D(-0.13255374, 0.014881663, 0.22898261, -0.060561355, 0.25
 
 [node name="7" parent="Characters" instance=ExtResource("10_bvxkv")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 36.895527, 8.018336, -4.501088)
+
+[node name="8" parent="Characters" instance=ExtResource("8_rk3wu")]
+transform = Transform3D(0.19951412, 0.0027195055, -0.15062113, 0.0098552, 0.24918821, 0.017553441, 0.15032296, -0.019946238, 0.19875903, 38.3002, 8.273444, -2.1468306)
+
+[node name="9" parent="Characters" instance=ExtResource("39_dn03h")]
+transform = Transform3D(0.29623923, 0, -0.18639296, 0, 0.34999996, 0, 0.18639296, 0, 0.29623923, 39.037167, 7.9536543, -4.1231318)
+
+[node name="10" parent="Characters" instance=ExtResource("10_bvxkv")]
+transform = Transform3D(0.22653398, 0.035833593, 0.19338633, -0.03517882, 0.29760414, -0.013935971, -0.19350651, -0.012153777, 0.2289268, 33.331203, 8.090973, -6.2853293)
 
 [node name="Player" parent="." instance=ExtResource("3_tw2e2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.423, 8.38549, 0)
