@@ -66,6 +66,7 @@ func _on_conch_used() -> void:
 	await get_tree().create_timer(0.5).timeout
 	
 	$Player/Head/Camera3D/MainHUDLayer.hide()
+	$Tasks/ConchTask/Arrow.hide()
 	
 	$ConchUseCutscene/Camera3D.make_current()
 	$Camera3D/FadeManager.play("fade", -1, -1, true)
@@ -85,5 +86,6 @@ func _on_conch_use_cutscene_animation_finished(_anim_name: StringName) -> void:
 
 
 func _on_conch_task_timeout() -> void:
+	$Tasks/ConchTask/Arrow.show()
 	print("task: conch")
 	task_system.task("BLOW_CONCH")

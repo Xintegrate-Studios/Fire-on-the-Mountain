@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://rhsd3pbxyvi3"
-path.s3tc="res://.godot/imported/Expland_Crosshair.png-fbaa40d2f58732a0c99d8161f548eba3.s3tc.ctex"
+path.s3tc="res://.godot/imported/crosshair.png-fb53a87c16ebbc5cdaafd6a593e44f95.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://ast/textures/Expland_Crosshair.png"
-dest_files=["res://.godot/imported/Expland_Crosshair.png-fbaa40d2f58732a0c99d8161f548eba3.s3tc.ctex"]
+source_file="res://ast/textures/crosshair.png"
+dest_files=["res://.godot/imported/crosshair.png-fb53a87c16ebbc5cdaafd6a593e44f95.s3tc.ctex"]
 
 [params]
 
@@ -28,6 +28,10 @@ mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

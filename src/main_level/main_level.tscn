@@ -1,9 +1,10 @@
-[gd_scene load_steps=71 format=3 uid="uid://biqj67tjrslek"]
+[gd_scene load_steps=75 format=3 uid="uid://biqj67tjrslek"]
 
 [ext_resource type="Script" uid="uid://dvav26tqc5pit" path="res://src/main_level/main_level.gd" id="1_fpkve"]
 [ext_resource type="PackedScene" uid="uid://bm3l1fnoqw1bx" path="res://ast/models/island/island.tscn" id="1_scctx"]
 [ext_resource type="AudioStream" uid="uid://do1fobbjojcch" path="res://ast/audio/sfx/conch.mp3" id="2_0pe4b"]
 [ext_resource type="PackedScene" uid="uid://ccvky0721knit" path="res://ast/models/Trees/Palm/Models/PalmTree1.blend" id="2_goh21"]
+[ext_resource type="Texture2D" uid="uid://b2xfuvu2crf62" path="res://ast/textures/white_arrow.png" id="2_kftxd"]
 [ext_resource type="AudioStream" uid="uid://dpian8iipruqd" path="res://ast/audio/sfx/wind_ambience.mp3" id="2_tchnu"]
 [ext_resource type="Shader" uid="uid://d2jmsgygcdag8" path="res://res/shaders/low_poly_water.gdshader" id="2_tw2e2"]
 [ext_resource type="PackedScene" uid="uid://c83ij1khevxpc" path="res://ast/models/Trees/Normal/Models/Tree4.blend" id="3_n4qwq"]
@@ -44,6 +45,45 @@
 [ext_resource type="PackedScene" uid="uid://dec7f1mgec0mb" path="res://ast/models/characters/scenes/fallen_idle.tscn" id="39_3ngmi"]
 [ext_resource type="PackedScene" uid="uid://cu08qw8vm81ew" path="res://ast/models/characters/scenes/idle.tscn" id="39_dn03h"]
 [ext_resource type="PackedScene" uid="uid://darbbw3k6n8gy" path="res://ast/models/characters/scenes/hanging_idle.tscn" id="40_a77lo"]
+
+[sub_resource type="Animation" id="Animation_kftxd"]
+resource_name = "main"
+length = 2.0
+loop_mode = 1
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrow:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(33.35269, 9.670964, -1.3057545), Vector3(33.35269, 10.448216, -1.3057545), Vector3(33.35269, 9.670964, -1.3057545)]
+}
+
+[sub_resource type="Animation" id="Animation_igp1d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(33.35269, 10.448216, -1.3057545)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_igp1d"]
+_data = {
+&"RESET": SubResource("Animation_igp1d"),
+&"main": SubResource("Animation_kftxd")
+}
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_scctx"]
 sky_top_color = Color(0.410916, 0.656231, 0.959196, 1)
@@ -737,6 +777,27 @@ _data = {
 process_mode = 1
 script = ExtResource("1_fpkve")
 
+[node name="Tasks" type="Node" parent="."]
+
+[node name="ConchTask" type="Node" parent="Tasks"]
+
+[node name="Arrow" type="Sprite3D" parent="Tasks/ConchTask"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 33.35269, 10.448216, -1.3057545)
+visible = false
+transparency = 0.71
+cast_shadow = 0
+billboard = 2
+no_depth_test = true
+texture_filter = 0
+render_priority = 5
+texture = ExtResource("2_kftxd")
+
+[node name="ArrowMovement" type="AnimationPlayer" parent="Tasks/ConchTask"]
+libraries = {
+&"": SubResource("AnimationLibrary_igp1d")
+}
+autoplay = "main"
+
 [node name="Timeline" type="Node" parent="."]
 
 [node name="ConchTask" type="Timer" parent="Timeline"]
@@ -778,6 +839,9 @@ transform = Transform3D(0.22194786, -0.014530825, 0.25050554, -0.038592134, 0.32
 
 [node name="4" parent="Characters" instance=ExtResource("8_rk3wu")]
 transform = Transform3D(0.17151809, 0, 0.18188334, 0, 0.25, 0, -0.18188334, 0, 0.17151809, 33.61898, 8.526501, -2.6134217)
+
+[node name="8" parent="Characters" instance=ExtResource("8_rk3wu")]
+transform = Transform3D(0.19951412, 0.0027195055, -0.15062113, 0.0098552, 0.24918821, 0.017553441, 0.15032296, -0.019946238, 0.19875903, 38.3002, 8.273444, -2.1468306)
 
 [node name="5" parent="Characters" instance=ExtResource("39_dn03h")]
 transform = Transform3D(0.15245186, 0, 0.31505308, 0, 0.35, 0, -0.31505308, 0, 0.15245186, 34.164425, 8.474348, -1.3071709)
