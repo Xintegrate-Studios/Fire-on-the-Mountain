@@ -9,6 +9,8 @@ var world
 var player
 var pause_animation_player
 
+var savagery_level : float = 10.0
+
 func pause():
 	paused = !paused
 	get_tree().paused = paused

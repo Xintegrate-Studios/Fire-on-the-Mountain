@@ -154,6 +154,11 @@ head = NodePath("Head")
 camera = NodePath("Head/Camera3D")
 task_ui_layer = NodePath("Head/Camera3D/TasksUILayer")
 
+[node name="Timers" type="Node" parent="."]
+
+[node name="SavegeryIncreaseTimer" type="Timer" parent="Timers"]
+wait_time = 30.0
+
 [node name="Body" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 visible = false
@@ -273,3 +278,5 @@ visible_ratio = 0.0
 libraries = {
 &"": SubResource("AnimationLibrary_v7rlw")
 }
+
+[connection signal="timeout" from="Timers/SavegeryIncreaseTimer" to="." method="_on_savegery_increase_timer_timeout"]

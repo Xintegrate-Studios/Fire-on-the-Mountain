@@ -132,8 +132,21 @@ func _headbob(time) -> Vector3:
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # lock mouse
 
-
+func update_bar(bar_name : String, new_value : float):
+	var tween = get_tree().create_tween()
+	if bar_name == "CONCH":
+		tween.tween_property($Head/Camera3D/MainHUDLayer/ConchBar, "value", new_value, 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
+	elif bar_name == "FIRE_FUEL":
+		tween.tween_property($Head/Camera3D/MainHUDLayer/FireFuelBar, "value", new_value, 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
+	elif bar_name == "SAVAGERY":
+		tween.tween_property($Head/Camera3D/MainHUDLayer/SavageryBar, "value", new_value, 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
+	else:
+		print("BAR NAME NOT RECOGNISED!")
 
 func display_task(text : String):
 	$Head/Camera3D/TasksUILayer/Task.text = text
 	$Head/Camera3D/TasksUILayer/TaskAnimation.play("main")
+
+
+func _on_savegery_increase_timer_timeout() -> void:
+	pass # Replace with function body.
