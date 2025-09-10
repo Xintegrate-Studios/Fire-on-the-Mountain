@@ -130,7 +130,13 @@ func _headbob(time) -> Vector3:
 
 
 func _ready():
+	# init bar values
+	$Head/Camera3D/MainHUDLayer/SavageryBar.value = global.savagery_level
+	$Head/Camera3D/MainHUDLayer/FireFuelBar.value = global.fire_fuel
+	$Head/Camera3D/MainHUDLayer/ConchBar.value = global.conch_effectiveness
+	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # lock mouse
+
 
 func update_bar(bar_name : String, new_value : float):
 	var tween = get_tree().create_tween()
@@ -149,4 +155,5 @@ func display_task(text : String):
 
 
 func _on_savegery_increase_timer_timeout() -> void:
-	pass # Replace with function body.
+	global.savagery_level += 7.0
+	update_bar("SAVAGERY", global.savagery_level)

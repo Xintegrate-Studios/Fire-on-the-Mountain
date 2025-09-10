@@ -10,6 +10,8 @@ var player
 var pause_animation_player
 
 var savagery_level : float = 10.0
+var conch_effectiveness : float = 100.0
+var fire_fuel : float = 100.0
 
 func pause():
 	paused = !paused
