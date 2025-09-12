@@ -576,7 +576,7 @@ _data = {
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kftxd"]
 content_margin_left = 23.0
-bg_color = Color(0, 0, 0, 0.27450982)
+bg_color = Color(0, 0, 0, 0.5764706)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -649,7 +649,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../../Characters/3/NameLabel:visible")
+tracks/4/path = NodePath("../../Characters/3/NameLabel_Jack:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -661,14 +661,14 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../../Characters/3/NameLabel:modulate")
+tracks/5/path = NodePath("../../Characters/3/NameLabel_Jack:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(14.366012, 14.933333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(14.366012, 14.933333, 19.899345, 20.466667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -973,7 +973,7 @@ transform = Transform3D(0.38495764, -0.0057113804, 0, 0.0057113804, 0.38495764, 
 [node name="3" parent="Characters" instance=ExtResource("40_a77lo")]
 transform = Transform3D(0.22194786, -0.014530825, 0.25050554, -0.038592134, 0.32848206, 0.053246554, -0.24794114, -0.06413582, 0.21595554, 33.60109, 8.576118, -3.6739302)
 
-[node name="NameLabel" type="Label3D" parent="Characters/3"]
+[node name="NameLabel_Jack" type="Label3D" parent="Characters/3"]
 transform = Transform3D(0.9656378, -0.12035861, -0.38028237, 0.049287613, 1.0244483, -0.19908154, 0.39581767, 0.16606183, 0.9525275, -0.271492, 5.913437, 1.3480225)
 pixel_size = 0.01
 billboard = 1
@@ -1249,6 +1249,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_kftxd")
 text = "\"We should hunt! There are pigs in the jungle.\""
 horizontal_alignment = 1
 vertical_alignment = 1
+visible_characters = 18
+visible_ratio = 0.3850576
 
 [node name="DialogueAnimations" type="AnimationPlayer" parent="Camera3D/DialogueCutsceneLayer"]
 libraries = {
@@ -1833,7 +1835,7 @@ near = 0.001
 [node name="FirstMeetingCutscene" type="AnimationPlayer" parent="."]
 
 [node name="Head" type="Node3D" parent="FirstMeetingCutscene"]
-transform = Transform3D(0.9895959, 0.050270706, 0.13480622, -0.044624142, 0.9980084, -0.04458782, -0.13677913, 0.038108308, 0.9898686, 35.46132, 9.70226, -0.05899012)
+transform = Transform3D(0.9959326, 0.01268035, -0.08920461, -0.022858232, 0.9932157, -0.11401815, 0.087153606, 0.11559343, 0.98946595, 35.46132, 9.70226, -0.05899012)
 
 [node name="Camera3D" type="Camera3D" parent="FirstMeetingCutscene/Head"]
 fov = 100.0
