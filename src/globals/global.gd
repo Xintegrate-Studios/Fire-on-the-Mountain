@@ -13,6 +13,10 @@ var savagery_level : float = 10.0
 var conch_effectiveness : float = 100.0
 var fire_fuel : float = 100.0
 
+var PROGRESSION : Dictionary = {
+	"CONCH_INTERACT_FIRST_TIME" : false
+}
+
 func pause():
 	paused = !paused
 	get_tree().paused = paused

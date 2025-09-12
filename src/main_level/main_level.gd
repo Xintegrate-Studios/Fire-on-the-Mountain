@@ -70,6 +70,7 @@ func _on_quit_button_pressed() -> void:
 
 
 func _on_conch_used() -> void:
+	global.PROGRESSION["CONCH_INTERACT_FIRST_TIME"] = true
 	global.player_active = false
 	$Camera3D/FadeManager.play("fade")
 	
@@ -98,6 +99,7 @@ func _on_conch_use_cutscene_animation_finished(_anim_name: StringName) -> void:
 
 
 func _on_conch_task_timeout() -> void:
-	$Tasks/ConchTask/Arrow.show()
+	if !global.PROGRESSION["CONCH_INTERACT_FIRST_TIME"] == true:
+		$Tasks/ConchTask/Arrow.show()
 	print("task: conch")
 	task_system.task("BLOW_CONCH")
