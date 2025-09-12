@@ -111,7 +111,6 @@ adjustment_enabled = true
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_tw2e2"]
 auto_exposure_scale = 0.8
-dof_blur_far_enabled = true
 dof_blur_far_distance = 88.93
 dof_blur_amount = 0.07
 
@@ -615,12 +614,15 @@ tracks/1/path = NodePath("DialogueLabel:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1.2, 7.8, 14.400001, 20.166668, 20.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1.2, 7.8, 14.400001, 20.166668, 20.2, 28.533333, 28.566666, 36.633335, 36.666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": ["Alright everyone, we need to get organised if we want to be rescued.", "First things first - we're on an island. No grown-ups. That
 means we have to look after ourselves until someone finds us.", "\"We should hunt! There are pigs in the jungle.\"", "\"We should hunt! There are pigs in the jungle.\"", "Hunting is important, yes. But more important is keeping a signal fire 
-going on the mountain. That's our best chance of getting rescued."]
+going on the mountain. That's our best chance of getting rescued.", "Hunting is important, yes. But more important is keeping a signal fire 
+going on the mountain. That's our best chance of getting rescued.", "We'll need teams. Some for keeping the fire, some 
+for building shelters, and yes, some for hunting food.", "We'll need teams. Some for keeping the fire, some 
+for building shelters, and yes, some for hunting food.", "\"The fire is definitely most important. Ships might see the smoke.\""]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -629,10 +631,10 @@ tracks/2/path = NodePath("DialogueLabel:visible_ratio")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.2, 3.7666667, 7.7666664, 7.8, 10.933333, 14.366667, 14.4, 16.133335, 20.166668, 20.2, 24.366667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1.2, 3.7666667, 7.7666664, 7.8, 10.933333, 14.366667, 14.4, 16.133335, 20.166668, 20.2, 24.366667, 28.533333, 28.566666, 31.866667, 36.633335, 36.666668, 39.200005),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0]
+"values": [0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -641,10 +643,10 @@ tracks/3/path = NodePath("DialogueLabel:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1.2, 1.3333334, 5.633333, 6.033334, 7.8, 7.9333334, 13.633333, 14.033334, 14.433334, 14.566668, 19.1, 19.500002, 20.2, 20.333334, 26.633333, 27.033335),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1.2, 1.3333334, 5.633333, 6.033334, 7.8, 7.9333334, 13.633333, 14.033334, 14.433334, 14.566668, 19.1, 19.500002, 20.2, 20.333334, 26.633333, 27.033335, 28.566666, 28.699999, 34.066666, 34.466667, 36.666668, 36.8, 41.4, 41.800003),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -689,10 +691,10 @@ tracks/7/path = NodePath("../../FirstMeetingCutscene/Head:rotation")
 tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 2.8333333, 5.0333333, 10.133333, 16.833334, 18.1, 26.366667, 28.666666, 34.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2.8333333, 5.0333333, 10.133333, 16.833334, 18.1, 26.366667, 28.666666, 34.4, 37.772453, 39.105125, 42.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.024341356, -0.14768149, -0.068826266), Vector3(0.024341354, 0.3895483, -0.06882625), Vector3(0.02249546, 0.08676097, -0.047537476), Vector3(0.04531216, 0.13334283, -0.04447639), Vector3(-0.069697335, 0.45531058, -0.07790914), Vector3(-0.0054484513, 0.2900912, -0.058695156), Vector3(-0.05167704, -0.103757635, -0.053882994), Vector3(0.0133771105, 0.029932167, -0.05193397)]
+"values": [Vector3(0, 0, 0), Vector3(0.024341356, -0.14768149, -0.068826266), Vector3(0.024341354, 0.3895483, -0.06882625), Vector3(0.02249546, 0.08676097, -0.047537476), Vector3(0.04531216, 0.13334283, -0.04447639), Vector3(-0.069697335, 0.45531058, -0.07790914), Vector3(-0.0054484513, 0.2900912, -0.058695156), Vector3(-0.05167704, -0.103757635, -0.053882994), Vector3(0.0133771105, 0.029932167, -0.05193397), Vector3(-0.03718412, -1.29408, 0.03562166), Vector3(-0.04449119, -1.4060663, 0.079365544), Vector3(-0.029083103, -1.3589588, 0.00723927)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -702,6 +704,42 @@ tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(14.366667, 14.933333, 19.900002, 20.466667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../../Characters/11/NameLabel_Piggy:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 35.648685, 35.666664),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../../Characters/11/NameLabel_Piggy:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(35.666664, 36.233986, 41.2, 41.767323),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../../Characters/11/NameLabel_Piggy:outline_modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(35.666664, 36.23333, 41.199997, 41.766663),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
@@ -719,7 +757,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-0.05167704, -0.103757635, -0.053882994)]
+"values": [Vector3(-0.03718412, -1.29408, 0.03562166)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1j151"]
@@ -1037,7 +1075,21 @@ transform = Transform3D(0.29623923, 0, -0.18639296, 0, 0.34999996, 0, 0.18639296
 transform = Transform3D(0.22653398, 0.035833593, 0.19338633, -0.03517882, 0.29760414, -0.013935971, -0.19350651, -0.012153777, 0.2289268, 33.331203, 8.090973, -6.2853293)
 
 [node name="11" parent="Characters" instance=ExtResource("39_dn03h")]
-transform = Transform3D(0.27947992, 0.011811253, -0.55417633, -0.0012120947, 0.24788092, 0.034447707, 0.48290297, -0.00621357, 0.3208158, 38.239914, 8.412828, -0.10914934)
+transform = Transform3D(0.12974904, 0.0130947195, -0.6227668, -0.0012120947, 0.24788092, 0.034447707, 0.54265046, -0.0025772967, 0.14898206, 38.239914, 8.412828, -0.10914934)
+
+[node name="NameLabel_Piggy" type="Label3D" parent="Characters/11"]
+transform = Transform3D(0.037083164, -0.0013627886, 0.6262012, 0.075787514, 1.4078873, -0.0014242977, -0.5440521, 0.02931923, 0.032282986, 0.028689384, 5.6750526, 0.13127136)
+visible = false
+pixel_size = 0.01
+billboard = 1
+no_depth_test = true
+render_priority = 5
+outline_render_priority = 4
+modulate = Color(1, 1, 1, 0)
+outline_modulate = Color(0, 0, 0, 0)
+text = "PIGGY"
+font = ExtResource("27_1u3bp")
+font_size = 57
 
 [node name="Player" parent="." instance=ExtResource("3_tw2e2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.423, 8.38549, 0)
@@ -1861,16 +1913,17 @@ libraries = {
 }
 
 [node name="Camera3D" type="Camera3D" parent="ConchUseCutscene"]
-transform = Transform3D(0.822768, 0.08544227, 0.5619184, -0.12599492, 0.99145705, 0.0337277, -0.5542363, -0.09854893, 0.8265047, 34.0194, 10.1239, -0.458998)
+transform = Transform3D(0.822768, 0.08544227, 0.5619184, -0.12599494, 0.99145705, 0.0337277, -0.55423635, -0.09854893, 0.8265047, 34.0194, 10.1239, -0.458998)
 fov = 100.0
 near = 0.001
 
 [node name="FirstMeetingCutscene" type="AnimationPlayer" parent="."]
 
 [node name="Head" type="Node3D" parent="FirstMeetingCutscene"]
-transform = Transform3D(0.9928901, 0.05890941, -0.103433296, -0.053785015, 0.9972157, 0.051654045, 0.10618819, -0.045723643, 0.9932942, 35.46132, 9.70226, -0.05899012)
+transform = Transform3D(0.27429867, 0.02600891, -0.9612926, 0.035589512, 0.99867517, 0.037175547, 0.9609858, -0.044409156, 0.27300948, 35.46132, 9.70226, -0.05899012)
 
 [node name="Camera3D" type="Camera3D" parent="FirstMeetingCutscene/Head"]
+transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000004, 0, 0, 0)
 fov = 100.0
 
 [connection signal="timeout" from="Timeline/ConchTask" to="." method="_on_conch_task_timeout"]
