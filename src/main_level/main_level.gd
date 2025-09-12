@@ -90,9 +90,10 @@ func _on_conch_use_cutscene_animation_finished(_anim_name: StringName) -> void:
 	await get_tree().create_timer(0.7).timeout
 	
 	$conch.transform = default_conch_transform
-	$Player/Head/Camera3D.make_current()
-	$Player/Head/Camera3D/MainHUDLayer.show()
-	global.player_active = true
+	
+	# first meeting cutscene
+	$FirstMeetingCutscene/Head/Camera3D.make_current()
+	$Camera3D/DialogueCutsceneLayer/DialogueAnimations.play("first_conch")
 	$Camera3D/FadeManager.play("fade", -1, -1, true)
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://biqj67tjrslek"]
+[gd_scene load_steps=78 format=3 uid="uid://biqj67tjrslek"]
 
 [ext_resource type="Script" uid="uid://dvav26tqc5pit" path="res://src/main_level/main_level.gd" id="1_fpkve"]
 [ext_resource type="PackedScene" uid="uid://bm3l1fnoqw1bx" path="res://ast/models/island/island.tscn" id="1_scctx"]
@@ -603,7 +603,7 @@ tracks/0/path = NodePath("DialogueLabel:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 1.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -615,11 +615,12 @@ tracks/1/path = NodePath("DialogueLabel:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.5, 7.0666666, 7.1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(1.2, 7.8, 14.400001, 14.433334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": ["Alright everyone, we need to get organised if we want to be rescued.", "Alright everyone, we need to get organised if we want to be rescued.", "First things first - we're on an island. No grown-ups. That
-means we have to look after ourselves until someone finds us."]
+"values": ["Alright everyone, we need to get organised if we want to be rescued.", "First things first - we're on an island. No grown-ups. That
+means we have to look after ourselves until someone finds us.", "First things first - we're on an island. No grown-ups. That
+means we have to look after ourselves until someone finds us.", "\"We should hunt! There are pigs in the jungle.\""]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -628,10 +629,10 @@ tracks/2/path = NodePath("DialogueLabel:visible_ratio")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.5, 3.0666666, 7.0666666, 7.1, 10.233334),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1.2, 3.7666667, 7.7666664, 7.8, 10.933333, 14.400001, 14.433334, 16.133335),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 1.0, 1.0, 0.0, 1.0]
+"values": [0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -640,54 +641,62 @@ tracks/3/path = NodePath("DialogueLabel:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.5, 0.6333333, 4.9333334, 5.3333335, 7.1, 7.233333, 12.933333, 13.333334),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1.2, 1.3333334, 5.633333, 6.033334, 7.8, 7.9333334, 13.633333, 14.033334, 14.433334, 14.566668, 19.1, 19.500002),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_1j151"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DialogueLabel:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Characters/3/NameLabel:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 14.366667, 14.3846445),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false]
+"values": [false, false, true]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DialogueLabel:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../Characters/3/NameLabel:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(14.366012, 14.933333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../FirstMeetingCutscene/Head:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Vector3(35.46132, 9.70226, -0.05899012)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("DialogueLabel:visible_ratio")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../FirstMeetingCutscene/Head:rotation")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.8333333, 5.0333333, 10.133333, 16.833334, 18.1, 26.366667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [1.0]
+"values": [Vector3(0, 0, 0), Vector3(0.024341356, -0.14768149, -0.068826266), Vector3(0.024341354, 0.3895483, -0.06882625), Vector3(0.02249546, 0.08676097, -0.047537476), Vector3(0.04531216, 0.13334283, -0.04447639), Vector3(-0.069697335, 0.45531058, -0.07790914), Vector3(-0.0054484513, 0.2900912, -0.058695156)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1j151"]
 _data = {
-&"RESET": SubResource("Animation_1j151"),
 &"first_conch": SubResource("Animation_tdn2i")
 }
 
@@ -964,6 +973,17 @@ transform = Transform3D(0.38495764, -0.0057113804, 0, 0.0057113804, 0.38495764, 
 [node name="3" parent="Characters" instance=ExtResource("40_a77lo")]
 transform = Transform3D(0.22194786, -0.014530825, 0.25050554, -0.038592134, 0.32848206, 0.053246554, -0.24794114, -0.06413582, 0.21595554, 33.60109, 8.576118, -3.6739302)
 
+[node name="NameLabel" type="Label3D" parent="Characters/3"]
+transform = Transform3D(0.9656378, -0.12035861, -0.38028237, 0.049287613, 1.0244483, -0.19908154, 0.39581767, 0.16606183, 0.9525275, -0.271492, 5.913437, 1.3480225)
+pixel_size = 0.01
+billboard = 1
+no_depth_test = true
+render_priority = 5
+outline_render_priority = 4
+text = "JACK"
+font = ExtResource("27_1u3bp")
+font_size = 57
+
 [node name="4" parent="Characters" instance=ExtResource("8_rk3wu")]
 transform = Transform3D(0.17151809, 0, 0.18188334, 0, 0.25, 0, -0.18188334, 0, 0.17151809, 33.61898, 8.526501, -2.6134217)
 
@@ -1213,26 +1233,24 @@ visible_ratio = 0.0
 [node name="DialogueCutsceneLayer" type="CanvasLayer" parent="Camera3D"]
 
 [node name="DialogueLabel" type="Label" parent="Camera3D/DialogueCutsceneLayer"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -3.5
-offset_top = -14.5
-offset_right = 3.5
-offset_bottom = 14.5
+offset_left = -160.5
+offset_top = 225.5
+offset_right = 160.5
+offset_bottom = 254.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("27_1u3bp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_kftxd")
-text = "First things first - we're on an island. No grown-ups. That
-means we have to look after ourselves until someone finds us."
+text = "\"We should hunt! There are pigs in the jungle.\""
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Dialogues" type="AnimationPlayer" parent="Camera3D/DialogueCutsceneLayer"]
+[node name="DialogueAnimations" type="AnimationPlayer" parent="Camera3D/DialogueCutsceneLayer"]
 libraries = {
 &"": SubResource("AnimationLibrary_1j151")
 }
@@ -1808,9 +1826,17 @@ libraries = {
 }
 
 [node name="Camera3D" type="Camera3D" parent="ConchUseCutscene"]
-transform = Transform3D(0.8227679, 0.08544227, 0.5619184, -0.12599492, 0.99145705, 0.0337277, -0.5542363, -0.09854893, 0.8265047, 34.0194, 10.1239, -0.458998)
+transform = Transform3D(0.822768, 0.08544227, 0.5619184, -0.12599492, 0.99145705, 0.0337277, -0.5542363, -0.09854893, 0.8265047, 34.0194, 10.1239, -0.458998)
 fov = 100.0
 near = 0.001
+
+[node name="FirstMeetingCutscene" type="AnimationPlayer" parent="."]
+
+[node name="Head" type="Node3D" parent="FirstMeetingCutscene"]
+transform = Transform3D(0.9895959, 0.050270706, 0.13480622, -0.044624142, 0.9980084, -0.04458782, -0.13677913, 0.038108308, 0.9898686, 35.46132, 9.70226, -0.05899012)
+
+[node name="Camera3D" type="Camera3D" parent="FirstMeetingCutscene/Head"]
+fov = 100.0
 
 [connection signal="timeout" from="Timeline/ConchTask" to="." method="_on_conch_task_timeout"]
 [connection signal="action_triggered" from="conch/ConchInteractableComponent" to="." method="_on_conch_used"]
