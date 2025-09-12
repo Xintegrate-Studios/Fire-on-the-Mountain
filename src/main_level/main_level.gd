@@ -2,6 +2,17 @@ extends Node3D
 
 var default_conch_transform
 
+@export var Character_1 : Node3D
+@export var Character_2 : Node3D
+@export var Character_3 : Node3D
+@export var Character_4 : Node3D
+@export var Character_5 : Node3D
+@export var Character_6 : Node3D
+@export var Character_7 : Node3D
+@export var Character_8 : Node3D
+@export var Character_9 : Node3D
+@export var Character_10 : Node3D
+
 func _ready() -> void:
 	default_conch_transform = $conch.transform
 	global.world = self

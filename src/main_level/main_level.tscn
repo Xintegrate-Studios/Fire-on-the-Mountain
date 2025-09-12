@@ -46,6 +46,21 @@
 [ext_resource type="PackedScene" uid="uid://cu08qw8vm81ew" path="res://ast/models/characters/scenes/idle.tscn" id="39_dn03h"]
 [ext_resource type="PackedScene" uid="uid://darbbw3k6n8gy" path="res://ast/models/characters/scenes/hanging_idle.tscn" id="40_a77lo"]
 
+[sub_resource type="Animation" id="Animation_igp1d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arrow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(33.35269, 10.448216, -1.3057545)]
+}
+
 [sub_resource type="Animation" id="Animation_kftxd"]
 resource_name = "main"
 length = 2.0
@@ -62,21 +77,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(33.35269, 9.670964, -1.3057545), Vector3(33.35269, 10.448216, -1.3057545), Vector3(33.35269, 9.670964, -1.3057545)]
-}
-
-[sub_resource type="Animation" id="Animation_igp1d"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Arrow:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(33.35269, 10.448216, -1.3057545)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_igp1d"]
@@ -773,9 +773,19 @@ _data = {
 &"main": SubResource("Animation_44kkc")
 }
 
-[node name="World" type="Node3D"]
+[node name="World" type="Node3D" node_paths=PackedStringArray("Character_1", "Character_2", "Character_3", "Character_4", "Character_5", "Character_6", "Character_7", "Character_8", "Character_9", "Character_10")]
 process_mode = 1
 script = ExtResource("1_fpkve")
+Character_1 = NodePath("Characters/1")
+Character_2 = NodePath("Characters/2")
+Character_3 = NodePath("Characters/3")
+Character_4 = NodePath("Characters/4")
+Character_5 = NodePath("Characters/5")
+Character_6 = NodePath("Characters/6")
+Character_7 = NodePath("Characters/7")
+Character_8 = NodePath("Characters/8")
+Character_9 = NodePath("Characters/9")
+Character_10 = NodePath("Characters/10")
 
 [node name="Tasks" type="Node" parent="."]
 
