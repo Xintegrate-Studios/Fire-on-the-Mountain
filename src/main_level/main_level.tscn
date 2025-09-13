@@ -593,7 +593,7 @@ expand_margin_bottom = 4.0
 
 [sub_resource type="Animation" id="Animation_tdn2i"]
 resource_name = "first_conch"
-length = 70.0
+length = 75.0
 step = 0.0333333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -614,8 +614,8 @@ tracks/1/path = NodePath("DialogueLabel:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1.2, 7.8, 14.400001, 20.166668, 20.2, 28.533333, 28.566666, 36.633335, 36.666668, 44.600002, 44.633335),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1.2, 7.8, 14.400001, 20.166668, 20.2, 28.533333, 28.566666, 36.633335, 36.666668, 44.600002, 44.633335, 51.266666, 51.3, 55.5, 55.533333, 61.5, 61.533333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": ["Alright everyone, we need to get organised if we want to be rescued.", "First things first - we're on an island. No grown-ups. That
 means we have to look after ourselves until someone finds us.", "\"We should hunt! There are pigs in the jungle.\"", "\"We should hunt! There are pigs in the jungle.\"", "Hunting is important, yes. But more important is keeping a signal fire 
@@ -623,7 +623,11 @@ going on the mountain. That's our best chance of getting rescued.", "Hunting is 
 going on the mountain. That's our best chance of getting rescued.", "We'll need teams. Some for keeping the fire, some 
 for building shelters, and yes, some for hunting food.", "We'll need teams. Some for keeping the fire, some 
 for building shelters, and yes, some for hunting food.", "\"The fire is definitely most important. Ships might see the smoke.\"", "\"The fire is definitely most important. Ships might see the smoke.\"", "Exactly. And we need rules.  When someone holds the conch, 
-everyone else listens. That's the only way this will work."]
+everyone else listens. That's the only way this will work.", "Exactly. And we need rules.  When someone holds the conch, 
+everyone else listens. That's the only way this will work.", "\"Maybe we should build better shelters too?\"", "\"Maybe we should build better shelters too?\"", "Good thinking, Simon. We need protection 
+from the rain and what we have right now...", "Good thinking, Simon. We need protection 
+from the rain and what we have right now...", "...Isn't very substantial.
+Right everyone. We need to get to work."]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -632,10 +636,10 @@ tracks/2/path = NodePath("DialogueLabel:visible_ratio")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.2, 3.7666667, 7.7666664, 7.8, 10.933333, 14.366667, 14.4, 16.133335, 20.166668, 20.2, 24.366667, 28.533333, 28.566666, 31.866667, 36.633335, 36.666668, 39.200005, 44.600002, 44.633335, 48),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1.2, 3.7666667, 7.7666664, 7.8, 10.933333, 14.366667, 14.4, 16.133335, 20.166668, 20.2, 24.366667, 28.533333, 28.566666, 31.866667, 36.633335, 36.666668, 39.200005, 44.600002, 44.633335, 48, 51.266666, 51.3, 52.733334, 55.5, 55.533333, 58.033337, 61.5, 61.533333, 62.800003, 64.166664, 66.13333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0]
+"values": [0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.409, 0.409, 1.0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -644,10 +648,10 @@ tracks/3/path = NodePath("DialogueLabel:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1.2, 1.3333334, 5.633333, 6.033334, 7.8, 7.9333334, 13.633333, 14.033334, 14.433334, 14.566668, 19.1, 19.500002, 20.2, 20.333334, 26.633333, 27.033335, 28.566666, 28.699999, 34.066666, 34.466667, 36.666668, 36.8, 41.4, 41.800003, 44.633335, 44.766666, 49.866665, 50.266666),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1.2, 1.3333334, 5.633333, 6.033334, 7.8, 7.9333334, 13.633333, 14.033334, 14.433334, 14.566668, 19.1, 19.500002, 20.2, 20.333334, 26.633333, 27.033335, 28.566666, 28.699999, 34.066666, 34.466667, 36.666668, 36.8, 41.4, 41.800003, 44.633335, 44.766666, 49.866665, 50.266666, 51.3, 51.43333, 54.6, 55, 55.533333, 55.666664, 59.8, 60.2, 61.533333, 61.666664, 67.90001, 68.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -692,10 +696,10 @@ tracks/7/path = NodePath("../../FirstMeetingCutscene/Head:rotation")
 tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 2.8333333, 5.0333333, 10.133333, 16.833334, 18.1, 26.366667, 28.666666, 34.4, 37.772453, 39.105125, 42.2, 48.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2.8333333, 5.0333333, 10.133333, 16.833334, 18.1, 26.366667, 28.666666, 34.4, 37.772453, 39.105125, 42.2, 48.2, 55.766666, 58.733334, 60.791943, 62.933334, 68.4, 73.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.024341356, -0.14768149, -0.068826266), Vector3(0.024341354, 0.3895483, -0.06882625), Vector3(0.02249546, 0.08676097, -0.047537476), Vector3(0.04531216, 0.13334283, -0.04447639), Vector3(-0.069697335, 0.45531058, -0.07790914), Vector3(-0.0054484513, 0.2900912, -0.058695156), Vector3(-0.05167704, -0.103757635, -0.053882994), Vector3(0.0133771105, 0.029932167, -0.05193397), Vector3(-0.03718412, -1.29408, 0.03562166), Vector3(-0.04449119, -1.4060663, 0.079365544), Vector3(-0.029083103, -1.3589588, 0.00723927), Vector3(-0.14654295, -1.1784503, 0.0015356597)]
+"values": [Vector3(0, 0, 0), Vector3(0.024341356, -0.14768149, -0.068826266), Vector3(0.024341354, 0.3895483, -0.06882625), Vector3(0.02249546, 0.08676097, -0.047537476), Vector3(0.04531216, 0.13334283, -0.04447639), Vector3(-0.069697335, 0.45531058, -0.07790914), Vector3(-0.0054484513, 0.2900912, -0.058695156), Vector3(-0.05167704, -0.103757635, -0.053882994), Vector3(0.0133771105, 0.029932167, -0.05193397), Vector3(-0.03718412, -1.29408, 0.03562166), Vector3(-0.04449119, -1.4060663, 0.079365544), Vector3(-0.029083103, -1.3589588, 0.00723927), Vector3(-0.14654295, -1.1784503, 0.0015356597), Vector3(-0.04471219, 0.05820297, -0.09481518), Vector3(-0.1064879, -0.07648195, -0.06395082), Vector3(-0.10648791, 0.48218045, -0.063950814), Vector3(-0.1064879, -0.09102058, -0.06395081), Vector3(-0.109354265, 0.10392929, -0.036698863), Vector3(-0.10972025, 0.019247374, -0.018511953)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -745,6 +749,42 @@ tracks/11/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../../Characters/1/NameLabel_Simon:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 50.933334, 50.966667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../../Characters/1/NameLabel_Simon:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(50.966667, 51.53399, 54.83268, 55.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../../Characters/1/NameLabel_Simon:outline_modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(50.966667, 51.533333, 54.83268, 55.399345),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_1j151"]
 length = 0.001
@@ -758,7 +798,19 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-0.03718412, -1.29408, 0.03562166)]
+"values": [Vector3(-0.04471219, 0.05820297, -0.09481518)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Characters/3/NameLabel_Jack:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1j151"]
@@ -1034,6 +1086,19 @@ mesh = SubResource("PlaneMesh_n4qwq")
 [node name="1" parent="Characters" instance=ExtResource("39_dn03h")]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 37.948288, 8.0006, -4.37502)
 
+[node name="NameLabel_Simon" type="Label3D" parent="Characters/1"]
+transform = Transform3D(0.9846329, 7.4505806e-08, 0.17464453, -4.789659e-08, 1.0000001, 9.978456e-09, -0.17464611, -6.253166e-08, 0.98463327, 0.20005035, 5.5483513, -0.40082932)
+pixel_size = 0.01
+billboard = 1
+no_depth_test = true
+render_priority = 5
+outline_render_priority = 4
+modulate = Color(1, 1, 1, 0)
+outline_modulate = Color(0, 0, 0, 0)
+text = "SIMON"
+font = ExtResource("27_1u3bp")
+font_size = 57
+
 [node name="2" parent="Characters" instance=ExtResource("39_3ngmi")]
 transform = Transform3D(0.38495764, -0.0057113804, 0, 0.0057113804, 0.38495764, 0, 0, 0, 0.385, 35.349903, 8.172344, -4.619134)
 
@@ -1042,6 +1107,7 @@ transform = Transform3D(0.22194786, -0.014530825, 0.25050554, -0.038592134, 0.32
 
 [node name="NameLabel_Jack" type="Label3D" parent="Characters/3"]
 transform = Transform3D(0.9656378, -0.12035861, -0.38028237, 0.049287613, 1.0244483, -0.19908154, 0.39581767, 0.16606183, 0.9525275, -0.271492, 5.913437, 1.3480225)
+visible = false
 pixel_size = 0.01
 billboard = 1
 no_depth_test = true
@@ -1329,8 +1395,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("27_1u3bp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_kftxd")
-text = "Exactly. And we need rules.  When someone holds the conch, 
-everyone else listens. That's the only way this will work."
+text = "...Isn't very substantial.
+Right everyone. We need to get to work."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1917,7 +1983,7 @@ near = 0.001
 [node name="FirstMeetingCutscene" type="AnimationPlayer" parent="."]
 
 [node name="Head" type="Node3D" parent="FirstMeetingCutscene"]
-transform = Transform3D(0.27429864, 0.026008906, -0.9612926, 0.03558951, 0.99867505, 0.037175547, 0.9609857, -0.044409152, 0.27300948, 35.46132, 9.70226, -0.05899012)
+transform = Transform3D(0.9940689, 0.09192452, 0.058111977, -0.09457856, 0.9945137, 0.044697292, -0.053684372, -0.049928345, 0.9973089, 35.46132, 9.70226, -0.05899012)
 
 [node name="Camera3D" type="Camera3D" parent="FirstMeetingCutscene/Head"]
 transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000004, 0, 0, 0)
