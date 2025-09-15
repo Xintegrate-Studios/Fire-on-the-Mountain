@@ -54,6 +54,8 @@ extends CharacterBody3D
 @export var camera : Camera3D
 @export var task_ui_layer : CanvasLayer
 
+@export var wood_plank_info_anim : AnimationPlayer
+
 func start_timers():
 	$Timers/SavegeryIncreaseTimer.start()
 	$Timers/FireFuelDepletingTimer.start()

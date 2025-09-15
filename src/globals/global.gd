@@ -16,6 +16,7 @@ var fire_fuel : float = 100.0
 var PROGRESSION : Dictionary = {
 	"CONCH_INTERACT_FIRST_TIME" : false
 }
+var wood_planks : int = 0
 
 func pause():
 	paused = !paused

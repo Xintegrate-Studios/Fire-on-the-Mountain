@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://c2r4l8dmvqgn4"]
+
+[ext_resource type="Script" uid="uid://ci0jij7da46cf" path="res://ast/models/items/wood plank/wood_plank.gd" id="1_jlcrt"]
+[ext_resource type="PackedScene" uid="uid://qpnbmlnibx86" path="res://ast/models/items/wood plank/wood_plank.blend" id="1_m3ir7"]
+[ext_resource type="Script" uid="uid://b65j5em4lbmxs" path="res://src/ic/interactable_component.gd" id="2_jlcrt"]
+[ext_resource type="FontFile" uid="uid://cmsnr0uluge1x" path="res://ast/fonts/times roman/times_roman.otf" id="3_vebrm"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_vebrm"]
+action = &"Interact"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0py58"]
+viewport_path = NodePath("InteractableComponent/Contents/UI/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nyf0v"]
+size = Vector3(7, 5, 7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lutt7"]
+size = Vector3(5.3681183, 0.741821, 0.92822266)
+
+[node name="WoodPlank" type="Node3D"]
+script = ExtResource("1_jlcrt")
+
+[node name="wood_plank" parent="." instance=ExtResource("1_m3ir7")]
+
+[node name="InteractableComponent" type="Node3D" parent="." node_paths=PackedStringArray("Contents_Node", "UI_Sprite_Node", "SubViewport_Node")]
+script = ExtResource("2_jlcrt")
+Contents_Node = NodePath("Contents")
+UI_Sprite_Node = NodePath("Contents/UI")
+SubViewport_Node = NodePath("Contents/UI/SubViewport")
+ActionToPress = SubResource("InputEventAction_vebrm")
+
+[node name="Contents" type="Node3D" parent="InteractableComponent"]
+
+[node name="UI" type="Sprite3D" parent="InteractableComponent/Contents"]
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0, 0.8842045, 0)
+billboard = 1
+no_depth_test = true
+render_priority = 1
+texture = SubResource("ViewportTexture_0py58")
+
+[node name="SubViewport" type="SubViewport" parent="InteractableComponent/Contents/UI"]
+transparent_bg = true
+gui_disable_input = true
+size = Vector2i(1150, 1150)
+
+[node name="Key" type="Label" parent="InteractableComponent/Contents/UI/SubViewport"]
+offset_left = 500.0
+offset_top = 500.0
+offset_right = 629.0
+offset_bottom = 646.0
+theme_override_fonts/font = ExtResource("3_vebrm")
+theme_override_font_sizes/font_size = 106
+text = "[E]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerAreaBox" type="Area3D" parent="InteractableComponent/Contents"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableComponent/Contents/PlayerAreaBox"]
+shape = SubResource("BoxShape3D_nyf0v")
+
+[node name="MimicRaycastBox" type="Area3D" parent="InteractableComponent/Contents"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableComponent/Contents/MimicRaycastBox"]
+transform = Transform3D(0.60973024, 0, 0.79260904, 0, 1, 0, -0.79260904, 0, 0.60973024, 0.014036233, 0, 0.00037276745)
+shape = SubResource("BoxShape3D_lutt7")
+
+[connection signal="action_triggered" from="InteractableComponent" to="." method="_on_wood_plank_collected"]
+[connection signal="body_entered" from="InteractableComponent/Contents/PlayerAreaBox" to="InteractableComponent" method="_on_player_area_box_body_entered"]
+[connection signal="body_exited" from="InteractableComponent/Contents/PlayerAreaBox" to="InteractableComponent" method="_on_player_area_box_body_exited"]
+[connection signal="area_entered" from="InteractableComponent/Contents/MimicRaycastBox" to="InteractableComponent" method="_on_mimic_raycast_box_area_entered"]
+[connection signal="area_exited" from="InteractableComponent/Contents/MimicRaycastBox" to="InteractableComponent" method="_on_mimic_raycast_box_area_exited"]
