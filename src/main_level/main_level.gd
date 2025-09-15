@@ -122,3 +122,4 @@ func _on_dialogue_animations_animation_finished(anim_name: StringName) -> void:
 		print("task: collect 10 wood")
 		task_system.task("COLLECT_10_WOOD")
 		
+		

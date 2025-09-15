@@ -207,12 +207,13 @@ _data = {
 &"in": SubResource("Animation_v5qoq")
 }
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("head", "camera", "task_ui_layer", "wood_plank_info_anim") groups=["PlayerBody"]]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("head", "camera", "task_ui_layer", "wood_plank_info_anim", "wood_plank_info_label") groups=["PlayerBody"]]
 script = ExtResource("1_r5cts")
 head = NodePath("Head")
 camera = NodePath("Head/Camera3D")
 task_ui_layer = NodePath("Head/Camera3D/TasksUILayer")
 wood_plank_info_anim = NodePath("Head/Camera3D/ItemInfoLayer/MainLayer/WoodPlankInfo/WoodPlankInfoAnim")
+wood_plank_info_label = NodePath("Head/Camera3D/ItemInfoLayer/MainLayer/WoodPlankInfo/Label")
 
 [node name="Timers" type="Node" parent="."]
 

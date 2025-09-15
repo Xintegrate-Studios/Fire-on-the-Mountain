@@ -55,10 +55,25 @@ extends CharacterBody3D
 @export var task_ui_layer : CanvasLayer
 
 @export var wood_plank_info_anim : AnimationPlayer
+@export var wood_plank_info_label : Label
+
+#region init
 
 func start_timers():
 	$Timers/SavegeryIncreaseTimer.start()
 	$Timers/FireFuelDepletingTimer.start()
+
+func _ready():
+	# init bar values
+	$Head/Camera3D/MainHUDLayer/SavageryBar.value = global.savagery_level
+	$Head/Camera3D/MainHUDLayer/FireFuelBar.value = global.fire_fuel
+	$Head/Camera3D/MainHUDLayer/ConchBar.value = global.conch_effectiveness
+	
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # lock mouse
+
+#endregion
+
+#region physics
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -134,15 +149,10 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	return pos
 
+#endregion
 
-func _ready():
-	# init bar values
-	$Head/Camera3D/MainHUDLayer/SavageryBar.value = global.savagery_level
-	$Head/Camera3D/MainHUDLayer/FireFuelBar.value = global.fire_fuel
-	$Head/Camera3D/MainHUDLayer/ConchBar.value = global.conch_effectiveness
-	
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # lock mouse
-
+func _process(_delta: float) -> void:
+	wood_plank_info_label.text = "WOOD PLANKS: " + str(global.wood_planks)
 
 func update_bar(bar_name : String, new_value : float):
 	var tween = get_tree().create_tween()
@@ -163,7 +173,6 @@ func display_task(text : String):
 func _on_savegery_increase_timer_timeout() -> void:
 	global.savagery_level += 7.0
 	update_bar("SAVAGERY", global.savagery_level)
-
 
 func _on_fire_fuel_depleting_timer_timeout() -> void:
 	global.fire_fuel -= 7
