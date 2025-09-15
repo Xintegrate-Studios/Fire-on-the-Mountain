@@ -14,7 +14,8 @@ var conch_effectiveness : float = 100.0
 var fire_fuel : float = 100.0
 
 var PROGRESSION : Dictionary = {
-	"CONCH_INTERACT_FIRST_TIME" : false
+	"CONCH_INTERACT_FIRST_TIME" : false,
+	"HAD_FIRST_MEETING" : false
 }
 var wood_planks : int = 0
 

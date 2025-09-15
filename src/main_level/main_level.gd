@@ -116,3 +116,9 @@ func _on_dialogue_animations_animation_finished(anim_name: StringName) -> void:
 		
 		$conch/ConchInteractableComponent.show()
 		global.player_active = true
+		
+		await get_tree().create_timer(2.0).timeout
+		
+		print("task: collect 10 wood")
+		task_system.task("COLLECT_10_WOOD")
+		

@@ -351,6 +351,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="WoodPlankInfo" type="Control" parent="Head/Camera3D/ItemInfoLayer/MainLayer"]
 layout_mode = 1
@@ -359,6 +360,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="BG" type="Panel" parent="Head/Camera3D/ItemInfoLayer/MainLayer/WoodPlankInfo"]
 layout_mode = 0
@@ -366,6 +368,7 @@ offset_left = -17.0
 offset_top = 7.0
 offset_right = -13.0
 offset_bottom = 59.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_v5qoq")
 
 [node name="WoodPlank" type="Sprite2D" parent="Head/Camera3D/ItemInfoLayer/MainLayer/WoodPlankInfo"]

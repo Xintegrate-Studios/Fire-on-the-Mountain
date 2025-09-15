@@ -1411,6 +1411,7 @@ visible_ratio = 0.0
 libraries = {
 &"": SubResource("AnimationLibrary_1j151")
 }
+speed_scale = 20.0
 
 [node name="TutorialLayer" type="CanvasLayer" parent="Camera3D"]
 
@@ -1981,6 +1982,7 @@ transform = Transform3D(0.425574, 0, -0.904924, 0, 1, 0, 0.904924, 0, 0.425574, 
 libraries = {
 &"": SubResource("AnimationLibrary_tchnu")
 }
+speed_scale = 10.0
 
 [node name="Camera3D" type="Camera3D" parent="ConchUseCutscene"]
 transform = Transform3D(0.822768, 0.08544227, 0.5619184, -0.12599494, 0.99145705, 0.0337277, -0.55423635, -0.09854893, 0.8265047, 34.0194, 10.1239, -0.458998)
