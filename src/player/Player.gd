@@ -152,7 +152,7 @@ func _headbob(time) -> Vector3:
 #endregion
 
 func _process(_delta: float) -> void:
-	wood_plank_info_label.text = "WOOD PLANKS: " + str(global.wood_planks)
+	wood_plank_info_label.text = "WOOD PLANKS:  " + str(global.wood_planks)
 
 func update_bar(bar_name : String, new_value : float):
 	var tween = get_tree().create_tween()
