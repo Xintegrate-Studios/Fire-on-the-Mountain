@@ -17,7 +17,10 @@ var PROGRESSION : Dictionary = {
 	"CONCH_INTERACT_FIRST_TIME" : false,
 	"HAD_FIRST_MEETING" : false
 }
-var wood_planks : int = 0
+var wood_planks : int = 0:
+	set(value):
+		wood_planks = value
+		player.wood_plank_plus_animation()
 
 func pause():
 	paused = !paused

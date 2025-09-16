@@ -32,7 +32,7 @@ ActionToPress = SubResource("InputEventAction_vebrm")
 [node name="Contents" type="Node3D" parent="InteractableComponent"]
 
 [node name="UI" type="Sprite3D" parent="InteractableComponent/Contents"]
-transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0, 0.8842045, 0)
+transform = Transform3D(0.385, 0, 0, 0, 0.385, 0, 0, 0, 0.385, 0, 0.8842045, 0)
 billboard = 1
 no_depth_test = true
 render_priority = 1
@@ -48,6 +48,7 @@ offset_left = 500.0
 offset_top = 500.0
 offset_right = 629.0
 offset_bottom = 646.0
+theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("3_vebrm")
 theme_override_font_sizes/font_size = 106
 text = "[E]"

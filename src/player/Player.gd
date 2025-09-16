@@ -177,3 +177,6 @@ func _on_savegery_increase_timer_timeout() -> void:
 func _on_fire_fuel_depleting_timer_timeout() -> void:
 	global.fire_fuel -= 7
 	update_bar("FIRE_FUEL", global.fire_fuel)
+
+func wood_plank_plus_animation() -> void:
+	$Head/Camera3D/ItemInfoLayer/MainLayer/WoodPlankInfo/WoodPlankPlusAnimation.play("main")
