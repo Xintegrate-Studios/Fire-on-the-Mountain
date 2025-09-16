@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=4 uid="uid://biqj67tjrslek"]
+[gd_scene load_steps=98 format=4 uid="uid://biqj67tjrslek"]
 
 [ext_resource type="Script" uid="uid://dvav26tqc5pit" path="res://src/main_level/main_level.gd" id="1_fpkve"]
 [ext_resource type="PackedScene" uid="uid://bm3l1fnoqw1bx" path="res://ast/models/island/island.tscn" id="1_scctx"]
@@ -1383,6 +1383,14 @@ _data = {
 &"main": SubResource("Animation_44kkc")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kftxd"]
+transparency = 4
+cull_mode = 2
+stencil_flags = 6
+stencil_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_igp1d"]
+
 [node name="World" type="Node3D" node_paths=PackedStringArray("Character_1", "Character_2", "Character_3", "Character_4", "Character_5", "Character_6", "Character_7", "Character_8", "Character_9", "Character_10", "firepit_tinder")]
 process_mode = 1
 script = ExtResource("1_fpkve")
@@ -2460,6 +2468,11 @@ transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 0.99999994, 35.46132, 9.
 [node name="Camera3D" type="Camera3D" parent="FirstMeetingCutscene/Head"]
 transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000004, 0, 0, 0)
 fov = 100.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85929155, -62.976643)
+material_override = SubResource("StandardMaterial3D_kftxd")
+mesh = SubResource("BoxMesh_igp1d")
 
 [connection signal="timeout" from="Timeline/ConchTask" to="." method="_on_conch_task_timeout"]
 [connection signal="action_triggered" from="conch/ConchInteractableComponent" to="." method="_on_conch_used"]
