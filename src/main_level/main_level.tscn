@@ -592,6 +592,21 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 4.0
 
+[sub_resource type="Animation" id="Animation_1j151"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Characters/1/NameLabel_Simon:outline_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_tdn2i"]
 resource_name = "first_conch"
 length = 73.0
@@ -799,21 +814,6 @@ tracks/15/keys = {
 "args": [&"fade", -1, 1.0, false],
 "method": &"play"
 }]
-}
-
-[sub_resource type="Animation" id="Animation_1j151"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Characters/1/NameLabel_Simon:outline_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1j151"]
@@ -1691,6 +1691,62 @@ visible_ratio = 0.0
 [node name="island" parent="IslandComponents" instance=ExtResource("1_scctx")]
 transform = Transform3D(3.2622, 0, 0, 0, 3.2622, 0, 0, 0, 3.2622, 0, 0.685446, 0)
 
+[node name="Wood Planks" type="Node" parent="IslandComponents"]
+
+[node name="WoodPlank1" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+transform = Transform3D(0.25963587, 0, 0, 0, 0.25963587, 0, 0, 0, 0.25963587, 34.94912, 8.255346, 7.7322264)
+
+[node name="WoodPlank2" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+transform = Transform3D(0.25522938, -0.047631186, 0, 0.04750211, 0.25453776, -0.019101128, 0.0035041748, 0.01877695, 0.25893226, 26.421406, 8.614018, 4.361233)
+
+[node name="WoodPlank3" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+transform = Transform3D(0.25398687, -0.05375785, -0.0033909895, 0.05385372, 0.25310186, 0.021213472, -0.0010866174, -0.021455294, 0.2587455, 24.01833, 8.50844, -2.7042718)
+
+[node name="WoodPlank4" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+transform = Transform3D(0.2566216, -0.039419003, -0.001489956, 0.03939981, 0.25565082, 0.022385098, -0.0019315114, -0.022351334, 0.25866467, 22.078493, 4.244511, -20.662956)
+
+[node name="WoodPlank5" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+transform = Transform3D(0.2566216, -0.039419003, -0.001489956, 0.03939981, 0.25565082, 0.022385098, -0.0019315114, -0.022351334, 0.25866467, 14.644488, 3.5923395, -24.858246)
+
+[node name="WoodPlank6" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+transform = Transform3D(0.04575145, -0.0035078805, 0.25554886, 0.004039541, 0.25958893, 0.0028401294, -0.25554103, 0.0034754835, 0.045797754, 12.331528, 3.616506, -24.735888)
+
+[node name="WoodPlank7" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+transform = Transform3D(0.04575145, -0.0035078805, 0.25554886, 0.004039541, 0.25958893, 0.0028401294, -0.25554103, 0.0034754835, 0.045797754, -3.3051105, 4.1173253, -25.117344)
+
+[node name="WoodPlank8" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+transform = Transform3D(0.045886505, 0.030508779, 0.25372106, -0.0019852018, 0.25781375, -0.030641854, -0.25554103, 0.0034754835, 0.045797758, -8.522011, 4.7635627, -25.117344)
+
+[node name="WoodPlank9" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+transform = Transform3D(0.045886498, 0.030508773, 0.25372103, 0.08343, 0.24186575, -0.044171877, -0.2415462, 0.08933612, 0.0329424, -8.522011, 4.6240754, -32.160316)
+
+[node name="WoodPlank10" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+transform = Transform3D(0.25963572, 0, 0, 0, 0.24621734, 0.082387924, 0, -0.08238795, 0.24621722, -8.522011, 6.3854995, 13.926651)
+
+[node name="WoodPlank11" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+transform = Transform3D(0.2592352, 0.014231705, 0.002299935, -0.01399804, 0.25839508, -0.021137461, -0.0034475753, 0.020980876, 0.25876358, -8.522011, 5.4122944, 25.925112)
+
+[node name="WoodPlank12" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+transform = Transform3D(0.2592352, 0.014231705, 0.002299935, -0.01399804, 0.25839508, -0.021137461, -0.0034475753, 0.020980876, 0.25876358, 4.264736, 3.8783588, 28.80381)
+
+[node name="WoodPlank13" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+transform = Transform3D(-0.10516277, -0.009784987, 0.23718295, -0.023562778, 0.25856432, 0.00021976007, -0.23621248, -0.021436121, -0.10561675, 6.285211, 3.8783588, 28.80381)
+
+[node name="WoodPlank14" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+transform = Transform3D(-0.10516277, -0.009784987, 0.23718295, -0.023562778, 0.25856432, 0.00021976007, -0.23621248, -0.021436121, -0.10561675, 12.741247, 4.0960956, 28.80381)
+
+[node name="WoodPlank15" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+transform = Transform3D(0.091941155, -0.043717302, 0.2388437, -0.0053699925, 0.25496438, 0.048735075, -0.24275239, -0.022197826, 0.08938267, 18.980427, 5.066613, 27.580551)
+
+[node name="WoodPlank16" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+transform = Transform3D(0.25842616, -0.024844518, 0.0030729736, 0.025033843, 0.2564718, -0.031722534, 0, 0.03187103, 0.25767234, 24.386673, 6.9309363, 13.586582)
+
+[node name="WoodPlank17" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+transform = Transform3D(0.08220347, -0.018414395, 0.24558988, 0.015700618, 0.2587744, 0.0141477, -0.2457782, 0.010371914, 0.08304422, 22.970509, 6.8102603, 13.153491)
+
+[node name="WoodPlank18" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+transform = Transform3D(-0.021144541, 0.10377817, 0.23705252, 0.0021422554, 0.23790453, -0.10396012, -0.25876468, -0.0065104933, -0.020231005, 10.384741, 4.766264, 13.153491)
+
 [node name="PalmTree1" parent="IslandComponents" instance=ExtResource("2_goh21")]
 transform = Transform3D(0.698707, 0.138905, 0, -0.138905, 0.698707, 0, 0, 0, 0.71238, 52.0267, 5.65167, -3.76445)
 
@@ -1998,9 +2054,6 @@ transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 0.99999994, 35.46132, 9.
 [node name="Camera3D" type="Camera3D" parent="FirstMeetingCutscene/Head"]
 transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000004, 0, 0, 0)
 fov = 100.0
-
-[node name="WoodPlank" parent="." instance=ExtResource("46_igp1d")]
-transform = Transform3D(0.25963587, 0, 0, 0, 0.25963587, 0, 0, 0, 0.25963587, 34.94912, 8.249431, 3.7987206)
 
 [connection signal="timeout" from="Timeline/ConchTask" to="." method="_on_conch_task_timeout"]
 [connection signal="action_triggered" from="conch/ConchInteractableComponent" to="." method="_on_conch_used"]

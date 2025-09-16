@@ -35,7 +35,7 @@ ActionToPress = SubResource("InputEventAction_vebrm")
 transform = Transform3D(0.385, 0, 0, 0, 0.385, 0, 0, 0, 0.385, 0, 0.8842045, 0)
 billboard = 1
 no_depth_test = true
-render_priority = 1
+render_priority = 6
 texture = SubResource("ViewportTexture_0py58")
 
 [node name="SubViewport" type="SubViewport" parent="InteractableComponent/Contents/UI"]
