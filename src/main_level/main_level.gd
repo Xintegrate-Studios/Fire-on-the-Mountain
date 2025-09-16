@@ -111,6 +111,7 @@ func _on_dialogue_animations_animation_finished(anim_name: StringName) -> void:
 		await get_tree().create_timer(1.0).timeout
 		$Camera3D/FadeManager.play("fade", -1, -1, true)
 		$Player/Head/Camera3D/MainHUDLayer.show()
+		global.PROGRESSION["HAD_FIRST_MEETING"] = true
 		
 		global.player.camera.make_current()
 		
