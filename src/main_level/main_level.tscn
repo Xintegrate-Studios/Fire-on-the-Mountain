@@ -2126,6 +2126,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.036355097, 0)
 mesh = SubResource("ArrayMesh_4el25")
 skeleton = NodePath("")
 
+[node name="Stone1" parent="IslandComponents/firepit" instance=ExtResource("5_n7bfk")]
+transform = Transform3D(-0.000159501, 0.380828, 0, -0.380828, -0.000159501, 0, 0, 0, 0.380828, 0.09339905, -0.22559738, -1.3533697)
+
+[node name="Stone2" parent="IslandComponents/firepit" instance=ExtResource("5_n7bfk")]
+transform = Transform3D(0.224017, -0.307971, 0, 0.307971, 0.224017, 0, 0, 0, 0.380828, -0.11439896, -0.42229843, -1.37111)
+
+[node name="Stone3" parent="IslandComponents/firepit" instance=ExtResource("5_n7bfk")]
+transform = Transform3D(-0.147384, 0.202619, -0.286799, 0.307971, 0.224017, 0, 0.168706, -0.231931, -0.250552, -1.3414993, -0.37649918, -0.7429099)
+
 [node name="Tinder" type="Node3D" parent="IslandComponents/firepit"]
 
 [node name="tinder" type="MeshInstance3D" parent="IslandComponents/firepit/Tinder"]
@@ -2152,6 +2161,9 @@ skeleton = NodePath("")
 transform = Transform3D(-0.06661399, 0.37372807, 0.08485083, -0.03435271, 0.14743206, -0.2083035, -0.21218552, -0.14119817, 0.0070859557, -0.41630173, 0.053344727, 0.26891422)
 mesh = SubResource("ArrayMesh_6y0uv")
 skeleton = NodePath("")
+
+[node name="FireParticles" parent="IslandComponents/firepit" instance=ExtResource("25_lkofv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115802765, 0.31510162, -0.12651014)
 
 [node name="PalmTree1" parent="IslandComponents" instance=ExtResource("2_goh21")]
 transform = Transform3D(0.698707, 0.138905, 0, -0.138905, 0.698707, 0, 0, 0, 0.71238, 52.0267, 5.65167, -3.76445)
@@ -2311,18 +2323,6 @@ transform = Transform3D(0.999535, 0.0304845, 0.00108052, -0.0304479, 0.99494, 0.
 
 [node name="GlassClump11" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.663825, 0.153092, 0.732052, -0.183667, 0.98222, -0.0388588, -0.724985, -0.108659, 0.68014, 38.9901, 6.65551, -6.74007)
-
-[node name="FireParticles" parent="IslandComponents" instance=ExtResource("25_lkofv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.1882, 35.8236, 6.77125)
-
-[node name="Stone5" parent="IslandComponents" instance=ExtResource("5_n7bfk")]
-transform = Transform3D(-0.000159501, 0.380828, 0, -0.380828, -0.000159501, 0, 0, 0, 0.380828, -43.979, 35.2829, 5.54439)
-
-[node name="Stone6" parent="IslandComponents" instance=ExtResource("5_n7bfk")]
-transform = Transform3D(0.224017, -0.307971, 0, 0.307971, 0.224017, 0, 0, 0, 0.380828, -44.1868, 35.0862, 5.52665)
-
-[node name="Stone7" parent="IslandComponents" instance=ExtResource("5_n7bfk")]
-transform = Transform3D(-0.147384, 0.202619, -0.286799, 0.307971, 0.224017, 0, 0.168706, -0.231931, -0.250552, -45.4139, 35.132, 6.15485)
 
 [node name="PineTree7" parent="IslandComponents" instance=ExtResource("16_n0lbn")]
 transform = Transform3D(0.669331, 0, 0, 0, 0.669331, 0, 0, 0, 0.669331, 24.385, 7.01647, -12.0434)
