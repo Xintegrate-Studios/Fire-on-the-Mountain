@@ -101,7 +101,6 @@ func _on_conch_use_cutscene_animation_finished(_anim_name: StringName) -> void:
 func _on_conch_task_timeout() -> void:
 	if !global.PROGRESSION["CONCH_INTERACT_FIRST_TIME"] == true:
 		$Tasks/ConchTask/Arrow.show()
-	print("task: conch")
 	task_system.task("BLOW_CONCH")
 
 
@@ -120,7 +119,5 @@ func _on_dialogue_animations_animation_finished(anim_name: StringName) -> void:
 		
 		await get_tree().create_timer(2.0).timeout
 		
-		print("task: collect 10 wood")
 		task_system.task("COLLECT_10_WOOD")
 		global.player.wood_plank_info_anim.play(&"in")
-		
