@@ -121,3 +121,8 @@ func _on_dialogue_animations_animation_finished(anim_name: StringName) -> void:
 		
 		task_system.task("COLLECT_10_WOOD")
 		global.player.wood_plank_info_anim.play(&"in")
+
+
+func _on_climb_mountain_area_body_entered(body: Node3D) -> void:
+	if body.is_in_group(&"PlayerBody"):
+		pass
