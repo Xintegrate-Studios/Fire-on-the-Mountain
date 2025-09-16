@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://biqj67tjrslek"]
+[gd_scene load_steps=83 format=3 uid="uid://biqj67tjrslek"]
 
 [ext_resource type="Script" uid="uid://dvav26tqc5pit" path="res://src/main_level/main_level.gd" id="1_fpkve"]
 [ext_resource type="PackedScene" uid="uid://bm3l1fnoqw1bx" path="res://ast/models/island/island.tscn" id="1_scctx"]
@@ -935,6 +935,15 @@ _data = {
 &"main": SubResource("Animation_bvxkv")
 }
 
+[sub_resource type="InputEventAction" id="InputEventAction_igp1d"]
+action = &"Interact"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tdn2i"]
+viewport_path = NodePath("Contents/UI/SubViewport")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_igp1d"]
+radius = 30.435081
+
 [sub_resource type="Animation" id="Animation_44kkc"]
 resource_name = "main"
 length = 22.0
@@ -1691,6 +1700,51 @@ visible_ratio = 0.0
 [node name="island" parent="IslandComponents" instance=ExtResource("1_scctx")]
 transform = Transform3D(3.2622, 0, 0, 0, 3.2622, 0, 0, 0, 3.2622, 0, 0.685446, 0)
 
+[node name="InteractableComponent" type="Node3D" parent="IslandComponents" node_paths=PackedStringArray("Contents_Node", "UI_Sprite_Node", "SubViewport_Node")]
+script = ExtResource("36_44kkc")
+Contents_Node = NodePath("Contents")
+UI_Sprite_Node = NodePath("Contents/UI")
+SubViewport_Node = NodePath("Contents/UI/SubViewport")
+ActionToPress = SubResource("InputEventAction_igp1d")
+
+[node name="Contents" type="Node3D" parent="IslandComponents/InteractableComponent"]
+
+[node name="UI" type="Sprite3D" parent="IslandComponents/InteractableComponent/Contents"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+billboard = 1
+no_depth_test = true
+render_priority = 6
+texture = SubResource("ViewportTexture_tdn2i")
+
+[node name="SubViewport" type="SubViewport" parent="IslandComponents/InteractableComponent/Contents/UI"]
+transparent_bg = true
+gui_disable_input = true
+size = Vector2i(1150, 1150)
+
+[node name="Key" type="Label" parent="IslandComponents/InteractableComponent/Contents/UI/SubViewport"]
+visible = false
+offset_left = 500.0
+offset_top = 500.0
+offset_right = 629.0
+offset_bottom = 646.0
+theme_override_fonts/font = ExtResource("27_1u3bp")
+theme_override_font_sizes/font_size = 106
+text = "[E]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerAreaBox" type="Area3D" parent="IslandComponents/InteractableComponent/Contents"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/InteractableComponent/Contents/PlayerAreaBox"]
+transform = Transform3D(0.80669224, 0, 0.59097177, 0, 1, 0, -0.59097177, 0, 0.80669224, -41.361557, 8.738373, 13.585163)
+shape = SubResource("SphereShape3D_igp1d")
+
+[node name="MimicRaycastBox" type="Area3D" parent="IslandComponents/InteractableComponent/Contents"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/InteractableComponent/Contents/MimicRaycastBox"]
+transform = Transform3D(0.80669224, 0, 0.59097177, 0, 1, 0, -0.59097177, 0, 0.80669224, -41.361557, 8.738373, 13.585163)
+shape = SubResource("SphereShape3D_igp1d")
+
 [node name="Wood Planks" type="Node" parent="IslandComponents"]
 
 [node name="WoodPlank1" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
@@ -2066,4 +2120,8 @@ fov = 100.0
 [connection signal="pressed" from="Camera3D/PauseLayer/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="Camera3D/PauseLayer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Camera3D/PauseLayer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="body_entered" from="IslandComponents/InteractableComponent/Contents/PlayerAreaBox" to="IslandComponents/InteractableComponent" method="_on_player_area_box_body_entered"]
+[connection signal="body_exited" from="IslandComponents/InteractableComponent/Contents/PlayerAreaBox" to="IslandComponents/InteractableComponent" method="_on_player_area_box_body_exited"]
+[connection signal="area_entered" from="IslandComponents/InteractableComponent/Contents/MimicRaycastBox" to="IslandComponents/InteractableComponent" method="_on_mimic_raycast_box_area_entered"]
+[connection signal="area_exited" from="IslandComponents/InteractableComponent/Contents/MimicRaycastBox" to="IslandComponents/InteractableComponent" method="_on_mimic_raycast_box_area_exited"]
 [connection signal="animation_finished" from="ConchUseCutscene" to="." method="_on_conch_use_cutscene_animation_finished"]

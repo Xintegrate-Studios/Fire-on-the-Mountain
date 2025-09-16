@@ -15,12 +15,17 @@ var fire_fuel : float = 100.0
 
 var PROGRESSION : Dictionary = {
 	"CONCH_INTERACT_FIRST_TIME" : false,
-	"HAD_FIRST_MEETING" : false
+	"HAD_FIRST_MEETING" : false,
+	"FIRST_TIME_LIGHTING_FIRE" : true,
 }
 var wood_planks : int = 0:
 	set(value):
 		wood_planks = value
 		player.wood_plank_plus_animation()
+		
+		if value == 10 and PROGRESSION["FIRST_TIME_LIGHTING_FIRE"]:
+			PROGRESSION["FIRST_TIME_LIGHTING_FIRE"] = false
+			task_system.task("LIGHT_FIRE")
 
 func pause():
 	paused = !paused
