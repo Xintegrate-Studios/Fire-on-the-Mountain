@@ -179,4 +179,5 @@ func _on_fire_fuel_depleting_timer_timeout() -> void:
 	update_bar("FIRE_FUEL", global.fire_fuel)
 
 func wood_plank_plus_animation() -> void:
+	$Head/Camera3D/ItemInfoLayer/MainLayer/WoodPlankInfo/WoodPlankPlusAnimation.seek(0.0, true)
 	$Head/Camera3D/ItemInfoLayer/MainLayer/WoodPlankInfo/WoodPlankPlusAnimation.play("main")
