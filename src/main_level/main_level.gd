@@ -42,11 +42,13 @@ func _on_play_button_pressed() -> void:
 	$Camera3D/StartGameNoticeLayer.show()
 	$Camera3D/StartGameNoticeLayer/MainLayer/StartGameNoticeAnimation.play("main")
 	
-	
 	await get_tree().create_timer(3.0).timeout
 	global.player_active = true
 	$"Player/Head/Camera3D".make_current()
 	$"Player/Head/Camera3D/MainHUDLayer".show()
+	
+	$IslandComponents/firepit/FireParticles.hide()
+	$IslandComponents/firepit/Tinder.hide()
 	
 	$Camera3D/FadeManager.play("fade", -1, -0.35, true)
 	
@@ -132,3 +134,18 @@ func _on_climb_mountain_area_body_entered(body: Node3D) -> void:
 func _on_climb_mountain_area_body_exited(body: Node3D) -> void:
 	if body.is_in_group(&"PlayerBody"):
 		global.is_in_climb_mountain_area = false
+
+func go_to_top_of_mountain():
+	$Camera3D/FadeManager.play("fade")
+	global.player_active = false
+	
+	await get_tree().create_timer(1.0).timeout
+	
+	global.player.head.rotation_degrees = Vector3(0.0, -93.9, 0.0)
+	global.player.camera.rotation_degrees = Vector3(-4.8, 0.0, 0.0)
+	global.player.global_position = $PlayerMountainSpawn.global_position
+	global.player_active = true
+	
+	await get_tree().create_timer(1.0).timeout
+	
+	$Camera3D/FadeManager.play("fade", -1, -0.35, true)

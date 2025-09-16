@@ -1527,6 +1527,9 @@ font_size = 57
 [node name="Player" parent="." instance=ExtResource("3_tw2e2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.423, 8.38549, 0)
 
+[node name="PlayerMountainSpawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.806023, 35.830154, 6.648554)
+
 [node name="conch" parent="." instance=ExtResource("35_63h44")]
 transform = Transform3D(0.11878704, -0.06269031, -0.14317591, 0.14828607, -0.011639647, 0.12812304, -0.049402945, -0.18567301, 0.04030977, 33.2969, 9.04649, -1.36873)
 
@@ -1580,7 +1583,7 @@ visible = false
 mesh = SubResource("BoxMesh_lkofv")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.034574, 0.0785157, -0.996313, 0.0234201, 0.996572, 0.0793488, 0.999128, -0.0260772, 0.0326166, -48.7406, 37.3539, 4.49816)
+transform = Transform3D(0.03315517, 0.08015486, -0.99623066, 0, 0.99677914, 0.08019891, 0.99945045, -0.002659009, 0.033048358, -48.7406, 37.3539, 4.49816)
 current = true
 
 [node name="MenuAnimation" type="AnimationPlayer" parent="Camera3D"]
