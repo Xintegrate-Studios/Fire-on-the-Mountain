@@ -253,13 +253,14 @@ _data = {
 &"main": SubResource("Animation_jtmj1")
 }
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("head", "camera", "task_ui_layer", "wood_plank_info_anim", "wood_plank_info_label") groups=["PlayerBody"]]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("head", "camera", "task_ui_layer", "wood_plank_info_anim", "wood_plank_info_label", "climb_mountain_ui") groups=["PlayerBody"]]
 script = ExtResource("1_r5cts")
 head = NodePath("Head")
 camera = NodePath("Head/Camera3D")
 task_ui_layer = NodePath("Head/Camera3D/TasksUILayer")
 wood_plank_info_anim = NodePath("Head/Camera3D/ItemInfoLayer/MainLayer/WoodPlankInfo/WoodPlankInfoAnim")
 wood_plank_info_label = NodePath("Head/Camera3D/ItemInfoLayer/MainLayer/WoodPlankInfo/Label")
+climb_mountain_ui = NodePath("Head/Camera3D/MainHUDLayer/ClimbMountainUI")
 
 [node name="Timers" type="Node" parent="."]
 
@@ -356,6 +357,33 @@ modulate = Color(1, 1, 1, 0.392157)
 position = Vector2(17, 575)
 scale = Vector2(0.0429688, 0.0429688)
 texture = ExtResource("5_u2a3t")
+
+[node name="ClimbMountainUI" type="Control" parent="Head/Camera3D/MainHUDLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Text" type="Label" parent="Head/Camera3D/MainHUDLayer/ClimbMountainUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -39.0
+offset_right = 80.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("6_v7rlw")
+text = "[E] to climb mountain"
 
 [node name="TasksUILayer" type="CanvasLayer" parent="Head/Camera3D"]
 

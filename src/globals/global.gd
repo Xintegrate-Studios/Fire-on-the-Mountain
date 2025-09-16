@@ -4,6 +4,10 @@ var player_active : bool = true
 var paused : bool = false
 
 var did_tutorial : bool = false
+var is_in_climb_mountain_area : bool = false:
+	set(value):
+		is_in_climb_mountain_area = value
+		player.climb_mountain_ui.visible = value
 
 var world
 var player

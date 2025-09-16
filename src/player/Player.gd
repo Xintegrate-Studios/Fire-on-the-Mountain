@@ -56,6 +56,7 @@ extends CharacterBody3D
 
 @export var wood_plank_info_anim : AnimationPlayer
 @export var wood_plank_info_label : Label
+@export var climb_mountain_ui : Control
 
 #region init
 
@@ -73,7 +74,7 @@ func _ready():
 
 #endregion
 
-#region physics
+#region physics and process
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -149,7 +150,6 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	return pos
 
-#endregion
 
 func _process(_delta: float) -> void:
 	wood_plank_info_label.text = "WOOD PLANKS:  " + str(global.wood_planks)
@@ -164,6 +164,13 @@ func update_bar(bar_name : String, new_value : float):
 		tween.tween_property($Head/Camera3D/MainHUDLayer/SavageryBar, "value", new_value, 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
 	else:
 		print("BAR NAME NOT RECOGNISED!")
+
+#endregion
+
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("Interact") and global.is_in_climb_mountain_area:
+		print("climbed mountain")
 
 func display_task(text : String):
 	$Head/Camera3D/TasksUILayer/Task.text = text

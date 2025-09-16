@@ -125,4 +125,8 @@ func _on_dialogue_animations_animation_finished(anim_name: StringName) -> void:
 
 func _on_climb_mountain_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group(&"PlayerBody"):
-		pass
+		global.is_in_climb_mountain_area = true
+
+func _on_climb_mountain_area_body_exited(body: Node3D) -> void:
+	if body.is_in_group(&"PlayerBody"):
+		global.is_in_climb_mountain_area = false
