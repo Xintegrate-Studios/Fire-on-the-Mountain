@@ -177,9 +177,28 @@ func _on_firepit_interacted() -> void:
 			global.wood_planks -= 10
 			$IslandComponents/firepit/Tinder.show()
 			$Audio/WoodCollect.play()
+			global.wood_placed = true
+			
+			# change interactable component text
+			$IslandComponents/firepit/InteractableComponent/Contents/UI/SubViewport/Key.text = "[E] to light fire"
+			
 	else:
 		if !global.fire_lighted:
-			pass
+			global.fire_lighted = true
+			
+			$Camera3D/FadeManager.play("fade")
+			global.player_active = false
+			
+			await get_tree().create_timer(1.0).timeout
+			
+			$IslandComponents/firepit/FireParticles.show()
+			
+			$Camera3D/FadeManager.play("fade", -1, -0.35, true)
+			global.player_active = true
+			
+			# hide the text bcs its no longer needed
+			$IslandComponents/firepit/InteractableComponent/Contents/UI/SubViewport/Key.hide()
+			
 
 func make_wood_sound():
 	$Audio/WoodCollect.play()

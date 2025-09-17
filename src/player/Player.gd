@@ -68,7 +68,6 @@ func _ready():
 	# init bar values
 	$Head/Camera3D/MainHUDLayer/SavageryBar.value = global.savagery_level
 	$Head/Camera3D/MainHUDLayer/FireFuelBar.value = global.fire_fuel
-	$Head/Camera3D/MainHUDLayer/ConchBar.value = global.conch_effectiveness
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # lock mouse
 
@@ -178,9 +177,16 @@ func _on_savegery_increase_timer_timeout() -> void:
 	update_bar("SAVAGERY", global.savagery_level)
 
 func _on_fire_fuel_depleting_timer_timeout() -> void:
-	global.fire_fuel -= 7
-	update_bar("FIRE_FUEL", global.fire_fuel)
+	if global.fire_lighted:
+		global.fire_fuel -= 7
+		update_bar("FIRE_FUEL", global.fire_fuel)
 
 func wood_plank_plus_animation() -> void:
 	$Head/Camera3D/ItemInfoLayer/MainLayer/WoodPlankInfo/WoodPlankPlusAnimation.seek(0.0, true)
 	$Head/Camera3D/ItemInfoLayer/MainLayer/WoodPlankInfo/WoodPlankPlusAnimation.play("main")
+
+func display_quick_message(message : String):
+	$Head/Camera3D/QuickMessageLayer/MainLayer/Message.text = message
+	
+	$Head/Camera3D/QuickMessageLayer/PopupAnimation.seek(0.0, true) # reset animation to previous state (if it's being spammed)
+	$Head/Camera3D/QuickMessageLayer/PopupAnimation.play("main")

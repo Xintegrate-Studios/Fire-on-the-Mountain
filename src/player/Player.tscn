@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bsljbif1rji7e"]
+[gd_scene load_steps=28 format=3 uid="uid://bsljbif1rji7e"]
 
 [ext_resource type="Texture2D" uid="uid://rhsd3pbxyvi3" path="res://ast/textures/crosshair.png" id="1_0mcnq"]
 [ext_resource type="Script" uid="uid://1cvtdgkq7sng" path="res://src/player/Player.gd" id="1_r5cts"]
@@ -149,6 +149,67 @@ _data = {
 &"main": SubResource("Animation_565yv")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jtmj1"]
+bg_color = Color(0, 0, 0, 0.45882353)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 7.0
+expand_margin_top = 5.0
+expand_margin_right = 7.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="Animation" id="Animation_ebyyx"]
+resource_name = "main"
+length = 4.0
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainLayer/Message:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainLayer/Message:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 3.3333333, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bj1ma"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainLayer/Message:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bj1ma"]
+_data = {
+&"RESET": SubResource("Animation_bj1ma"),
+&"main": SubResource("Animation_ebyyx")
+}
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5qoq"]
 content_margin_left = 0.0
 content_margin_top = 0.0
@@ -268,7 +329,7 @@ climb_mountain_ui = NodePath("Head/Camera3D/MainHUDLayer/ClimbMountainUI")
 wait_time = 30.0
 
 [node name="FireFuelDepletingTimer" type="Timer" parent="Timers"]
-wait_time = 20.0
+wait_time = 40.0
 
 [node name="Body" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -330,6 +391,7 @@ value = 52.37
 show_percentage = false
 
 [node name="ConchBar" type="ProgressBar" parent="Head/Camera3D/MainHUDLayer"]
+visible = false
 offset_left = 33.0
 offset_top = 564.0
 offset_right = 159.0
@@ -353,6 +415,7 @@ scale = Vector2(0.0240625, 0.0240625)
 texture = ExtResource("4_t0sa8")
 
 [node name="Conch" type="Sprite2D" parent="Head/Camera3D/MainHUDLayer"]
+visible = false
 modulate = Color(1, 1, 1, 0.392157)
 position = Vector2(17, 575)
 scale = Vector2(0.0429688, 0.0429688)
@@ -415,6 +478,44 @@ visible_ratio = 0.0
 [node name="TaskAnimation" type="AnimationPlayer" parent="Head/Camera3D/TasksUILayer"]
 libraries = {
 &"": SubResource("AnimationLibrary_v7rlw")
+}
+
+[node name="QuickMessageLayer" type="CanvasLayer" parent="Head/Camera3D"]
+
+[node name="MainLayer" type="Control" parent="Head/Camera3D/QuickMessageLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Message" type="Label" parent="Head/Camera3D/QuickMessageLayer/MainLayer"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -95.0
+offset_top = -79.0
+offset_right = 95.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_v7rlw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jtmj1")
+text = "Call a meeting using the 
+conch before collecting wood!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PopupAnimation" type="AnimationPlayer" parent="Head/Camera3D/QuickMessageLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_bj1ma")
 }
 
 [node name="ItemInfoLayer" type="CanvasLayer" parent="Head/Camera3D"]
