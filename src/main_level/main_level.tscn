@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=4 uid="uid://biqj67tjrslek"]
+[gd_scene load_steps=105 format=4 uid="uid://biqj67tjrslek"]
 
 [ext_resource type="Script" uid="uid://dvav26tqc5pit" path="res://src/main_level/main_level.gd" id="1_fpkve"]
 [ext_resource type="PackedScene" uid="uid://bm3l1fnoqw1bx" path="res://ast/models/island/island.tscn" id="1_scctx"]
@@ -592,21 +592,6 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 4.0
 
-[sub_resource type="Animation" id="Animation_1j151"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Characters/1/NameLabel_Simon:outline_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_tdn2i"]
 resource_name = "first_conch"
 length = 73.0
@@ -818,7 +803,6 @@ tracks/15/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1j151"]
 _data = {
-&"RESET": SubResource("Animation_1j151"),
 &"first_conch": SubResource("Animation_tdn2i")
 }
 
@@ -1411,7 +1395,7 @@ _data = {
 &"main": SubResource("Animation_44kkc")
 }
 
-[node name="World" type="Node3D" node_paths=PackedStringArray("Character_1", "Character_2", "Character_3", "Character_4", "Character_5", "Character_6", "Character_7", "Character_8", "Character_9", "Character_10", "firepit_tinder")]
+[node name="World" type="Node3D" node_paths=PackedStringArray("Character_1", "Character_2", "Character_3", "Character_4", "Character_5", "Character_6", "Character_7", "Character_8", "Character_9", "Character_10", "firepit_tinder", "HideCharactersList")]
 process_mode = 1
 script = ExtResource("1_fpkve")
 Character_1 = NodePath("Characters/1")
@@ -1425,6 +1409,7 @@ Character_8 = NodePath("Characters/8")
 Character_9 = NodePath("Characters/9")
 Character_10 = NodePath("Characters/10")
 firepit_tinder = NodePath("IslandComponents/firepit")
+HideCharactersList = [NodePath("Characters/1"), NodePath("Characters/2"), NodePath("Characters/3"), NodePath("Characters/4"), NodePath("Characters/5"), NodePath("Characters/7"), NodePath("Characters/8"), NodePath("Characters/9")]
 
 [node name="Tasks" type="Node" parent="."]
 
@@ -1800,8 +1785,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("27_1u3bp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_kftxd")
-text = "...Isn't very substantial.
-Right everyone. We need to get to work."
+text = "Alright everyone, we need to get organised if we want to be rescued."
 horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters = 0
@@ -1811,7 +1795,6 @@ visible_ratio = 0.0
 libraries = {
 &"": SubResource("AnimationLibrary_1j151")
 }
-speed_scale = 20.0
 
 [node name="TutorialLayer" type="CanvasLayer" parent="Camera3D"]
 
@@ -2556,7 +2539,6 @@ transform = Transform3D(0.425574, 0, -0.904924, 0, 1, 0, 0.904924, 0, 0.425574, 
 libraries = {
 &"": SubResource("AnimationLibrary_tchnu")
 }
-speed_scale = 20.0
 
 [node name="Camera3D" type="Camera3D" parent="ConchUseCutscene"]
 transform = Transform3D(0.822768, 0.08544227, 0.5619184, -0.12599494, 0.99145705, 0.0337277, -0.55423635, -0.09854893, 0.8265047, 34.0194, 10.1239, -0.458998)

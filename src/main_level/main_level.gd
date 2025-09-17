@@ -17,6 +17,8 @@ var default_conch_transform
 # Environment
 @export var firepit_tinder : Node3D
 
+@export var HideCharactersList : Array[Node3D]
+
 
 func _ready() -> void:
 	default_conch_transform = $conch.transform
@@ -128,6 +130,8 @@ func _on_dialogue_animations_animation_finished(anim_name: StringName) -> void:
 	
 	await get_tree().create_timer(1.0).timeout
 	$Camera3D/FadeManager.play("fade", -1, -1, true)
+	for node in HideCharactersList:
+		node.hide()
 	$Player/Head/Camera3D/MainHUDLayer.show()
 	
 	global.PROGRESSION["HAD_FIRST_MEETING"] = true
