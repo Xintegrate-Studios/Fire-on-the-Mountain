@@ -168,10 +168,6 @@ func update_bar(bar_name : String, new_value : float):
 #endregion
 
 
-func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("Interact") and global.is_in_climb_mountain_area:
-		global.world.go_to_top_of_mountain()
-
 func display_task(text : String):
 	$Head/Camera3D/TasksUILayer/Task.text = text
 	$Head/Camera3D/TasksUILayer/TaskAnimation.play("main")

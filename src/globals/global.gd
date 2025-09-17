@@ -17,6 +17,8 @@ var savagery_level : float = 10.0
 var conch_effectiveness : float = 100.0
 var fire_fuel : float = 100.0
 
+var is_on_top_of_mountain : bool = false
+
 var wood_placed : bool = false
 var fire_lighted : bool = false
 
@@ -27,8 +29,11 @@ var PROGRESSION : Dictionary = {
 }
 var wood_planks : int = 0:
 	set(value):
+		var old_value = wood_planks
 		wood_planks = value
-		player.wood_plank_plus_animation()
+		
+		if wood_planks > old_value:
+			player.wood_plank_plus_animation()
 		
 		if value == 10 and PROGRESSION["FIRST_TIME_LIGHTING_FIRE"]:
 			PROGRESSION["FIRST_TIME_LIGHTING_FIRE"] = false
