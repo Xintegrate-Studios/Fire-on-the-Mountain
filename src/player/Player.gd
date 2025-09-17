@@ -155,9 +155,7 @@ func _process(_delta: float) -> void:
 
 func update_bar(bar_name : String, new_value : float):
 	var tween = get_tree().create_tween()
-	if bar_name == "CONCH":
-		tween.tween_property($Head/Camera3D/MainHUDLayer/ConchBar, "value", new_value, 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
-	elif bar_name == "FIRE_FUEL":
+	if bar_name == "FIRE_FUEL":
 		tween.tween_property($Head/Camera3D/MainHUDLayer/FireFuelBar, "value", new_value, 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
 	elif bar_name == "SAVAGERY":
 		tween.tween_property($Head/Camera3D/MainHUDLayer/SavageryBar, "value", new_value, 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)

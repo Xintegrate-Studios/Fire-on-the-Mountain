@@ -156,9 +156,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 expand_margin_left = 7.0
-expand_margin_top = 5.0
 expand_margin_right = 7.0
-expand_margin_bottom = 5.0
 
 [sub_resource type="Animation" id="Animation_ebyyx"]
 resource_name = "main"
@@ -493,7 +491,6 @@ mouse_filter = 2
 
 [node name="Message" type="Label" parent="Head/Camera3D/QuickMessageLayer/MainLayer"]
 visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5

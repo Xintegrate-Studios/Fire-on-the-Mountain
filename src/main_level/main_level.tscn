@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=4 uid="uid://biqj67tjrslek"]
+[gd_scene load_steps=106 format=4 uid="uid://biqj67tjrslek"]
 
 [ext_resource type="Script" uid="uid://dvav26tqc5pit" path="res://src/main_level/main_level.gd" id="1_fpkve"]
 [ext_resource type="PackedScene" uid="uid://bm3l1fnoqw1bx" path="res://ast/models/island/island.tscn" id="1_scctx"]
@@ -927,6 +927,9 @@ size = Vector3(2.1655273, 4.6098633, 13.030151)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1j151"]
 size = Vector3(2.7683105, 6.209717, 6.8163757)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mgnnu"]
+size = Vector3(13.944519, 2.1053467, 17.02684)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_igp1d"]
 size = Vector3(2.7683105, 6.209717, 13.030151)
@@ -2088,6 +2091,11 @@ debug_color = Color(1, 0, 0, 1)
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="IslandComponents/IslandCollision"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -43.267464, 35.94513, 11.225624)
 shape = SubResource("BoxShape3D_1j151")
+debug_color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="IslandComponents/IslandCollision"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -48.372696, 33.490253, 7.2535477)
+shape = SubResource("BoxShape3D_mgnnu")
 debug_color = Color(1, 0, 0, 1)
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="IslandComponents/IslandCollision"]
