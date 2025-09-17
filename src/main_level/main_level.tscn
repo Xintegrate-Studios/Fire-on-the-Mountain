@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=4 uid="uid://biqj67tjrslek"]
+[gd_scene load_steps=101 format=4 uid="uid://biqj67tjrslek"]
 
 [ext_resource type="Script" uid="uid://dvav26tqc5pit" path="res://src/main_level/main_level.gd" id="1_fpkve"]
 [ext_resource type="PackedScene" uid="uid://bm3l1fnoqw1bx" path="res://ast/models/island/island.tscn" id="1_scctx"]
@@ -934,6 +934,21 @@ _data = {
 &"main": SubResource("Animation_bvxkv")
 }
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_kftxd"]
+radius = 31.610643
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kftxd"]
+size = Vector3(2.1655273, 4.6098633, 13.030151)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1j151"]
+size = Vector3(2.7683105, 6.209717, 6.8163757)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_igp1d"]
+size = Vector3(2.7683105, 6.209717, 13.030151)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tdn2i"]
+size = Vector3(2.1655273, 6.333374, 13.030151)
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_igp1d"]
 radius = 31.7
 
@@ -1383,14 +1398,6 @@ _data = {
 &"main": SubResource("Animation_44kkc")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kftxd"]
-transparency = 4
-cull_mode = 2
-stencil_flags = 6
-stencil_color = Color(1, 0, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_igp1d"]
-
 [node name="World" type="Node3D" node_paths=PackedStringArray("Character_1", "Character_2", "Character_3", "Character_4", "Character_5", "Character_6", "Character_7", "Character_8", "Character_9", "Character_10", "firepit_tinder")]
 process_mode = 1
 script = ExtResource("1_fpkve")
@@ -1453,6 +1460,7 @@ shadow_enabled = true
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.611401, 0.152959)
+visible = false
 mesh = SubResource("PlaneMesh_n4qwq")
 
 [node name="Characters" type="Node3D" parent="."]
@@ -2063,6 +2071,38 @@ visible_ratio = 0.0
 
 [node name="IslandComponents" type="Node" parent="."]
 
+[node name="IslandCollision" type="StaticBody3D" parent="IslandComponents"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/IslandCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.590042, -1.9399033, 13.564869)
+shape = SubResource("SphereShape3D_kftxd")
+debug_color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="IslandComponents/IslandCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.782986, 35.145203, 7.882695)
+shape = SubResource("BoxShape3D_kftxd")
+debug_color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="IslandComponents/IslandCollision"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -43.267464, 35.94513, 11.225624)
+shape = SubResource("BoxShape3D_1j151")
+debug_color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="IslandComponents/IslandCollision"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -47.685753, 35.94513, 13.122332)
+shape = SubResource("BoxShape3D_igp1d")
+debug_color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="IslandComponents/IslandCollision"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -48.449905, 36.006958, 3.623415)
+shape = SubResource("BoxShape3D_tdn2i")
+debug_color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="IslandComponents/IslandCollision"]
+transform = Transform3D(-0.9955043, 0, -0.09471636, 0, 1, 0, 0.09471636, 0, -0.9955043, -41.25677, 36.742218, 7.8638167)
+shape = SubResource("BoxShape3D_kftxd")
+debug_color = Color(1, 0, 0, 1)
+
 [node name="island" parent="IslandComponents" instance=ExtResource("1_scctx")]
 transform = Transform3D(3.2622, 0, 0, 0, 3.2622, 0, 0, 0, 3.2622, 0, 0.685446, 0)
 
@@ -2468,11 +2508,6 @@ transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 0.99999994, 35.46132, 9.
 [node name="Camera3D" type="Camera3D" parent="FirstMeetingCutscene/Head"]
 transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000004, 0, 0, 0)
 fov = 100.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85929155, -62.976643)
-material_override = SubResource("StandardMaterial3D_kftxd")
-mesh = SubResource("BoxMesh_igp1d")
 
 [connection signal="timeout" from="Timeline/ConchTask" to="." method="_on_conch_task_timeout"]
 [connection signal="action_triggered" from="conch/ConchInteractableComponent" to="." method="_on_conch_used"]
