@@ -208,7 +208,7 @@ func _on_firepit_interacted() -> void:
 			global.wood_placed = true
 			
 			# Update interactable text
-			$IslandComponents/firepit/InteractableComponent/Contents/UI/SubViewport/Key.text = "[E] to light fire"
+			$IslandComponents/firepit/InteractableComponent/Contents/UI/SubViewport/Key.text = "[F] to light fire"
 		else:
 			global.player.display_quick_message("Not enough wood planks!")
 	else:
@@ -234,3 +234,16 @@ func make_wood_sound():
 	$Audio/WoodCollect.play()
 
 #endregion
+
+
+func _on_climb_down_mountain_area_body_entered(body: Node3D) -> void:
+	if body.is_in_group(&"PlayerBody"):
+		print("in")
+
+
+
+
+
+func _on_climb_down_mountain_area_body_exited(body: Node3D) -> void:
+	if body.is_in_group(&"PlayerBody"):
+		print("----        OUT")

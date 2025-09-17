@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=4 uid="uid://biqj67tjrslek"]
+[gd_scene load_steps=111 format=4 uid="uid://biqj67tjrslek"]
 
 [ext_resource type="Script" uid="uid://dvav26tqc5pit" path="res://src/main_level/main_level.gd" id="1_fpkve"]
 [ext_resource type="PackedScene" uid="uid://bm3l1fnoqw1bx" path="res://ast/models/island/island.tscn" id="1_scctx"]
@@ -919,6 +919,9 @@ _data = {
 &"main": SubResource("Animation_bvxkv")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_mgnnu"]
+size = Vector3(13.944519, 2.1053467, 17.02684)
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_kftxd"]
 radius = 31.610643
 
@@ -928,9 +931,6 @@ size = Vector3(2.1655273, 4.6098633, 13.030151)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1j151"]
 size = Vector3(2.7683105, 6.209717, 6.8163757)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_mgnnu"]
-size = Vector3(13.944519, 2.1053467, 17.02684)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_igp1d"]
 size = Vector3(2.7683105, 6.209717, 13.030151)
 
@@ -939,6 +939,21 @@ size = Vector3(2.1655273, 6.333374, 13.030151)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_igp1d"]
 radius = 31.7
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nxijr"]
+size = Vector3(2.3397217, 4.6098633, 13.030151)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rrs32"]
+size = Vector3(3.1004639, 6.209717, 7.113266)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ibu3"]
+size = Vector3(3.0159912, 6.209717, 13.030151)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d1ok4"]
+size = Vector3(2.4691772, 6.333374, 13.030151)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yhvva"]
+size = Vector3(2.5240479, 4.6098633, 13.030151)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8r2yi"]
 resource_name = "Material"
@@ -1300,8 +1315,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tdyi0")
 
-[sub_resource type="InputEventAction" id="InputEventAction_kftxd"]
-action = &"Interact"
+[sub_resource type="InputEventAction" id="InputEventAction_igp1d"]
+action = &"Interact2"
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_igp1d"]
 viewport_path = NodePath("IslandComponents/firepit/InteractableComponent/Contents/UI/SubViewport")
@@ -2076,45 +2091,46 @@ visible_ratio = 0.0
 
 [node name="IslandComponents" type="Node" parent="."]
 
-[node name="IslandCollision" type="StaticBody3D" parent="IslandComponents"]
+[node name="island" parent="IslandComponents" instance=ExtResource("1_scctx")]
+transform = Transform3D(3.2622, 0, 0, 0, 3.2622, 0, 0, 0, 3.2622, 0, 0.685446, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/IslandCollision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.590042, -1.9399033, 13.564869)
-shape = SubResource("SphereShape3D_kftxd")
-debug_color = Color(1, 0, 0, 1)
+[node name="IslandCollision" type="StaticBody3D" parent="IslandComponents/island"]
+transform = Transform3D(0.30654156, 0, 0, 0, 0.30654156, 0, 0, 0, 0.30654156, 0, -0.2101177, 0)
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="IslandComponents/IslandCollision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.782986, 35.145203, 7.882695)
-shape = SubResource("BoxShape3D_kftxd")
-debug_color = Color(1, 0, 0, 1)
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="IslandComponents/IslandCollision"]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -43.267464, 35.94513, 11.225624)
-shape = SubResource("BoxShape3D_1j151")
-debug_color = Color(1, 0, 0, 1)
-
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="IslandComponents/IslandCollision"]
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -48.372696, 33.490253, 7.2535477)
 shape = SubResource("BoxShape3D_mgnnu")
 debug_color = Color(1, 0, 0, 1)
 
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="IslandComponents/IslandCollision"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.590042, -1.9399033, 13.564869)
+shape = SubResource("SphereShape3D_kftxd")
+debug_color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.782986, 35.145203, 7.882695)
+shape = SubResource("BoxShape3D_kftxd")
+debug_color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -43.267464, 35.94513, 11.225624)
+shape = SubResource("BoxShape3D_1j151")
+debug_color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -47.685753, 35.94513, 13.122332)
 shape = SubResource("BoxShape3D_igp1d")
 debug_color = Color(1, 0, 0, 1)
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="IslandComponents/IslandCollision"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -48.449905, 36.006958, 3.623415)
 shape = SubResource("BoxShape3D_tdn2i")
 debug_color = Color(1, 0, 0, 1)
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="IslandComponents/IslandCollision"]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
 transform = Transform3D(-0.9955043, 0, -0.09471636, 0, 1, 0, 0.09471636, 0, -0.9955043, -41.25677, 36.742218, 7.8638167)
 shape = SubResource("BoxShape3D_kftxd")
 debug_color = Color(1, 0, 0, 1)
-
-[node name="island" parent="IslandComponents" instance=ExtResource("1_scctx")]
-transform = Transform3D(3.2622, 0, 0, 0, 3.2622, 0, 0, 0, 3.2622, 0, 0.685446, 0)
 
 [node name="ClimbMountainArea" type="Area3D" parent="IslandComponents"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.682205, 0, 15.832413)
@@ -2122,6 +2138,128 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.682205, 0, 15.832413)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/ClimbMountainArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4179459, 8.136528, -2.6705399)
 shape = SubResource("SphereShape3D_igp1d")
+
+[node name="ClimbDownMountainArea" type="Area3D" parent="IslandComponents"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.682205, 0, 15.832413)
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="IslandComponents/ClimbDownMountainArea"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -10.0136795, 35.1452, -7.949718)
+shape = SubResource("BoxShape3D_nxijr")
+debug_color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="IslandComponents/ClimbDownMountainArea"]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 0.99999994, 0, 0.99999994, 0, -4.3711385e-08, 0.2663002, 35.945126, -4.7728662)
+shape = SubResource("BoxShape3D_rrs32")
+debug_color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="IslandComponents/ClimbDownMountainArea"]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 0.99999994, 0, 0.99999994, 0, -4.3711385e-08, -4.003544, 35.945126, -2.8339224)
+shape = SubResource("BoxShape3D_1ibu3")
+debug_color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="IslandComponents/ClimbDownMountainArea"]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 0.99999994, 0, 0.99999994, 0, -4.3711385e-08, -4.7676964, 36.006954, -12.057173)
+shape = SubResource("BoxShape3D_d1ok4")
+debug_color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="IslandComponents/ClimbDownMountainArea"]
+transform = Transform3D(-0.99550426, 0, -0.094716355, 0, 0.99999994, 0, 0.094716355, 0, -0.99550426, 2.2469826, 36.742214, -7.9516177)
+shape = SubResource("BoxShape3D_yhvva")
+debug_color = Color(1, 0, 0, 1)
+
+[node name="firepit" type="Node3D" parent="IslandComponents"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.0724, 35.5085, 6.89776)
+
+[node name="plate" type="MeshInstance3D" parent="IslandComponents/firepit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.036355097, 0)
+mesh = SubResource("ArrayMesh_4el25")
+skeleton = NodePath("")
+
+[node name="Stone1" parent="IslandComponents/firepit" instance=ExtResource("5_n7bfk")]
+transform = Transform3D(-0.000159501, 0.380828, 0, -0.380828, -0.000159501, 0, 0, 0, 0.380828, 0.09339905, -0.22559738, -1.3533697)
+
+[node name="Stone2" parent="IslandComponents/firepit" instance=ExtResource("5_n7bfk")]
+transform = Transform3D(0.224017, -0.307971, 0, 0.307971, 0.224017, 0, 0, 0, 0.380828, -0.11439896, -0.42229843, -1.37111)
+
+[node name="Stone3" parent="IslandComponents/firepit" instance=ExtResource("5_n7bfk")]
+transform = Transform3D(-0.147384, 0.202619, -0.286799, 0.307971, 0.224017, 0, 0.168706, -0.231931, -0.250552, -1.3414993, -0.37649918, -0.7429099)
+
+[node name="Tinder" type="Node3D" parent="IslandComponents/firepit"]
+
+[node name="tinder" type="MeshInstance3D" parent="IslandComponents/firepit/Tinder"]
+transform = Transform3D(0, 0.4873088, 0, -0.2575125, 0, 0, 0, 0, 0.2575125, -0.43358994, 0.20656967, -0.108707905)
+mesh = SubResource("ArrayMesh_gghvn")
+skeleton = NodePath("")
+
+[node name="tinder_001" type="MeshInstance3D" parent="IslandComponents/firepit/Tinder"]
+transform = Transform3D(-0.06661401, 0.37372807, 0.08485081, -0.21231802, -0.14062145, 0.0062725446, 0.033523932, -0.14798222, 0.2083296, 0.28638458, 0.19337463, -0.046002388)
+mesh = SubResource("ArrayMesh_t4i0x")
+skeleton = NodePath("")
+
+[node name="tinder_002" type="MeshInstance3D" parent="IslandComponents/firepit/Tinder"]
+transform = Transform3D(-0.060813703, 0.31728095, 0.13722584, -0.16162638, -0.24605592, 0.08723851, 0.14428733, -0.14189813, 0.15555944, 0.16862488, 0.113227844, -0.4511671)
+mesh = SubResource("ArrayMesh_vdcfj")
+skeleton = NodePath("")
+
+[node name="tinder_003" type="MeshInstance3D" parent="IslandComponents/firepit/Tinder"]
+transform = Transform3D(0.092776, -0.16722767, 0.3285876, -0.3257239, 0.14273949, 0.11225311, -0.09840175, -0.6301552, -0.061772056, -0.018482208, 0.01455307, -0.11485386)
+mesh = SubResource("ArrayMesh_08qjk")
+skeleton = NodePath("")
+
+[node name="tinder_004" type="MeshInstance3D" parent="IslandComponents/firepit/Tinder"]
+transform = Transform3D(-0.06661399, 0.37372807, 0.08485083, -0.03435271, 0.14743206, -0.2083035, -0.21218552, -0.14119817, 0.0070859557, -0.41630173, 0.053344727, 0.26891422)
+mesh = SubResource("ArrayMesh_6y0uv")
+skeleton = NodePath("")
+
+[node name="FireParticles" parent="IslandComponents/firepit" instance=ExtResource("25_lkofv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115802765, 0.31510162, -0.12651014)
+
+[node name="InteractableComponent" type="Node3D" parent="IslandComponents/firepit" node_paths=PackedStringArray("Contents_Node", "UI_Sprite_Node", "SubViewport_Node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.46057796)
+script = ExtResource("36_44kkc")
+Contents_Node = NodePath("Contents")
+UI_Sprite_Node = NodePath("Contents/UI")
+SubViewport_Node = NodePath("Contents/UI/SubViewport")
+ActionToPress = SubResource("InputEventAction_igp1d")
+
+[node name="Contents" type="Node3D" parent="IslandComponents/firepit/InteractableComponent"]
+
+[node name="UI" type="Sprite3D" parent="IslandComponents/firepit/InteractableComponent/Contents"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.080207825, 0, 0.2677045)
+billboard = 1
+no_depth_test = true
+render_priority = 1
+texture = SubResource("ViewportTexture_igp1d")
+
+[node name="SubViewport" type="SubViewport" parent="IslandComponents/firepit/InteractableComponent/Contents/UI"]
+transparent_bg = true
+gui_disable_input = true
+size = Vector2i(1805, 1150)
+
+[node name="Key" type="Label" parent="IslandComponents/firepit/InteractableComponent/Contents/UI/SubViewport"]
+offset_left = 500.0
+offset_top = 500.0
+offset_right = 629.0
+offset_bottom = 646.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("27_1u3bp")
+theme_override_font_sizes/font_size = 106
+text = "[F] to place wood"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerAreaBox" type="Area3D" parent="IslandComponents/firepit/InteractableComponent/Contents"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/firepit/InteractableComponent/Contents/PlayerAreaBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04447174, 0.77944565, 0.32035732)
+shape = SubResource("BoxShape3D_5kn0p")
+debug_color = Color(0, 1, 0, 1)
+
+[node name="MimicRaycastBox" type="Area3D" parent="IslandComponents/firepit/InteractableComponent/Contents"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/firepit/InteractableComponent/Contents/MimicRaycastBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04650879, 0, 0.35115814)
+shape = SubResource("BoxShape3D_b351x")
 
 [node name="Wood Planks" type="Node" parent="IslandComponents"]
 
@@ -2178,100 +2316,6 @@ transform = Transform3D(0.08220347, -0.018414395, 0.24558988, 0.015700618, 0.258
 
 [node name="WoodPlank18" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
 transform = Transform3D(-0.021144541, 0.10377817, 0.23705252, 0.0021422554, 0.23790453, -0.10396012, -0.25876468, -0.0065104933, -0.020231005, 10.384741, 4.766264, 13.153491)
-
-[node name="firepit" type="Node3D" parent="IslandComponents"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.0724, 35.5085, 6.89776)
-
-[node name="plate" type="MeshInstance3D" parent="IslandComponents/firepit"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.036355097, 0)
-mesh = SubResource("ArrayMesh_4el25")
-skeleton = NodePath("")
-
-[node name="Stone1" parent="IslandComponents/firepit" instance=ExtResource("5_n7bfk")]
-transform = Transform3D(-0.000159501, 0.380828, 0, -0.380828, -0.000159501, 0, 0, 0, 0.380828, 0.09339905, -0.22559738, -1.3533697)
-
-[node name="Stone2" parent="IslandComponents/firepit" instance=ExtResource("5_n7bfk")]
-transform = Transform3D(0.224017, -0.307971, 0, 0.307971, 0.224017, 0, 0, 0, 0.380828, -0.11439896, -0.42229843, -1.37111)
-
-[node name="Stone3" parent="IslandComponents/firepit" instance=ExtResource("5_n7bfk")]
-transform = Transform3D(-0.147384, 0.202619, -0.286799, 0.307971, 0.224017, 0, 0.168706, -0.231931, -0.250552, -1.3414993, -0.37649918, -0.7429099)
-
-[node name="Tinder" type="Node3D" parent="IslandComponents/firepit"]
-
-[node name="tinder" type="MeshInstance3D" parent="IslandComponents/firepit/Tinder"]
-transform = Transform3D(0, 0.4873088, 0, -0.2575125, 0, 0, 0, 0, 0.2575125, -0.43358994, 0.20656967, -0.108707905)
-mesh = SubResource("ArrayMesh_gghvn")
-skeleton = NodePath("")
-
-[node name="tinder_001" type="MeshInstance3D" parent="IslandComponents/firepit/Tinder"]
-transform = Transform3D(-0.06661401, 0.37372807, 0.08485081, -0.21231802, -0.14062145, 0.0062725446, 0.033523932, -0.14798222, 0.2083296, 0.28638458, 0.19337463, -0.046002388)
-mesh = SubResource("ArrayMesh_t4i0x")
-skeleton = NodePath("")
-
-[node name="tinder_002" type="MeshInstance3D" parent="IslandComponents/firepit/Tinder"]
-transform = Transform3D(-0.060813703, 0.31728095, 0.13722584, -0.16162638, -0.24605592, 0.08723851, 0.14428733, -0.14189813, 0.15555944, 0.16862488, 0.113227844, -0.4511671)
-mesh = SubResource("ArrayMesh_vdcfj")
-skeleton = NodePath("")
-
-[node name="tinder_003" type="MeshInstance3D" parent="IslandComponents/firepit/Tinder"]
-transform = Transform3D(0.092776, -0.16722767, 0.3285876, -0.3257239, 0.14273949, 0.11225311, -0.09840175, -0.6301552, -0.061772056, -0.018482208, 0.01455307, -0.11485386)
-mesh = SubResource("ArrayMesh_08qjk")
-skeleton = NodePath("")
-
-[node name="tinder_004" type="MeshInstance3D" parent="IslandComponents/firepit/Tinder"]
-transform = Transform3D(-0.06661399, 0.37372807, 0.08485083, -0.03435271, 0.14743206, -0.2083035, -0.21218552, -0.14119817, 0.0070859557, -0.41630173, 0.053344727, 0.26891422)
-mesh = SubResource("ArrayMesh_6y0uv")
-skeleton = NodePath("")
-
-[node name="FireParticles" parent="IslandComponents/firepit" instance=ExtResource("25_lkofv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115802765, 0.31510162, -0.12651014)
-
-[node name="InteractableComponent" type="Node3D" parent="IslandComponents/firepit" node_paths=PackedStringArray("Contents_Node", "UI_Sprite_Node", "SubViewport_Node")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.46057796)
-script = ExtResource("36_44kkc")
-Contents_Node = NodePath("Contents")
-UI_Sprite_Node = NodePath("Contents/UI")
-SubViewport_Node = NodePath("Contents/UI/SubViewport")
-ActionToPress = SubResource("InputEventAction_kftxd")
-
-[node name="Contents" type="Node3D" parent="IslandComponents/firepit/InteractableComponent"]
-
-[node name="UI" type="Sprite3D" parent="IslandComponents/firepit/InteractableComponent/Contents"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.080207825, 0, 0.2677045)
-billboard = 1
-no_depth_test = true
-render_priority = 1
-texture = SubResource("ViewportTexture_igp1d")
-
-[node name="SubViewport" type="SubViewport" parent="IslandComponents/firepit/InteractableComponent/Contents/UI"]
-transparent_bg = true
-gui_disable_input = true
-size = Vector2i(1805, 1150)
-
-[node name="Key" type="Label" parent="IslandComponents/firepit/InteractableComponent/Contents/UI/SubViewport"]
-offset_left = 500.0
-offset_top = 500.0
-offset_right = 629.0
-offset_bottom = 646.0
-theme_override_constants/outline_size = 30
-theme_override_fonts/font = ExtResource("27_1u3bp")
-theme_override_font_sizes/font_size = 106
-text = "[E] to place wood"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PlayerAreaBox" type="Area3D" parent="IslandComponents/firepit/InteractableComponent/Contents"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/firepit/InteractableComponent/Contents/PlayerAreaBox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04447174, 0.77944565, 0.32035732)
-shape = SubResource("BoxShape3D_5kn0p")
-debug_color = Color(0, 1, 0, 1)
-
-[node name="MimicRaycastBox" type="Area3D" parent="IslandComponents/firepit/InteractableComponent/Contents"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/firepit/InteractableComponent/Contents/MimicRaycastBox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04650879, 0, 0.35115814)
-shape = SubResource("BoxShape3D_b351x")
 
 [node name="PalmTree1" parent="IslandComponents" instance=ExtResource("2_goh21")]
 transform = Transform3D(0.698707, 0.138905, 0, -0.138905, 0.698707, 0, 0, 0, 0.71238, 52.0267, 5.65167, -3.76445)
@@ -2578,6 +2622,8 @@ fov = 100.0
 [connection signal="pressed" from="Camera3D/PauseLayer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="body_entered" from="IslandComponents/ClimbMountainArea" to="." method="_on_climb_mountain_area_body_entered"]
 [connection signal="body_exited" from="IslandComponents/ClimbMountainArea" to="." method="_on_climb_mountain_area_body_exited"]
+[connection signal="body_entered" from="IslandComponents/ClimbDownMountainArea" to="." method="_on_climb_down_mountain_area_body_entered"]
+[connection signal="body_exited" from="IslandComponents/ClimbDownMountainArea" to="." method="_on_climb_down_mountain_area_body_exited"]
 [connection signal="action_triggered" from="IslandComponents/firepit/InteractableComponent" to="." method="_on_firepit_interacted"]
 [connection signal="body_entered" from="IslandComponents/firepit/InteractableComponent/Contents/PlayerAreaBox" to="IslandComponents/firepit/InteractableComponent" method="_on_player_area_box_body_entered"]
 [connection signal="body_exited" from="IslandComponents/firepit/InteractableComponent/Contents/PlayerAreaBox" to="IslandComponents/firepit/InteractableComponent" method="_on_player_area_box_body_exited"]
