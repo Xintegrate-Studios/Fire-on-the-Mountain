@@ -135,6 +135,7 @@ func _on_climb_mountain_area_body_exited(body: Node3D) -> void:
 	if body.is_in_group(&"PlayerBody"):
 		global.is_in_climb_mountain_area = false
 
+
 func go_to_top_of_mountain():
 	$Camera3D/FadeManager.play("fade")
 	global.player_active = false
@@ -152,7 +153,11 @@ func go_to_top_of_mountain():
 
 
 func _on_firepit_interacted() -> void:
-	if !global.wood_placed and global.wood_planks >= 10: # if the wood hasnt been placed yet AND the player has 10 planks of wood or more
-		global.wood_planks -= 10
-		$IslandComponents/firepit/Tinder.show()
-		$Audio/WoodCollect.play()
+	if !global.wood_placed: # if the wood hasnt been placed yet
+		if global.wood_planks >= 10:
+			global.wood_planks -= 10
+			$IslandComponents/firepit/Tinder.show()
+			$Audio/WoodCollect.play()
+	else:
+		if !global.fire_lighted:
+			pass
