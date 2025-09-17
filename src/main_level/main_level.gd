@@ -149,3 +149,10 @@ func go_to_top_of_mountain():
 	await get_tree().create_timer(1.0).timeout
 	
 	$Camera3D/FadeManager.play("fade", -1, -0.35, true)
+
+
+func _on_firepit_interacted() -> void:
+	if !global.wood_placed and global.wood_planks >= 10: # if the wood hasnt been placed yet AND the player has 10 planks of wood or more
+		global.wood_planks -= 10
+		$IslandComponents/firepit/Tinder.show()
+		$Audio/WoodCollect.play()

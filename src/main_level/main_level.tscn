@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=4 uid="uid://biqj67tjrslek"]
+[gd_scene load_steps=106 format=4 uid="uid://biqj67tjrslek"]
 
 [ext_resource type="Script" uid="uid://dvav26tqc5pit" path="res://src/main_level/main_level.gd" id="1_fpkve"]
 [ext_resource type="PackedScene" uid="uid://bm3l1fnoqw1bx" path="res://ast/models/island/island.tscn" id="1_scctx"]
@@ -9,6 +9,7 @@
 [ext_resource type="Shader" uid="uid://d2jmsgygcdag8" path="res://res/shaders/low_poly_water.gdshader" id="2_tw2e2"]
 [ext_resource type="PackedScene" uid="uid://c83ij1khevxpc" path="res://ast/models/Trees/Normal/Models/Tree4.blend" id="3_n4qwq"]
 [ext_resource type="PackedScene" uid="uid://bsljbif1rji7e" path="res://src/player/Player.tscn" id="3_tw2e2"]
+[ext_resource type="AudioStream" uid="uid://ckdkb5qwbi4na" path="res://ast/audio/sfx/wood_collect.mp3" id="4_igp1d"]
 [ext_resource type="PackedScene" uid="uid://c2vb563dpgipc" path="res://ast/models/Trees/Normal/Models/Tree8.blend" id="4_mbfot"]
 [ext_resource type="PackedScene" uid="uid://hp6koxjebkch" path="res://ast/models/stones/Stone1.blend" id="5_n7bfk"]
 [ext_resource type="PackedScene" uid="uid://c855wuotwp7n7" path="res://ast/models/grass/Grass1.blend" id="6_hnkfv"]
@@ -1312,6 +1313,18 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tdyi0")
 
+[sub_resource type="InputEventAction" id="InputEventAction_kftxd"]
+action = &"Interact"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_igp1d"]
+viewport_path = NodePath("IslandComponents/firepit/InteractableComponent/Contents/UI/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5kn0p"]
+size = Vector3(7, 5, 7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b351x"]
+size = Vector3(0.460693, 0.741821, 0.463135)
+
 [sub_resource type="Animation" id="Animation_44kkc"]
 resource_name = "main"
 length = 22.0
@@ -1445,6 +1458,10 @@ one_shot = true
 [node name="Conch" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("2_0pe4b")
 
+[node name="WoodCollect" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("4_igp1d")
+max_polyphony = 3
+
 [node name="WindAmbience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_tchnu")
 volume_db = 8.8
@@ -1460,7 +1477,6 @@ shadow_enabled = true
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.611401, 0.152959)
-visible = false
 mesh = SubResource("PlaneMesh_n4qwq")
 
 [node name="Characters" type="Node3D" parent="."]
@@ -2216,6 +2232,50 @@ skeleton = NodePath("")
 [node name="FireParticles" parent="IslandComponents/firepit" instance=ExtResource("25_lkofv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115802765, 0.31510162, -0.12651014)
 
+[node name="InteractableComponent" type="Node3D" parent="IslandComponents/firepit" node_paths=PackedStringArray("Contents_Node", "UI_Sprite_Node", "SubViewport_Node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.46057796)
+script = ExtResource("36_44kkc")
+Contents_Node = NodePath("Contents")
+UI_Sprite_Node = NodePath("Contents/UI")
+SubViewport_Node = NodePath("Contents/UI/SubViewport")
+ActionToPress = SubResource("InputEventAction_kftxd")
+
+[node name="Contents" type="Node3D" parent="IslandComponents/firepit/InteractableComponent"]
+
+[node name="UI" type="Sprite3D" parent="IslandComponents/firepit/InteractableComponent/Contents"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.080207825, 0, 0.2677045)
+billboard = 1
+no_depth_test = true
+render_priority = 1
+texture = SubResource("ViewportTexture_igp1d")
+
+[node name="SubViewport" type="SubViewport" parent="IslandComponents/firepit/InteractableComponent/Contents/UI"]
+transparent_bg = true
+gui_disable_input = true
+size = Vector2i(1805, 1150)
+
+[node name="Key" type="Label" parent="IslandComponents/firepit/InteractableComponent/Contents/UI/SubViewport"]
+offset_left = 500.0
+offset_top = 500.0
+offset_right = 629.0
+offset_bottom = 646.0
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("27_1u3bp")
+theme_override_font_sizes/font_size = 106
+text = "[E] to place wood"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerAreaBox" type="Area3D" parent="IslandComponents/firepit/InteractableComponent/Contents"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/firepit/InteractableComponent/Contents/PlayerAreaBox"]
+shape = SubResource("BoxShape3D_5kn0p")
+
+[node name="MimicRaycastBox" type="Area3D" parent="IslandComponents/firepit/InteractableComponent/Contents"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/firepit/InteractableComponent/Contents/MimicRaycastBox"]
+shape = SubResource("BoxShape3D_b351x")
+
 [node name="PalmTree1" parent="IslandComponents" instance=ExtResource("2_goh21")]
 transform = Transform3D(0.698707, 0.138905, 0, -0.138905, 0.698707, 0, 0, 0, 0.71238, 52.0267, 5.65167, -3.76445)
 
@@ -2522,4 +2582,9 @@ fov = 100.0
 [connection signal="pressed" from="Camera3D/PauseLayer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="body_entered" from="IslandComponents/ClimbMountainArea" to="." method="_on_climb_mountain_area_body_entered"]
 [connection signal="body_exited" from="IslandComponents/ClimbMountainArea" to="." method="_on_climb_mountain_area_body_exited"]
+[connection signal="action_triggered" from="IslandComponents/firepit/InteractableComponent" to="." method="_on_firepit_interacted"]
+[connection signal="body_entered" from="IslandComponents/firepit/InteractableComponent/Contents/PlayerAreaBox" to="IslandComponents/firepit/InteractableComponent" method="_on_player_area_box_body_entered"]
+[connection signal="body_exited" from="IslandComponents/firepit/InteractableComponent/Contents/PlayerAreaBox" to="IslandComponents/firepit/InteractableComponent" method="_on_player_area_box_body_exited"]
+[connection signal="area_entered" from="IslandComponents/firepit/InteractableComponent/Contents/MimicRaycastBox" to="IslandComponents/firepit/InteractableComponent" method="_on_mimic_raycast_box_area_entered"]
+[connection signal="area_exited" from="IslandComponents/firepit/InteractableComponent/Contents/MimicRaycastBox" to="IslandComponents/firepit/InteractableComponent" method="_on_mimic_raycast_box_area_exited"]
 [connection signal="animation_finished" from="ConchUseCutscene" to="." method="_on_conch_use_cutscene_animation_finished"]

@@ -17,6 +17,9 @@ var savagery_level : float = 10.0
 var conch_effectiveness : float = 100.0
 var fire_fuel : float = 100.0
 
+var wood_placed : bool = false
+var fire_lighted : bool = false
+
 var PROGRESSION : Dictionary = {
 	"CONCH_INTERACT_FIRST_TIME" : false,
 	"HAD_FIRST_MEETING" : false,
