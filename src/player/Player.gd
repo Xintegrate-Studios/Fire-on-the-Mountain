@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+#region exports and variables
 
 @export_group("Utility")
 @export var inventory_opened_in_air := false
@@ -58,7 +59,10 @@ extends CharacterBody3D
 @export var wood_plank_info_label : Label
 @export var climb_mountain_ui : Control
 
-#region init
+#endregion
+
+
+#region ready
 
 func start_timers():
 	$Timers/SavegeryIncreaseTimer.start()
