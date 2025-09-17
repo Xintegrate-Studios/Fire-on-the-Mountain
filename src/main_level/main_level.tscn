@@ -1320,10 +1320,10 @@ action = &"Interact"
 viewport_path = NodePath("IslandComponents/firepit/InteractableComponent/Contents/UI/SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5kn0p"]
-size = Vector3(7, 5, 7)
+size = Vector3(5.0549316, 4, 5.4711914)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b351x"]
-size = Vector3(0.460693, 0.741821, 0.463135)
+size = Vector3(2.831543, 0.741821, 2.978302)
 
 [sub_resource type="Animation" id="Animation_44kkc"]
 resource_name = "main"
@@ -2269,11 +2269,14 @@ vertical_alignment = 1
 [node name="PlayerAreaBox" type="Area3D" parent="IslandComponents/firepit/InteractableComponent/Contents"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/firepit/InteractableComponent/Contents/PlayerAreaBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04447174, 0.77944565, 0.32035732)
 shape = SubResource("BoxShape3D_5kn0p")
+debug_color = Color(0, 1, 0, 1)
 
 [node name="MimicRaycastBox" type="Area3D" parent="IslandComponents/firepit/InteractableComponent/Contents"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/firepit/InteractableComponent/Contents/MimicRaycastBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04650879, 0, 0.35115814)
 shape = SubResource("BoxShape3D_b351x")
 
 [node name="PalmTree1" parent="IslandComponents" instance=ExtResource("2_goh21")]

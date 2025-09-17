@@ -176,3 +176,6 @@ func _on_firepit_interacted() -> void:
 	else:
 		if !global.fire_lighted:
 			pass
+
+func make_wood_sound():
+	$Audio/WoodCollect.play()
