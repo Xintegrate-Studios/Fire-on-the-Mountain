@@ -238,12 +238,8 @@ func make_wood_sound():
 
 func _on_climb_down_mountain_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group(&"PlayerBody"):
-		print("in")
-
-
-
-
+		global.is_in_climb_down_mountain_area = true
 
 func _on_climb_down_mountain_area_body_exited(body: Node3D) -> void:
 	if body.is_in_group(&"PlayerBody"):
-		print("----        OUT")
+		global.is_in_climb_down_mountain_area = false

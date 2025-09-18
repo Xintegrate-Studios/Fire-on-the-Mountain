@@ -9,6 +9,11 @@ var is_in_climb_mountain_area : bool = false:
 		is_in_climb_mountain_area = value
 		player.climb_mountain_ui.visible = value
 
+var is_in_climb_down_mountain_area : bool = false:
+	set(value):
+		is_in_climb_down_mountain_area = value
+		player.climb_down_mountain_ui.visible = value
+
 var world
 var player
 var pause_animation_player
