@@ -44,6 +44,7 @@ func _ready() -> void:
 #endregion
 
 #region input
+
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Tutorial"):
 		pass
@@ -52,6 +53,12 @@ func _input(_event: InputEvent) -> void:
 	and global.is_in_climb_mountain_area \
 	and !global.is_on_top_of_mountain:
 		go_to_top_of_mountain()
+	
+	if Input.is_action_just_pressed("Interact") \
+	and global.is_in_climb_down_mountain_area \
+	and global.is_on_top_of_mountain:
+		go_to_bottom_of_mountain()
+
 #endregion
 
 
@@ -166,7 +173,7 @@ func _on_dialogue_animations_animation_finished(anim_name: StringName) -> void:
 
 #endregion
 
-#region climb mountain area
+#region mountain
 
 func _on_climb_mountain_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group(&"PlayerBody"):
@@ -175,7 +182,6 @@ func _on_climb_mountain_area_body_entered(body: Node3D) -> void:
 func _on_climb_mountain_area_body_exited(body: Node3D) -> void:
 	if body.is_in_group(&"PlayerBody"):
 		global.is_in_climb_mountain_area = false
-
 
 func go_to_top_of_mountain() -> void:
 	$Camera3D/FadeManager.play("fade")
@@ -191,6 +197,32 @@ func go_to_top_of_mountain() -> void:
 	global.player_active = true
 	
 	global.player.climb_mountain_ui.hide()
+	
+	await get_tree().create_timer(1.0).timeout
+	$Camera3D/FadeManager.play("fade", -1, -0.35, true)
+
+
+func _on_climb_down_mountain_area_body_entered(body: Node3D) -> void:
+	if body.is_in_group(&"PlayerBody"):
+		global.is_in_climb_down_mountain_area = true
+
+func _on_climb_down_mountain_area_body_exited(body: Node3D) -> void:
+	if body.is_in_group(&"PlayerBody"):
+		global.is_in_climb_down_mountain_area = false
+
+func go_to_bottom_of_mountain():
+	$Camera3D/FadeManager.play("fade")
+	global.player_active = false
+	global.is_on_top_of_mountain = false
+	
+	await get_tree().create_timer(1.0).timeout
+	
+	# Move player to top
+	global.player.head.rotation_degrees = Vector3(0.0, -93.9, 0.0)
+	global.player.camera.rotation_degrees = Vector3(-4.8, 0.0, 0.0)
+	global.player.global_position = $PlayerBottomMountainSpawn.global_position
+	global.player_active = true
+	
 	
 	await get_tree().create_timer(1.0).timeout
 	$Camera3D/FadeManager.play("fade", -1, -0.35, true)
@@ -234,12 +266,3 @@ func make_wood_sound():
 	$Audio/WoodCollect.play()
 
 #endregion
-
-
-func _on_climb_down_mountain_area_body_entered(body: Node3D) -> void:
-	if body.is_in_group(&"PlayerBody"):
-		global.is_in_climb_down_mountain_area = true
-
-func _on_climb_down_mountain_area_body_exited(body: Node3D) -> void:
-	if body.is_in_group(&"PlayerBody"):
-		global.is_in_climb_down_mountain_area = false
