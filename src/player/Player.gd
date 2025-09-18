@@ -58,6 +58,7 @@ extends CharacterBody3D
 @export var wood_plank_info_anim : AnimationPlayer
 @export var wood_plank_info_label : Label
 @export var climb_mountain_ui : Control
+@export var climb_down_mountain_ui : Control
 
 #endregion
 
