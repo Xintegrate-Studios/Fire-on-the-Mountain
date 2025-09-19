@@ -1486,6 +1486,7 @@ mesh = SubResource("PlaneMesh_n4qwq")
 
 [node name="1" parent="Characters" instance=ExtResource("39_dn03h")]
 transform = Transform3D(0.31815377, 0, -0.14587043, 0, 0.35, 0, 0.14587043, 0, 0.31815377, 37.948288, 8.0006, -4.37502)
+visible = false
 
 [node name="NameLabel_Simon" type="Label3D" parent="Characters/1"]
 transform = Transform3D(1.4572543, 5.724621e-08, 0.25847587, -7.088685e-08, 1.48, 7.186658e-08, -0.25847587, -8.31422e-08, 1.4572543, -0.008903503, 5.5483513, -0.30503845)
@@ -1503,9 +1504,11 @@ font_size = 57
 
 [node name="2" parent="Characters" instance=ExtResource("39_3ngmi")]
 transform = Transform3D(0.38495764, -0.0057113804, 0, 0.0057113804, 0.38495764, 0, 0, 0, 0.385, 35.349903, 8.172344, -4.619134)
+visible = false
 
 [node name="3" parent="Characters" instance=ExtResource("40_a77lo")]
 transform = Transform3D(0.22194786, -0.014530825, 0.25050554, -0.038592134, 0.32848206, 0.053246554, -0.24794114, -0.06413582, 0.21595554, 33.60109, 8.576118, -3.6739302)
+visible = false
 
 [node name="NameLabel_Jack" type="Label3D" parent="Characters/3"]
 transform = Transform3D(0.9656378, -0.12035861, -0.38028237, 0.049287613, 1.0244483, -0.19908154, 0.39581767, 0.16606183, 0.9525275, -0.271492, 5.913437, 1.3480225)
@@ -1523,21 +1526,26 @@ font_size = 57
 
 [node name="4" parent="Characters" instance=ExtResource("8_rk3wu")]
 transform = Transform3D(0.17151809, 0, 0.18188334, 0, 0.25, 0, -0.18188334, 0, 0.17151809, 33.61898, 8.526501, -2.6134217)
+visible = false
 
 [node name="5" parent="Characters" instance=ExtResource("39_dn03h")]
 transform = Transform3D(-0.014929675, 0.028654126, 0.3485055, 0.0012263932, 0.34882507, -0.02862787, -0.34967932, 0, -0.01497996, 32.58648, 8.564689, -0.10914934)
+visible = false
 
 [node name="6" parent="Characters" instance=ExtResource("9_w3ep2")]
 transform = Transform3D(-0.13255374, 0.014881663, 0.22898261, -0.060561355, 0.2527971, -0.051487204, -0.22132969, -0.07808423, -0.12304888, 38.641888, 7.5859284, -2.8385782)
 
 [node name="7" parent="Characters" instance=ExtResource("10_bvxkv")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 36.895527, 8.018336, -4.501088)
+visible = false
 
 [node name="8" parent="Characters" instance=ExtResource("8_rk3wu")]
 transform = Transform3D(0.19951412, 0.0027195055, -0.15062113, 0.0098552, 0.24918821, 0.017553441, 0.15032296, -0.019946238, 0.19875903, 38.3002, 8.273444, -2.1468306)
+visible = false
 
 [node name="9" parent="Characters" instance=ExtResource("39_dn03h")]
 transform = Transform3D(0.29623923, 0, -0.18639296, 0, 0.34999996, 0, 0.18639296, 0, 0.29623923, 39.037167, 7.9536543, -4.1231318)
+visible = false
 
 [node name="10" parent="Characters" instance=ExtResource("10_bvxkv")]
 transform = Transform3D(0.22653398, 0.035833593, 0.19338633, -0.03517882, 0.29760414, -0.013935971, -0.19350651, -0.012153777, 0.2289268, 33.331203, 8.090973, -6.2853293)
@@ -1816,6 +1824,7 @@ visible_ratio = 0.0
 libraries = {
 &"": SubResource("AnimationLibrary_1j151")
 }
+speed_scale = 20.0
 
 [node name="TutorialLayer" type="CanvasLayer" parent="Camera3D"]
 
@@ -2594,6 +2603,7 @@ transform = Transform3D(0.425574, 0, -0.904924, 0, 1, 0, 0.904924, 0, 0.425574, 
 libraries = {
 &"": SubResource("AnimationLibrary_tchnu")
 }
+speed_scale = 20.0
 
 [node name="Camera3D" type="Camera3D" parent="ConchUseCutscene"]
 transform = Transform3D(0.822768, 0.08544227, 0.5619184, -0.12599494, 0.99145705, 0.0337277, -0.55423635, -0.09854893, 0.8265047, 34.0194, 10.1239, -0.458998)

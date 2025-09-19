@@ -132,6 +132,9 @@ func _on_conch_use_cutscene_animation_finished(_anim_name: StringName) -> void:
 	await get_tree().create_timer(0.7).timeout
 	$conch.transform = default_conch_transform
 	
+	for node in HideCharactersList:
+		node.show()
+	
 	# First meeting cutscene
 	$FirstMeetingCutscene/Head/Camera3D.make_current()
 	$Camera3D/DialogueCutsceneLayer/DialogueAnimations.play("first_conch")
