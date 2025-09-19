@@ -285,9 +285,23 @@ func sleep():
 	
 	$Camera3D/FadeManager.play("fade", -1, -0.35, true)
 	global.player_active = true
+	
+	$FireCharacters.show()
+	$FireLight.show()
+	$pig_on_stick.show()
+	$"firepit (shack)".show()
+	$conch.hide()
+	$Characters.hide()
 
 func go_to_night():
 	$WorldEnvironment.environment = load("res://res/environments/night.tres")
 	$DirectionalLight3D.hide()
 
+func endgame():
+	await get_tree().create_timer(1.0).timeout
+
 #endregion
+
+func _on_end_game_area_body_entered(body: Node3D) -> void:
+	if body.is_in_group(&"PlayerBody") and global.slept:
+		endgame()
