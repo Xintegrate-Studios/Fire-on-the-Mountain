@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=4 uid="uid://biqj67tjrslek"]
+[gd_scene load_steps=112 format=4 uid="uid://biqj67tjrslek"]
 
 [ext_resource type="Script" uid="uid://dvav26tqc5pit" path="res://src/main_level/main_level.gd" id="1_fpkve"]
 [ext_resource type="PackedScene" uid="uid://bm3l1fnoqw1bx" path="res://ast/models/island/island.tscn" id="1_scctx"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://cl7ub1w20hgbk" path="res://ast/models/deco/log1.blend" id="14_4s85u"]
 [ext_resource type="PackedScene" uid="uid://cwu1exk1sgj4t" path="res://ast/models/Trees/Pine/Models/PineTree1.blend" id="15_b4j44"]
 [ext_resource type="PackedScene" uid="uid://b6ijgxw1ym8h0" path="res://ast/models/rocks/Rock1.blend" id="15_ibte4"]
+[ext_resource type="PackedScene" uid="uid://b6f7wdg15bkon" path="res://ast/models/items/sackcloth bed/sackcloth_bed.tscn" id="15_tdn2i"]
 [ext_resource type="PackedScene" uid="uid://d22xrpdo83kd6" path="res://ast/models/Trees/Pine/Models/PineTree3.blend" id="16_n0lbn"]
 [ext_resource type="PackedScene" uid="uid://d3ryqywu5nr0k" path="res://ast/models/Trees/Pine/Models/PineTree5.blend" id="17_ybo0d"]
 [ext_resource type="PackedScene" uid="uid://cdbylnsm71dkk" path="res://ast/models/Trees/Normal/Models/Tree3.blend" id="20_n0lbn"]
@@ -1575,6 +1576,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.806023, 35.830154, 6.6485
 
 [node name="PlayerBottomMountainSpawn" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.385231, 7.85938, 15.931199)
+
+[node name="sackcloth bed" parent="." instance=ExtResource("15_tdn2i")]
+transform = Transform3D(0.36288458, 0.0049945065, 0.55962384, -0.045859393, 0.6649958, 0.023802312, -0.557764, -0.051426534, 0.3621376, 29.740442, 8.618249, -6.8206697)
 
 [node name="conch" parent="." instance=ExtResource("35_63h44")]
 transform = Transform3D(0.11878704, -0.06269031, -0.14317591, 0.14828607, -0.011639647, 0.12812304, -0.049402945, -0.18567301, 0.04030977, 33.2969, 9.04649, -1.36873)
