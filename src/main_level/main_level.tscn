@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=4 uid="uid://biqj67tjrslek"]
+[gd_scene load_steps=113 format=4 uid="uid://biqj67tjrslek"]
 
 [ext_resource type="Script" uid="uid://dvav26tqc5pit" path="res://src/main_level/main_level.gd" id="1_fpkve"]
 [ext_resource type="PackedScene" uid="uid://bm3l1fnoqw1bx" path="res://ast/models/island/island.tscn" id="1_scctx"]
@@ -47,6 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://cu08qw8vm81ew" path="res://ast/models/characters/scenes/idle.tscn" id="39_dn03h"]
 [ext_resource type="PackedScene" uid="uid://darbbw3k6n8gy" path="res://ast/models/characters/scenes/hanging_idle.tscn" id="40_a77lo"]
 [ext_resource type="PackedScene" uid="uid://c2r4l8dmvqgn4" path="res://ast/models/items/wood plank/wood_plank.tscn" id="46_igp1d"]
+[ext_resource type="AudioStream" uid="uid://bq2pbtqdb5qai" path="res://ast/audio/sfx/fire_loop.mp3" id="48_1j151"]
 
 [sub_resource type="Animation" id="Animation_igp1d"]
 length = 0.001
@@ -1465,6 +1466,12 @@ stream = ExtResource("2_0pe4b")
 [node name="WoodCollect" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("4_igp1d")
 max_polyphony = 3
+
+[node name="FireSFX" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.228184, 35.920647, 6.75978)
+stream = ExtResource("48_1j151")
+volume_db = -4.409
+unit_size = 5.0
 
 [node name="WindAmbience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_tchnu")

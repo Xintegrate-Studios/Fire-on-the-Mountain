@@ -312,7 +312,7 @@ _data = {
 &"main": SubResource("Animation_jtmj1")
 }
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("head", "camera", "task_ui_layer", "wood_plank_info_anim", "wood_plank_info_label", "climb_mountain_ui", "climb_down_mountain_ui") groups=["PlayerBody"]]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("head", "camera", "task_ui_layer", "wood_plank_info_anim", "wood_plank_info_label", "climb_mountain_ui", "climb_down_mountain_ui", "fire_fuel_node") groups=["PlayerBody"]]
 script = ExtResource("1_r5cts")
 head = NodePath("Head")
 camera = NodePath("Head/Camera3D")
@@ -321,6 +321,7 @@ wood_plank_info_anim = NodePath("Head/Camera3D/ItemInfoLayer/MainLayer/WoodPlank
 wood_plank_info_label = NodePath("Head/Camera3D/ItemInfoLayer/MainLayer/WoodPlankInfo/Label")
 climb_mountain_ui = NodePath("Head/Camera3D/MainHUDLayer/ClimbMountainUI")
 climb_down_mountain_ui = NodePath("Head/Camera3D/MainHUDLayer/ClimbDownMountainUI")
+fire_fuel_node = NodePath("Head/Camera3D/MainHUDLayer/FireFuel")
 
 [node name="Timers" type="Node" parent="."]
 
@@ -379,7 +380,14 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_f51xu")
 value = 23.12
 show_percentage = false
 
-[node name="FireFuelBar" type="ProgressBar" parent="Head/Camera3D/MainHUDLayer"]
+[node name="FireFuel" type="Control" parent="Head/Camera3D/MainHUDLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FireFuelBar" type="ProgressBar" parent="Head/Camera3D/MainHUDLayer/FireFuel"]
+layout_mode = 0
 offset_left = 33.0
 offset_top = 593.0
 offset_right = 159.0
@@ -388,6 +396,12 @@ theme_override_styles/background = SubResource("StyleBoxFlat_xb7bp")
 theme_override_styles/fill = SubResource("StyleBoxFlat_msvgs")
 value = 52.37
 show_percentage = false
+
+[node name="Firepit" type="Sprite2D" parent="Head/Camera3D/MainHUDLayer/FireFuel"]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(18, 604)
+scale = Vector2(0.0240625, 0.0240625)
+texture = ExtResource("4_t0sa8")
 
 [node name="ConchBar" type="ProgressBar" parent="Head/Camera3D/MainHUDLayer"]
 visible = false
@@ -406,12 +420,6 @@ position = Vector2(18, 633)
 rotation = -3.08653
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("3_f51xu")
-
-[node name="Firepit" type="Sprite2D" parent="Head/Camera3D/MainHUDLayer"]
-modulate = Color(1, 1, 1, 0.392157)
-position = Vector2(18, 604)
-scale = Vector2(0.0240625, 0.0240625)
-texture = ExtResource("4_t0sa8")
 
 [node name="Conch" type="Sprite2D" parent="Head/Camera3D/MainHUDLayer"]
 visible = false

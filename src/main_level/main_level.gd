@@ -254,9 +254,12 @@ func _on_firepit_interacted() -> void:
 			
 			await get_tree().create_timer(1.0).timeout
 			$IslandComponents/firepit/FireParticles.show()
+			global.PROGRESSION["LIGHTED_FIRE_FIRST_TIME"] = true
+			$Audio/FireSFX.play()
 			
 			$Camera3D/FadeManager.play("fade", -1, -0.35, true)
 			global.player_active = true
+			
 			
 			# Hide key text after lighting fire
 			$IslandComponents/firepit/InteractableComponent/Contents/UI/SubViewport/Key.hide()

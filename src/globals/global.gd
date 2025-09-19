@@ -31,6 +31,7 @@ var PROGRESSION : Dictionary = {
 	"CONCH_INTERACT_FIRST_TIME" : false,
 	"HAD_FIRST_MEETING" : false,
 	"FIRST_TIME_LIGHTING_FIRE" : true,
+	"LIGHTED_FIRE_FIRST_TIME" : false,
 }
 var wood_planks : int = 0:
 	set(value):
