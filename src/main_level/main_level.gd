@@ -260,6 +260,9 @@ func _on_firepit_interacted() -> void:
 			
 			# Hide key text after lighting fire
 			$IslandComponents/firepit/InteractableComponent/Contents/UI/SubViewport/Key.hide()
+			
+			await get_tree().create_timer(2.0).timeout
+			task_system.task("GO_TO_SLEEP")
 
 #endregion
 
@@ -267,5 +270,20 @@ func _on_firepit_interacted() -> void:
 
 func make_wood_sound():
 	$Audio/WoodCollect.play()
+
+func sleep():
+	$Camera3D/FadeManager.play("fade")
+	global.player_active = false
+	global.slept = true
+	
+	await get_tree().create_timer(5.67).timeout
+	
+	go_to_night()
+	
+	$Camera3D/FadeManager.play("fade", -1, -0.35, true)
+	global.player_active = true
+
+func go_to_night():
+	pass
 
 #endregion

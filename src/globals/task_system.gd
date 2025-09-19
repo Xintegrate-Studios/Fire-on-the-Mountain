@@ -4,6 +4,7 @@ const TASKS = {
 	"BLOW_CONCH" : "Blow the conch to assemble everyone.",
 	"COLLECT_10_WOOD" : "Collect 10 wood planks for the fire on the mountain.",
 	"LIGHT_FIRE" : "Light the fire on the mountain.",
+	"GO_TO_SLEEP" : "Go to sleep."
 }
 
 func task(task_name : String):

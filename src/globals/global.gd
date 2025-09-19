@@ -25,6 +25,7 @@ var is_on_top_of_mountain : bool = false
 
 var wood_placed : bool = false
 var fire_lighted : bool = false
+var slept : bool = false
 
 var PROGRESSION : Dictionary = {
 	"CONCH_INTERACT_FIRST_TIME" : false,
