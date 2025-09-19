@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=4 uid="uid://biqj67tjrslek"]
+[gd_scene load_steps=126 format=4 uid="uid://biqj67tjrslek"]
 
 [ext_resource type="Script" uid="uid://dvav26tqc5pit" path="res://src/main_level/main_level.gd" id="1_fpkve"]
 [ext_resource type="PackedScene" uid="uid://bm3l1fnoqw1bx" path="res://ast/models/island/island.tscn" id="1_scctx"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c2vb563dpgipc" path="res://ast/models/Trees/Normal/Models/Tree8.blend" id="4_mbfot"]
 [ext_resource type="PackedScene" uid="uid://hp6koxjebkch" path="res://ast/models/stones/Stone1.blend" id="5_n7bfk"]
 [ext_resource type="PackedScene" uid="uid://c855wuotwp7n7" path="res://ast/models/grass/Grass1.blend" id="6_hnkfv"]
+[ext_resource type="Environment" uid="uid://byumni1rp0fq2" path="res://res/environments/day.tres" id="7_5kn0p"]
 [ext_resource type="PackedScene" uid="uid://exmlfia43n4n" path="res://ast/models/grass/GrassClump1.blend" id="7_yj2oh"]
 [ext_resource type="PackedScene" uid="uid://db2wxlqatq182" path="res://ast/models/characters/scenes/kneeling_idle.tscn" id="8_rk3wu"]
 [ext_resource type="PackedScene" uid="uid://dqutcuc265evu" path="res://ast/models/characters/scenes/laying_idle.tscn" id="9_w3ep2"]
@@ -25,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://cwu1exk1sgj4t" path="res://ast/models/Trees/Pine/Models/PineTree1.blend" id="15_b4j44"]
 [ext_resource type="PackedScene" uid="uid://b6ijgxw1ym8h0" path="res://ast/models/rocks/Rock1.blend" id="15_ibte4"]
 [ext_resource type="PackedScene" uid="uid://b6f7wdg15bkon" path="res://ast/models/items/sackcloth bed/sackcloth_bed.tscn" id="15_tdn2i"]
+[ext_resource type="PackedScene" uid="uid://cxqteeeobsc08" path="res://ast/models/structures/pig on stick/pig_on_stick.blend" id="16_b351x"]
 [ext_resource type="PackedScene" uid="uid://d22xrpdo83kd6" path="res://ast/models/Trees/Pine/Models/PineTree3.blend" id="16_n0lbn"]
 [ext_resource type="PackedScene" uid="uid://d3ryqywu5nr0k" path="res://ast/models/Trees/Pine/Models/PineTree5.blend" id="17_ybo0d"]
 [ext_resource type="PackedScene" uid="uid://cdbylnsm71dkk" path="res://ast/models/Trees/Normal/Models/Tree3.blend" id="20_n0lbn"]
@@ -87,30 +89,6 @@ _data = {
 &"RESET": SubResource("Animation_igp1d"),
 &"main": SubResource("Animation_kftxd")
 }
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_scctx"]
-sky_top_color = Color(0.410916, 0.656231, 0.959196, 1)
-sky_horizon_color = Color(0.604433, 0.680793, 0.761855, 1)
-ground_horizon_color = Color(0.603922, 0.682353, 0.760784, 1)
-
-[sub_resource type="Sky" id="Sky_tw2e2"]
-sky_material = SubResource("ProceduralSkyMaterial_scctx")
-
-[sub_resource type="Environment" id="Environment_goh21"]
-background_mode = 2
-sky = SubResource("Sky_tw2e2")
-tonemap_mode = 2
-ssao_radius = 10.5
-sdfgi_bounce_feedback = 1.99
-glow_enabled = true
-fog_mode = 1
-fog_light_energy = 1.27
-fog_density = 1.0
-fog_sky_affect = 0.263
-fog_depth_curve = 14.9285
-volumetric_fog_length = 479.53
-volumetric_fog_ambient_inject = 0.31
-adjustment_enabled = true
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_tw2e2"]
 auto_exposure_scale = 0.8
@@ -1329,6 +1307,88 @@ size = Vector3(5.0549316, 4, 5.4711914)
 [sub_resource type="BoxShape3D" id="BoxShape3D_b351x"]
 size = Vector3(2.831543, 0.741821, 2.978302)
 
+[sub_resource type="Gradient" id="Gradient_py7r6"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.643137, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fu4e1"]
+gradient = SubResource("Gradient_py7r6")
+
+[sub_resource type="Curve" id="Curve_t11dk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.512887, 0.548638), 0.0, 0.0, 0, 0, Vector2(0.987113, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_gqr5o"]
+curve = SubResource("Curve_t11dk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fu4e1"]
+emission_shape_scale = Vector3(2, 2, 2)
+emission_shape = 1
+emission_sphere_radius = 0.3
+spread = 0.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = 90.0
+gravity = Vector3(0, 4, 0)
+scale_curve = SubResource("CurveTexture_gqr5o")
+color_ramp = SubResource("GradientTexture1D_fu4e1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_py7r6"]
+blend_mode = 1
+depth_draw_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_fu4e1"]
+material = SubResource("StandardMaterial3D_py7r6")
+size = Vector2(0.3, 0.3)
+
+[sub_resource type="Gradient" id="Gradient_fu4e1"]
+offsets = PackedFloat32Array(0, 0.988701)
+colors = PackedColorArray(0.0323822, 0.0323822, 0.0323822, 1, 0.0987284, 0.0987284, 0.0987284, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t11dk"]
+gradient = SubResource("Gradient_fu4e1")
+
+[sub_resource type="Curve" id="Curve_py7r6"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1e-05, 0.54863805), 0.0, 0.0, 0, 0, Vector2(0.8190955, 0.7198443), 0.0, 0.0, 0, 0, Vector2(1, 0.019455194), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_b351x"]
+curve = SubResource("Curve_py7r6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_b351x"]
+lifetime_randomness = 0.25
+emission_shape = 1
+emission_sphere_radius = 0.2
+spread = 0.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = 90.0
+gravity = Vector3(0, 4, 0)
+radial_accel_min = -23.960001
+radial_accel_max = 2.9999976
+scale_curve = SubResource("CurveTexture_b351x")
+color_ramp = SubResource("GradientTexture1D_t11dk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fu4e1"]
+transparency = 1
+depth_draw_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+refraction_enabled = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_t11dk"]
+material = SubResource("StandardMaterial3D_fu4e1")
+size = Vector2(0.3, 0.3)
+
 [sub_resource type="Animation" id="Animation_44kkc"]
 resource_name = "main"
 length = 22.0
@@ -1479,7 +1539,7 @@ volume_db = 8.8
 autoplay = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_goh21")
+environment = ExtResource("7_5kn0p")
 camera_attributes = SubResource("CameraAttributesPractical_tw2e2")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -1491,6 +1551,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.611401, 0.152959)
 mesh = SubResource("PlaneMesh_n4qwq")
 
 [node name="Characters" type="Node3D" parent="."]
+visible = false
 
 [node name="1" parent="Characters" instance=ExtResource("39_dn03h")]
 transform = Transform3D(0.31815377, 0, -0.14587043, 0, 0.35, 0, 0.14587043, 0, 0.31815377, 37.948288, 8.0006, -4.37502)
@@ -1574,6 +1635,44 @@ outline_modulate = Color(0, 0, 0, 0)
 text = "PIGGY"
 font = ExtResource("27_1u3bp")
 font_size = 57
+
+[node name="FireCharacters" type="Node3D" parent="."]
+
+[node name="1" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+transform = Transform3D(0.25093153, 0, -0.24399467, 0, 0.35, 0, 0.24399467, 0, 0.25093153, 41.448124, 7.8667126, -0.7643461)
+
+[node name="3" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+transform = Transform3D(0.316455, 0, -0.14952004, 0, 0.35, 0, 0.14952004, 0, 0.316455, 39.283283, 8.199895, -2.421073)
+
+[node name="5" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+transform = Transform3D(0.10603908, 0, 0.33355018, 0, 0.34999996, 0, -0.33355018, 0, 0.10603908, 35.0053, 8.4389305, -0.99925375)
+
+[node name="6" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+transform = Transform3D(-0.08637269, 0, 0.33917513, 0, 0.35, 0, -0.33917513, 0, -0.08637269, 35.0053, 8.334222, 0.69915915)
+
+[node name="7" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+transform = Transform3D(-0.2623004, 0, 0.23172942, 0, 0.35000002, 0, -0.23172942, 0, -0.2623004, 36.449657, 8.251122, 3.3961542)
+
+[node name="8" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+transform = Transform3D(-0.2588576, 0, -0.024346137, 0, 0.26, 0, 0.024346137, 0, -0.2588576, 37.95, 8.317, 4.475)
+
+[node name="4" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+transform = Transform3D(0.27916762, 0, 0.021573896, -0.0008477397, 0.27978373, 0.010969807, -0.021557232, -0.0110025145, 0.278952, 38.305084, 8.252473, -2.421073)
+
+[node name="9" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+transform = Transform3D(-0.26375127, 0, -0.2300767, 0, 0.35, 0, 0.2300767, 0, -0.26375127, 39.405064, 8.446527, 3.7162647)
+
+[node name="11" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+transform = Transform3D(-0.24107914, 0, 0.25373387, 0, 0.35, 0, -0.25373387, 0, -0.24107914, 34.794132, 8.109915, 2.7553031)
+
+[node name="10" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+transform = Transform3D(-0.18789044, 0.007564851, -0.20746073, -0.0008477398, 0.27978373, 0.010969808, 0.20759684, 0.007989267, -0.18772238, 40.516216, 8.252473, 3.043698)
+
+[node name="2" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+transform = Transform3D(-0.12107119, 0.02293726, -0.6231751, 0.018573415, 0.24715556, 0.05593968, 0.54433686, -0.0033315402, -0.14051503, 41.38945, 8.047699, 1.4271303)
+
+[node name="pig_on_stick" parent="FireCharacters" instance=ExtResource("16_b351x")]
+transform = Transform3D(0.06490773, 0, -0.22065127, 0, 0.23, 0, 0.22065127, 0, 0.06490773, 38.213955, 7.865856, 0.93028975)
 
 [node name="Player" parent="." instance=ExtResource("3_tw2e2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.423, 8.38549, 0)
@@ -2280,6 +2379,59 @@ debug_color = Color(0, 1, 0, 1)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/firepit/InteractableComponent/Contents/MimicRaycastBox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04650879, 0, 0.35115814)
 shape = SubResource("BoxShape3D_b351x")
+
+[node name="firepit (shack)" type="Node3D" parent="IslandComponents"]
+transform = Transform3D(0.60469115, 0.019330405, 0.00012745976, -0.019326886, 0.60447425, 0.016197093, 0.00039016566, -0.016192896, 0.6047832, 38.244473, 8.48336, 1.0289149)
+
+[node name="plate" type="MeshInstance3D" parent="IslandComponents/firepit (shack)"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.036355097, 0)
+mesh = SubResource("ArrayMesh_4el25")
+skeleton = NodePath("")
+
+[node name="Tinder" type="Node3D" parent="IslandComponents/firepit (shack)"]
+
+[node name="tinder" type="MeshInstance3D" parent="IslandComponents/firepit (shack)/Tinder"]
+transform = Transform3D(0, 0.4873088, 0, -0.2575125, 0, 0, 0, 0, 0.2575125, -0.43358994, 0.20656967, -0.108707905)
+mesh = SubResource("ArrayMesh_gghvn")
+skeleton = NodePath("")
+
+[node name="tinder_001" type="MeshInstance3D" parent="IslandComponents/firepit (shack)/Tinder"]
+transform = Transform3D(-0.06661401, 0.37372807, 0.08485081, -0.21231802, -0.14062145, 0.0062725446, 0.033523932, -0.14798222, 0.2083296, 0.28638458, 0.19337463, -0.046002388)
+mesh = SubResource("ArrayMesh_t4i0x")
+skeleton = NodePath("")
+
+[node name="tinder_002" type="MeshInstance3D" parent="IslandComponents/firepit (shack)/Tinder"]
+transform = Transform3D(-0.060813703, 0.31728095, 0.13722584, -0.16162638, -0.24605592, 0.08723851, 0.14428733, -0.14189813, 0.15555944, 0.16862488, 0.113227844, -0.4511671)
+mesh = SubResource("ArrayMesh_vdcfj")
+skeleton = NodePath("")
+
+[node name="tinder_003" type="MeshInstance3D" parent="IslandComponents/firepit (shack)/Tinder"]
+transform = Transform3D(0.092776, -0.16722767, 0.3285876, -0.3257239, 0.14273949, 0.11225311, -0.09840175, -0.6301552, -0.061772056, -0.018482208, 0.01455307, -0.11485386)
+mesh = SubResource("ArrayMesh_08qjk")
+skeleton = NodePath("")
+
+[node name="tinder_004" type="MeshInstance3D" parent="IslandComponents/firepit (shack)/Tinder"]
+transform = Transform3D(-0.06661399, 0.37372807, 0.08485083, -0.03435271, 0.14743206, -0.2083035, -0.21218552, -0.14119817, 0.0070859557, -0.41630173, 0.053344727, 0.26891422)
+mesh = SubResource("ArrayMesh_6y0uv")
+skeleton = NodePath("")
+
+[node name="FireParticles" type="Node3D" parent="IslandComponents/firepit (shack)"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115802765, 0.31510162, -0.12651014)
+
+[node name="Flame" type="GPUParticles3D" parent="IslandComponents/firepit (shack)/FireParticles"]
+amount = 50
+lifetime = 0.7
+preprocess = 2.0
+process_material = SubResource("ParticleProcessMaterial_fu4e1")
+draw_pass_1 = SubResource("QuadMesh_fu4e1")
+
+[node name="Smoke" type="GPUParticles3D" parent="IslandComponents/firepit (shack)/FireParticles"]
+transform = Transform3D(2.705, 0, 0, 0, 2.705, 0, 0, 0, 2.705, 0, -0.138882, 0)
+amount = 100
+lifetime = 1.3
+preprocess = 2.0
+process_material = SubResource("ParticleProcessMaterial_b351x")
+draw_pass_1 = SubResource("QuadMesh_t11dk")
 
 [node name="Wood Planks" type="Node" parent="IslandComponents"]
 

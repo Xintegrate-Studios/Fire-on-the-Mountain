@@ -287,6 +287,7 @@ func sleep():
 	global.player_active = true
 
 func go_to_night():
-	pass
+	$WorldEnvironment.environment = load("res://res/environments/night.tres")
+	$DirectionalLight3D.hide()
 
 #endregion
