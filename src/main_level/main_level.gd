@@ -298,7 +298,11 @@ func go_to_night():
 	$DirectionalLight3D.hide()
 
 func endgame():
+	print("end game")
+	global.player_active = false
 	await get_tree().create_timer(1.0).timeout
+	var tween = get_tree().create_tween()
+	tween.tween_property($Camera3D/EndGameLayer/MainLayer, "modulate", Color(1, 1, 1, 1), 1.5)
 
 #endregion
 
