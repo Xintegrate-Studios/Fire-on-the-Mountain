@@ -37,7 +37,20 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"FrameColor": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://ast/models/items/sackcloth bed/materials/wood.tres",
+"use_external/path": "uid://c1cbmxi2y53pg"
+},
+"SackClothColorNew": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://ast/models/items/sackcloth bed/materials/sackcloth.tres",
+"use_external/path": "uid://dnffsut07rg0"
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
