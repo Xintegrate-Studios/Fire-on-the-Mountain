@@ -2,6 +2,7 @@ extends Node
 
 var player_active : bool = true
 var paused : bool = false
+var in_main_menu : bool = true
 
 var did_tutorial : bool = false
 var is_in_climb_mountain_area : bool = false:
@@ -46,15 +47,16 @@ var wood_planks : int = 0:
 			task_system.task("LIGHT_FIRE")
 
 func pause():
-	paused = !paused
-	get_tree().paused = paused
-	
-	if paused:
-		pause_animation_player.play(&"main")
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	else:
-		pause_animation_player.play(&"main", -1, -2, true)
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if !in_main_menu:
+		paused = !paused
+		get_tree().paused = paused
+		
+		if paused:
+			pause_animation_player.play(&"main")
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			pause_animation_player.play(&"main", -1, -2, true)
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
 func _input(_event: InputEvent) -> void:

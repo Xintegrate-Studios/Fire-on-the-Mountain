@@ -3,6 +3,7 @@ extends Node3D
 #region exports and variables
 
 var default_conch_transform
+var showing_tutorial_ui : bool = false
 
 # Characters
 @export var Character_1 : Node3D
@@ -46,8 +47,20 @@ func _ready() -> void:
 #region input
 
 func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("Tutorial"):
-		pass
+	if Input.is_action_just_pressed("Tutorial") and !global.paused and !global.in_main_menu:
+		if showing_tutorial_ui:
+			$Camera3D/TutorialUILayer/MainLayer.hide()
+			global.player_active = true
+		else:
+			$Camera3D/TutorialUILayer/MainLayer.show()
+			global.player_active = false
+		
+		showing_tutorial_ui = !showing_tutorial_ui
+	
+	if Input.is_action_just_pressed("Exit") and showing_tutorial_ui:
+		$Camera3D/TutorialUILayer/MainLayer.hide()
+		global.player_active = true
+		showing_tutorial_ui = false
 	
 	if Input.is_action_just_pressed("Interact") \
 	and global.is_in_climb_mountain_area \
@@ -79,6 +92,7 @@ func _on_play_button_pressed() -> void:
 	
 	await get_tree().create_timer(3.0).timeout
 	
+	global.in_main_menu = false
 	# Activate player & HUD
 	global.player_active = true
 	$"Player/Head/Camera3D".make_current()
@@ -154,10 +168,11 @@ func _on_dialogue_animations_animation_finished(anim_name: StringName) -> void:
 	await get_tree().create_timer(1.0).timeout
 	
 	# Fade & hide characters
-	$Camera3D/FadeManager.play("fade", -1, -1, true)
+	$conch.hide()
 	for node in HideCharactersList:
 		node.hide()
 	$Player/Head/Camera3D/MainHUDLayer.show()
+	$Camera3D/FadeManager.play("fade", -1, -1, true)
 	
 	# Update progression and UI
 	global.PROGRESSION["HAD_FIRST_MEETING"] = true
@@ -290,7 +305,6 @@ func sleep():
 	$FireLight.show()
 	$pig_on_stick.show()
 	$"firepit (shack)".show()
-	$conch.hide()
 	$Characters.hide()
 
 func go_to_night():
