@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmdtiq0l0qqg"
 path.s3tc="res://.godot/imported/Cube.008 Base Color.png-72751e9f59292a5c6765d0e09b785f3d.s3tc.ctex"
+path.etc2="res://.godot/imported/Cube.008 Base Color.png-72751e9f59292a5c6765d0e09b785f3d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://ast/models/structures/shacks/shack1/textures/Cube.008 Base Color.png"
-dest_files=["res://.godot/imported/Cube.008 Base Color.png-72751e9f59292a5c6765d0e09b785f3d.s3tc.ctex"]
+dest_files=["res://.godot/imported/Cube.008 Base Color.png-72751e9f59292a5c6765d0e09b785f3d.s3tc.ctex", "res://.godot/imported/Cube.008 Base Color.png-72751e9f59292a5c6765d0e09b785f3d.etc2.ctex"]
 
 [params]
 
@@ -28,6 +29,10 @@ mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
