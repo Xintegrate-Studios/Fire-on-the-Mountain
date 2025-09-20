@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Fire on the Mountain"
+config/version="0.1"
 config/tags=PackedStringArray("3d", "for_school")
 run/main_scene="uid://biqj67tjrslek"
 config/features=PackedStringArray("4.5", "Forward Plus")
