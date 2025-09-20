@@ -26,6 +26,7 @@ task_system="*res://src/globals/task_system.gd"
 
 [display]
 
+window/size/mode=4
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
