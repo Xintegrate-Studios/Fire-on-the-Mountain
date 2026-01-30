@@ -8,6 +8,10 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Fire on the Mountain"
@@ -15,7 +19,7 @@ config/description="Survive a savage island, balancing alliances and chaos in a 
 config/version="0.1"
 config/tags=PackedStringArray("3d", "for_school")
 run/main_scene="uid://biqj67tjrslek"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 config/icon="uid://dus3tq22m7m6b"

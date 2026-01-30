@@ -1,4 +1,4 @@
-[gd_scene load_steps=202 format=4 uid="uid://biqj67tjrslek"]
+[gd_scene format=4 uid="uid://biqj67tjrslek"]
 
 [ext_resource type="Script" uid="uid://dvav26tqc5pit" path="res://src/main_level/main_level.gd" id="1_fpkve"]
 [ext_resource type="PackedScene" uid="uid://bm3l1fnoqw1bx" path="res://ast/models/island/island.tscn" id="1_scctx"]
@@ -2309,7 +2309,7 @@ _data = {
 &"main": SubResource("Animation_44kkc")
 }
 
-[node name="World" type="Node3D" node_paths=PackedStringArray("Character_1", "Character_2", "Character_3", "Character_4", "Character_5", "Character_6", "Character_7", "Character_8", "Character_9", "Character_10", "firepit_tinder", "HideCharactersList")]
+[node name="World" type="Node3D" unique_id=1677838160 node_paths=PackedStringArray("Character_1", "Character_2", "Character_3", "Character_4", "Character_5", "Character_6", "Character_7", "Character_8", "Character_9", "Character_10", "firepit_tinder", "HideCharactersList")]
 process_mode = 1
 script = ExtResource("1_fpkve")
 Character_1 = NodePath("Characters/1")
@@ -2325,11 +2325,11 @@ Character_10 = NodePath("Characters/10")
 firepit_tinder = NodePath("IslandComponents/firepit")
 HideCharactersList = [NodePath("Characters/1"), NodePath("Characters/2"), NodePath("Characters/3"), NodePath("Characters/4"), NodePath("Characters/5"), NodePath("Characters/7"), NodePath("Characters/8"), NodePath("Characters/9")]
 
-[node name="Tasks" type="Node" parent="."]
+[node name="Tasks" type="Node" parent="." unique_id=1165133056]
 
-[node name="ConchTask" type="Node" parent="Tasks"]
+[node name="ConchTask" type="Node" parent="Tasks" unique_id=630223411]
 
-[node name="Arrow" type="Sprite3D" parent="Tasks/ConchTask"]
+[node name="Arrow" type="Sprite3D" parent="Tasks/ConchTask" unique_id=202870266]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 33.35269, 10.448216, -1.3057545)
 visible = false
 transparency = 0.71
@@ -2340,57 +2340,55 @@ texture_filter = 0
 render_priority = 5
 texture = ExtResource("2_kftxd")
 
-[node name="ArrowMovement" type="AnimationPlayer" parent="Tasks/ConchTask"]
-libraries = {
-&"": SubResource("AnimationLibrary_igp1d")
-}
-autoplay = "main"
+[node name="ArrowMovement" type="AnimationPlayer" parent="Tasks/ConchTask" unique_id=1388089557]
+libraries/ = SubResource("AnimationLibrary_igp1d")
+autoplay = &"main"
 
-[node name="Timeline" type="Node" parent="."]
+[node name="Timeline" type="Node" parent="." unique_id=1281976812]
 
-[node name="ConchTask" type="Timer" parent="Timeline"]
+[node name="ConchTask" type="Timer" parent="Timeline" unique_id=2039091620]
 wait_time = 3.0
 one_shot = true
 
-[node name="Audio" type="Node" parent="."]
+[node name="Audio" type="Node" parent="." unique_id=521898870]
 
-[node name="Conch" type="AudioStreamPlayer" parent="Audio"]
+[node name="Conch" type="AudioStreamPlayer" parent="Audio" unique_id=1021638530]
 stream = ExtResource("2_0pe4b")
 
-[node name="WoodCollect" type="AudioStreamPlayer" parent="Audio"]
+[node name="WoodCollect" type="AudioStreamPlayer" parent="Audio" unique_id=545107282]
 stream = ExtResource("4_igp1d")
 max_polyphony = 3
 
-[node name="FireSFX" type="AudioStreamPlayer3D" parent="Audio"]
+[node name="FireSFX" type="AudioStreamPlayer3D" parent="Audio" unique_id=1141569667]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.228184, 35.920647, 6.75978)
 stream = ExtResource("48_1j151")
 volume_db = -4.409
 unit_size = 5.0
 
-[node name="WindAmbience" type="AudioStreamPlayer" parent="."]
+[node name="WindAmbience" type="AudioStreamPlayer" parent="." unique_id=278068301]
 stream = ExtResource("2_tchnu")
 volume_db = 8.8
 autoplay = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=983702826]
 environment = ExtResource("7_5kn0p")
 camera_attributes = SubResource("CameraAttributesPractical_tw2e2")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1017743078]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Water" type="MeshInstance3D" parent="."]
+[node name="Water" type="MeshInstance3D" parent="." unique_id=34882458]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.611401, 0.152959)
 mesh = SubResource("PlaneMesh_n4qwq")
 
-[node name="Characters" type="Node3D" parent="."]
+[node name="Characters" type="Node3D" parent="." unique_id=606161361]
 
-[node name="1" parent="Characters" instance=ExtResource("39_dn03h")]
+[node name="1" parent="Characters" unique_id=106946185 instance=ExtResource("39_dn03h")]
 transform = Transform3D(0.31815377, 0, -0.14587043, 0, 0.35, 0, 0.14587043, 0, 0.31815377, 37.948288, 8.0006, -4.37502)
 visible = false
 
-[node name="NameLabel_Simon" type="Label3D" parent="Characters/1"]
+[node name="NameLabel_Simon" type="Label3D" parent="Characters/1" unique_id=865502265]
 transform = Transform3D(1.4572543, 5.724621e-08, 0.25847587, -7.088685e-08, 1.48, 7.186658e-08, -0.25847587, -8.31422e-08, 1.4572543, -0.008903503, 5.5483513, -0.30503845)
 visible = false
 pixel_size = 0.01
@@ -2404,15 +2402,15 @@ text = "SIMON"
 font = ExtResource("27_1u3bp")
 font_size = 57
 
-[node name="2" parent="Characters" instance=ExtResource("39_3ngmi")]
+[node name="2" parent="Characters" unique_id=870599893 instance=ExtResource("39_3ngmi")]
 transform = Transform3D(0.38495764, -0.0057113804, 0, 0.0057113804, 0.38495764, 0, 0, 0, 0.385, 35.349903, 8.172344, -4.619134)
 visible = false
 
-[node name="3" parent="Characters" instance=ExtResource("40_a77lo")]
+[node name="3" parent="Characters" unique_id=846973666 instance=ExtResource("40_a77lo")]
 transform = Transform3D(0.22194786, -0.014530825, 0.25050554, -0.038592134, 0.32848206, 0.053246554, -0.24794114, -0.06413582, 0.21595554, 33.60109, 8.576118, -3.6739302)
 visible = false
 
-[node name="NameLabel_Jack" type="Label3D" parent="Characters/3"]
+[node name="NameLabel_Jack" type="Label3D" parent="Characters/3" unique_id=1802707680]
 transform = Transform3D(0.9656378, -0.12035861, -0.38028237, 0.049287613, 1.0244483, -0.19908154, 0.39581767, 0.16606183, 0.9525275, -0.271492, 5.913437, 1.3480225)
 visible = false
 pixel_size = 0.01
@@ -2426,36 +2424,36 @@ text = "JACK"
 font = ExtResource("27_1u3bp")
 font_size = 57
 
-[node name="4" parent="Characters" instance=ExtResource("8_rk3wu")]
+[node name="4" parent="Characters" unique_id=1299927530 instance=ExtResource("8_rk3wu")]
 transform = Transform3D(0.17151809, 0, 0.18188334, 0, 0.25, 0, -0.18188334, 0, 0.17151809, 33.61898, 8.526501, -2.6134217)
 visible = false
 
-[node name="5" parent="Characters" instance=ExtResource("39_dn03h")]
+[node name="5" parent="Characters" unique_id=1083953766 instance=ExtResource("39_dn03h")]
 transform = Transform3D(-0.014929675, 0.028654126, 0.3485055, 0.0012263932, 0.34882507, -0.02862787, -0.34967932, 0, -0.01497996, 32.58648, 8.564689, -0.10914934)
 visible = false
 
-[node name="6" parent="Characters" instance=ExtResource("9_w3ep2")]
+[node name="6" parent="Characters" unique_id=1315717539 instance=ExtResource("9_w3ep2")]
 transform = Transform3D(-0.13255374, 0.014881663, 0.22898261, -0.060561355, 0.2527971, -0.051487204, -0.22132969, -0.07808423, -0.12304888, 38.641888, 7.5859284, -2.8385782)
 
-[node name="7" parent="Characters" instance=ExtResource("10_bvxkv")]
+[node name="7" parent="Characters" unique_id=584688101 instance=ExtResource("10_bvxkv")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 36.895527, 8.018336, -4.501088)
 visible = false
 
-[node name="8" parent="Characters" instance=ExtResource("8_rk3wu")]
+[node name="8" parent="Characters" unique_id=1953654927 instance=ExtResource("8_rk3wu")]
 transform = Transform3D(0.19951412, 0.0027195055, -0.15062113, 0.0098552, 0.24918821, 0.017553441, 0.15032296, -0.019946238, 0.19875903, 38.3002, 8.273444, -2.1468306)
 visible = false
 
-[node name="9" parent="Characters" instance=ExtResource("39_dn03h")]
+[node name="9" parent="Characters" unique_id=2064801048 instance=ExtResource("39_dn03h")]
 transform = Transform3D(0.29623923, 0, -0.18639296, 0, 0.34999996, 0, 0.18639296, 0, 0.29623923, 39.037167, 7.9536543, -4.1231318)
 visible = false
 
-[node name="10" parent="Characters" instance=ExtResource("10_bvxkv")]
+[node name="10" parent="Characters" unique_id=1858628435 instance=ExtResource("10_bvxkv")]
 transform = Transform3D(0.22653398, 0.035833593, 0.19338633, -0.03517882, 0.29760414, -0.013935971, -0.19350651, -0.012153777, 0.2289268, 33.331203, 8.090973, -6.2853293)
 
-[node name="11" parent="Characters" instance=ExtResource("39_dn03h")]
+[node name="11" parent="Characters" unique_id=1957472795 instance=ExtResource("39_dn03h")]
 transform = Transform3D(0.12974904, 0.0130947195, -0.6227668, -0.0012120947, 0.24788092, 0.034447707, 0.54265046, -0.0025772967, 0.14898206, 38.239914, 8.412828, -0.10914934)
 
-[node name="NameLabel_Piggy" type="Label3D" parent="Characters/11"]
+[node name="NameLabel_Piggy" type="Label3D" parent="Characters/11" unique_id=928195972]
 transform = Transform3D(0.037083164, -0.0013627886, 0.6262012, 0.075787514, 1.4078873, -0.0014242977, -0.5440521, 0.02931923, 0.032282986, 0.028689384, 5.6750526, 0.13127136)
 visible = false
 pixel_size = 0.01
@@ -2469,43 +2467,43 @@ text = "PIGGY"
 font = ExtResource("27_1u3bp")
 font_size = 57
 
-[node name="FireCharacters" type="Node3D" parent="."]
+[node name="FireCharacters" type="Node3D" parent="." unique_id=798821497]
 visible = false
 
-[node name="1" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+[node name="1" parent="FireCharacters" unique_id=827916454 instance=ExtResource("39_dn03h")]
 transform = Transform3D(0.25093153, 0, -0.24399467, 0, 0.35, 0, 0.24399467, 0, 0.25093153, 41.448124, 7.8667126, -0.7643461)
 
-[node name="3" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+[node name="3" parent="FireCharacters" unique_id=893832629 instance=ExtResource("39_dn03h")]
 transform = Transform3D(0.316455, 0, -0.14952004, 0, 0.35, 0, 0.14952004, 0, 0.316455, 39.283283, 8.199895, -2.421073)
 
-[node name="5" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+[node name="5" parent="FireCharacters" unique_id=1710272814 instance=ExtResource("39_dn03h")]
 transform = Transform3D(0.10603908, 0, 0.33355018, 0, 0.34999996, 0, -0.33355018, 0, 0.10603908, 35.0053, 8.4389305, -0.99925375)
 
-[node name="6" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+[node name="6" parent="FireCharacters" unique_id=611284751 instance=ExtResource("39_dn03h")]
 transform = Transform3D(-0.08637269, 0, 0.33917513, 0, 0.35, 0, -0.33917513, 0, -0.08637269, 35.0053, 8.334222, 0.69915915)
 
-[node name="7" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+[node name="7" parent="FireCharacters" unique_id=262839647 instance=ExtResource("39_dn03h")]
 transform = Transform3D(-0.2623004, 0, 0.23172942, 0, 0.35000002, 0, -0.23172942, 0, -0.2623004, 36.449657, 8.251122, 3.3961542)
 
-[node name="8" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+[node name="8" parent="FireCharacters" unique_id=1589059502 instance=ExtResource("39_dn03h")]
 transform = Transform3D(-0.2588576, 0, -0.024346137, 0, 0.26, 0, 0.024346137, 0, -0.2588576, 37.95, 8.317, 4.475)
 
-[node name="4" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+[node name="4" parent="FireCharacters" unique_id=308418160 instance=ExtResource("39_dn03h")]
 transform = Transform3D(0.27916762, 0, 0.021573896, -0.0008477397, 0.27978373, 0.010969807, -0.021557232, -0.0110025145, 0.278952, 38.305084, 8.252473, -2.421073)
 
-[node name="9" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+[node name="9" parent="FireCharacters" unique_id=1958265604 instance=ExtResource("39_dn03h")]
 transform = Transform3D(-0.26375127, 0, -0.2300767, 0, 0.35, 0, 0.2300767, 0, -0.26375127, 39.405064, 8.446527, 3.7162647)
 
-[node name="11" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+[node name="11" parent="FireCharacters" unique_id=720389653 instance=ExtResource("39_dn03h")]
 transform = Transform3D(-0.24107914, 0, 0.25373387, 0, 0.35, 0, -0.25373387, 0, -0.24107914, 34.794132, 8.109915, 2.7553031)
 
-[node name="10" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+[node name="10" parent="FireCharacters" unique_id=1294398391 instance=ExtResource("39_dn03h")]
 transform = Transform3D(-0.18789044, 0.007564851, -0.20746073, -0.0008477398, 0.27978373, 0.010969808, 0.20759684, 0.007989267, -0.18772238, 40.516216, 8.252473, 3.043698)
 
-[node name="2" parent="FireCharacters" instance=ExtResource("39_dn03h")]
+[node name="2" parent="FireCharacters" unique_id=2145937458 instance=ExtResource("39_dn03h")]
 transform = Transform3D(-0.12107119, 0.02293726, -0.6231751, 0.018573415, 0.24715556, 0.05593968, 0.54433686, -0.0033315402, -0.14051503, 41.38945, 8.047699, 1.4271303)
 
-[node name="FireLight" type="OmniLight3D" parent="."]
+[node name="FireLight" type="OmniLight3D" parent="." unique_id=1141541309]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.147648, 9.1416855, 0.8565581)
 visible = false
 light_color = Color(0.8008867, 0.5320657, 0.22888348, 1)
@@ -2513,57 +2511,57 @@ light_energy = 2.719
 shadow_enabled = true
 omni_range = 19.335
 
-[node name="pig_on_stick" parent="." instance=ExtResource("16_b351x")]
+[node name="pig_on_stick" parent="." unique_id=1335118724 instance=ExtResource("16_b351x")]
 transform = Transform3D(0.06490773, 0, -0.22065127, 0, 0.23, 0, 0.22065127, 0, 0.06490773, 38.213955, 7.865856, 0.93028975)
 visible = false
 
-[node name="firepit (shack)" type="Node3D" parent="."]
+[node name="firepit (shack)" type="Node3D" parent="." unique_id=1072574695]
 transform = Transform3D(0.60469115, 0.019330405, 0.00012745976, -0.019326886, 0.60447425, 0.016197093, 0.00039016566, -0.016192896, 0.6047832, 38.244473, 8.48336, 1.0289149)
 visible = false
 
-[node name="plate" type="MeshInstance3D" parent="firepit (shack)"]
+[node name="plate" type="MeshInstance3D" parent="firepit (shack)" unique_id=1532925014]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.036355097, 0)
 mesh = SubResource("ArrayMesh_4el25")
 skeleton = NodePath("")
 
-[node name="Tinder" type="Node3D" parent="firepit (shack)"]
+[node name="Tinder" type="Node3D" parent="firepit (shack)" unique_id=385695806]
 
-[node name="tinder" type="MeshInstance3D" parent="firepit (shack)/Tinder"]
+[node name="tinder" type="MeshInstance3D" parent="firepit (shack)/Tinder" unique_id=409405485]
 transform = Transform3D(0, 0.4873088, 0, -0.2575125, 0, 0, 0, 0, 0.2575125, -0.43358994, 0.20656967, -0.108707905)
 mesh = SubResource("ArrayMesh_gghvn")
 skeleton = NodePath("")
 
-[node name="tinder_001" type="MeshInstance3D" parent="firepit (shack)/Tinder"]
+[node name="tinder_001" type="MeshInstance3D" parent="firepit (shack)/Tinder" unique_id=2068149338]
 transform = Transform3D(-0.06661401, 0.37372807, 0.08485081, -0.21231802, -0.14062145, 0.0062725446, 0.033523932, -0.14798222, 0.2083296, 0.28638458, 0.19337463, -0.046002388)
 mesh = SubResource("ArrayMesh_t4i0x")
 skeleton = NodePath("")
 
-[node name="tinder_002" type="MeshInstance3D" parent="firepit (shack)/Tinder"]
+[node name="tinder_002" type="MeshInstance3D" parent="firepit (shack)/Tinder" unique_id=1520588681]
 transform = Transform3D(-0.060813703, 0.31728095, 0.13722584, -0.16162638, -0.24605592, 0.08723851, 0.14428733, -0.14189813, 0.15555944, 0.16862488, 0.113227844, -0.4511671)
 mesh = SubResource("ArrayMesh_vdcfj")
 skeleton = NodePath("")
 
-[node name="tinder_003" type="MeshInstance3D" parent="firepit (shack)/Tinder"]
+[node name="tinder_003" type="MeshInstance3D" parent="firepit (shack)/Tinder" unique_id=1762177030]
 transform = Transform3D(0.092776, -0.16722767, 0.3285876, -0.3257239, 0.14273949, 0.11225311, -0.09840175, -0.6301552, -0.061772056, -0.018482208, 0.01455307, -0.11485386)
 mesh = SubResource("ArrayMesh_08qjk")
 skeleton = NodePath("")
 
-[node name="tinder_004" type="MeshInstance3D" parent="firepit (shack)/Tinder"]
+[node name="tinder_004" type="MeshInstance3D" parent="firepit (shack)/Tinder" unique_id=1385251889]
 transform = Transform3D(-0.06661399, 0.37372807, 0.08485083, -0.03435271, 0.14743206, -0.2083035, -0.21218552, -0.14119817, 0.0070859557, -0.41630173, 0.053344727, 0.26891422)
 mesh = SubResource("ArrayMesh_6y0uv")
 skeleton = NodePath("")
 
-[node name="FireParticles" type="Node3D" parent="firepit (shack)"]
+[node name="FireParticles" type="Node3D" parent="firepit (shack)" unique_id=631841276]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115802765, 0.31510162, -0.12651014)
 
-[node name="Flame" type="GPUParticles3D" parent="firepit (shack)/FireParticles"]
+[node name="Flame" type="GPUParticles3D" parent="firepit (shack)/FireParticles" unique_id=2072242697]
 amount = 50
 lifetime = 0.7
 preprocess = 2.0
 process_material = SubResource("ParticleProcessMaterial_fu4e1")
 draw_pass_1 = SubResource("QuadMesh_fu4e1")
 
-[node name="Smoke" type="GPUParticles3D" parent="firepit (shack)/FireParticles"]
+[node name="Smoke" type="GPUParticles3D" parent="firepit (shack)/FireParticles" unique_id=1062781370]
 transform = Transform3D(2.705, 0, 0, 0, 2.705, 0, 0, 0, 2.705, 0, -0.138882, 0)
 amount = 100
 lifetime = 1.3
@@ -2571,22 +2569,22 @@ preprocess = 2.0
 process_material = SubResource("ParticleProcessMaterial_b351x")
 draw_pass_1 = SubResource("QuadMesh_t11dk")
 
-[node name="Player" parent="." instance=ExtResource("3_tw2e2")]
+[node name="Player" parent="." unique_id=647907755 instance=ExtResource("3_tw2e2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.423, 8.38549, 0)
 
-[node name="PlayerMountainSpawn" type="Marker3D" parent="."]
+[node name="PlayerMountainSpawn" type="Marker3D" parent="." unique_id=1201007175]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.806023, 35.830154, 6.648554)
 
-[node name="PlayerBottomMountainSpawn" type="Marker3D" parent="."]
+[node name="PlayerBottomMountainSpawn" type="Marker3D" parent="." unique_id=972208288]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.385231, 7.85938, 15.931199)
 
-[node name="sackcloth bed" parent="." instance=ExtResource("15_tdn2i")]
+[node name="sackcloth bed" parent="." unique_id=1155958488 instance=ExtResource("15_tdn2i")]
 transform = Transform3D(0.36288458, 0.0049945065, 0.55962384, -0.045859393, 0.6649958, 0.023802312, -0.557764, -0.051426534, 0.3621376, 29.740442, 8.618249, -6.8206697)
 
-[node name="conch" parent="." instance=ExtResource("35_63h44")]
+[node name="conch" parent="." unique_id=874726577 instance=ExtResource("35_63h44")]
 transform = Transform3D(0.11878704, -0.06269031, -0.14317591, 0.14828607, -0.011639647, 0.12812304, -0.049402945, -0.18567301, 0.04030977, 33.2969, 9.04649, -1.36873)
 
-[node name="ConchInteractableComponent" type="Node3D" parent="conch" node_paths=PackedStringArray("Contents_Node", "UI_Sprite_Node", "SubViewport_Node")]
+[node name="ConchInteractableComponent" type="Node3D" parent="conch" unique_id=1955721979 node_paths=PackedStringArray("Contents_Node", "UI_Sprite_Node", "SubViewport_Node")]
 transform = Transform3D(3.08219, 3.84761, -1.28187, -1.62663, -0.302021, -4.81767, -3.71502, 3.32444, 1.04592, 2.44716, -0.900589, 2.58077)
 script = ExtResource("36_44kkc")
 Contents_Node = NodePath("Contents")
@@ -2594,21 +2592,21 @@ UI_Sprite_Node = NodePath("Contents/UI")
 SubViewport_Node = NodePath("Contents/UI/SubViewport")
 ActionToPress = SubResource("InputEventAction_5soda")
 
-[node name="Contents" type="Node3D" parent="conch/ConchInteractableComponent"]
+[node name="Contents" type="Node3D" parent="conch/ConchInteractableComponent" unique_id=199479871]
 
-[node name="UI" type="Sprite3D" parent="conch/ConchInteractableComponent/Contents"]
+[node name="UI" type="Sprite3D" parent="conch/ConchInteractableComponent/Contents" unique_id=849217317]
 transform = Transform3D(0.105, -6.25349e-24, 0, 6.25349e-24, 0.105, -9.99201e-16, 5.95094e-38, 9.99201e-16, 0.105, 0.112873, -0.648659, -0.157279)
 billboard = 1
 no_depth_test = true
 render_priority = 1
 texture = SubResource("ViewportTexture_44kkc")
 
-[node name="SubViewport" type="SubViewport" parent="conch/ConchInteractableComponent/Contents/UI"]
+[node name="SubViewport" type="SubViewport" parent="conch/ConchInteractableComponent/Contents/UI" unique_id=540240775]
 transparent_bg = true
 gui_disable_input = true
 size = Vector2i(1150, 1150)
 
-[node name="Key" type="Label" parent="conch/ConchInteractableComponent/Contents/UI/SubViewport"]
+[node name="Key" type="Label" parent="conch/ConchInteractableComponent/Contents/UI/SubViewport" unique_id=1230439370]
 offset_left = 500.0
 offset_top = 500.0
 offset_right = 629.0
@@ -2619,45 +2617,39 @@ text = "[E]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlayerAreaBox" type="Area3D" parent="conch/ConchInteractableComponent/Contents"]
+[node name="PlayerAreaBox" type="Area3D" parent="conch/ConchInteractableComponent/Contents" unique_id=1983884449]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="conch/ConchInteractableComponent/Contents/PlayerAreaBox"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="conch/ConchInteractableComponent/Contents/PlayerAreaBox" unique_id=233329822]
 shape = SubResource("BoxShape3D_nyf0v")
 
-[node name="MimicRaycastBox" type="Area3D" parent="conch/ConchInteractableComponent/Contents"]
+[node name="MimicRaycastBox" type="Area3D" parent="conch/ConchInteractableComponent/Contents" unique_id=762041223]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="conch/ConchInteractableComponent/Contents/MimicRaycastBox"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="conch/ConchInteractableComponent/Contents/MimicRaycastBox" unique_id=1061248444]
 transform = Transform3D(1, -2.61569e-13, 0, 5.9557e-23, 1, 0, 0, 1.77636e-15, 1, 0.0497284, -0.705292, -0.138511)
 shape = SubResource("BoxShape3D_lutt7")
 
-[node name="Clouds" type="MeshInstance3D" parent="."]
+[node name="Clouds" type="MeshInstance3D" parent="." unique_id=681936214]
 transform = Transform3D(500, 0, 0, 0, 128, 0, 0, 0, 500, 0, 128.812, 0)
 visible = false
 mesh = SubResource("BoxMesh_lkofv")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2074566973]
 transform = Transform3D(0.03315517, 0.08015486, -0.99623066, 0, 0.99677914, 0.08019891, 0.99945045, -0.002659009, 0.033048358, -48.7406, 37.3539, 4.49816)
 current = true
 
-[node name="MenuAnimation" type="AnimationPlayer" parent="Camera3D"]
-libraries = {
-&"": SubResource("AnimationLibrary_fpkve")
-}
+[node name="MenuAnimation" type="AnimationPlayer" parent="Camera3D" unique_id=1161685296]
+libraries/ = SubResource("AnimationLibrary_fpkve")
 
-[node name="PauseAnimation" type="AnimationPlayer" parent="Camera3D"]
+[node name="PauseAnimation" type="AnimationPlayer" parent="Camera3D" unique_id=1202534111]
 process_mode = 3
-libraries = {
-&"": SubResource("AnimationLibrary_dxot6")
-}
+libraries/ = SubResource("AnimationLibrary_dxot6")
 
-[node name="FadeManager" type="AnimationPlayer" parent="Camera3D"]
-libraries = {
-&"": SubResource("AnimationLibrary_c857x")
-}
+[node name="FadeManager" type="AnimationPlayer" parent="Camera3D" unique_id=357447955]
+libraries/ = SubResource("AnimationLibrary_c857x")
 
-[node name="MainMenuLayer" type="CanvasLayer" parent="Camera3D"]
+[node name="MainMenuLayer" type="CanvasLayer" parent="Camera3D" unique_id=119851988]
 
-[node name="BG" type="Panel" parent="Camera3D/MainMenuLayer"]
+[node name="BG" type="Panel" parent="Camera3D/MainMenuLayer" unique_id=834200062]
 material = ExtResource("28_c857x")
 anchors_preset = 8
 anchor_left = 0.5
@@ -2670,7 +2662,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Title" type="Label" parent="Camera3D/MainMenuLayer"]
+[node name="Title" type="Label" parent="Camera3D/MainMenuLayer" unique_id=1630460726]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -2692,7 +2684,7 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="PlayButton" type="Button" parent="Camera3D/MainMenuLayer"]
+[node name="PlayButton" type="Button" parent="Camera3D/MainMenuLayer" unique_id=526585847]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -2709,7 +2701,7 @@ focus_mode = 0
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("27_1u3bp")
 
-[node name="OptionsButton" type="Button" parent="Camera3D/MainMenuLayer"]
+[node name="OptionsButton" type="Button" parent="Camera3D/MainMenuLayer" unique_id=1824903959]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -2726,7 +2718,7 @@ focus_mode = 0
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("27_1u3bp")
 
-[node name="CreditsButton" type="Button" parent="Camera3D/MainMenuLayer"]
+[node name="CreditsButton" type="Button" parent="Camera3D/MainMenuLayer" unique_id=1532042796]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -2743,7 +2735,7 @@ focus_mode = 0
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("27_1u3bp")
 
-[node name="PlayText" type="Label" parent="Camera3D/MainMenuLayer"]
+[node name="PlayText" type="Label" parent="Camera3D/MainMenuLayer" unique_id=1221418450]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -2763,7 +2755,7 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="OptionsText" type="Label" parent="Camera3D/MainMenuLayer"]
+[node name="OptionsText" type="Label" parent="Camera3D/MainMenuLayer" unique_id=1275134605]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -2783,7 +2775,7 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="CreditsText" type="Label" parent="Camera3D/MainMenuLayer"]
+[node name="CreditsText" type="Label" parent="Camera3D/MainMenuLayer" unique_id=625047289]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -2803,9 +2795,9 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="DialogueCutsceneLayer" type="CanvasLayer" parent="Camera3D"]
+[node name="DialogueCutsceneLayer" type="CanvasLayer" parent="Camera3D" unique_id=1392707966]
 
-[node name="DialogueLabel" type="Label" parent="Camera3D/DialogueCutsceneLayer"]
+[node name="DialogueLabel" type="Label" parent="Camera3D/DialogueCutsceneLayer" unique_id=754769907]
 visible = false
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
@@ -2827,19 +2819,15 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="DialogueAnimations" type="AnimationPlayer" parent="Camera3D/DialogueCutsceneLayer"]
-libraries = {
-&"": SubResource("AnimationLibrary_1j151")
-}
+[node name="DialogueAnimations" type="AnimationPlayer" parent="Camera3D/DialogueCutsceneLayer" unique_id=1342241113]
+libraries/ = SubResource("AnimationLibrary_1j151")
 
-[node name="TutorialLayer" type="CanvasLayer" parent="Camera3D"]
+[node name="TutorialLayer" type="CanvasLayer" parent="Camera3D" unique_id=1055466565]
 
-[node name="ToastAnimation" type="AnimationPlayer" parent="Camera3D/TutorialLayer"]
-libraries = {
-&"": SubResource("AnimationLibrary_xgma8")
-}
+[node name="ToastAnimation" type="AnimationPlayer" parent="Camera3D/TutorialLayer" unique_id=114295058]
+libraries/ = SubResource("AnimationLibrary_xgma8")
 
-[node name="MainLayer" type="Control" parent="Camera3D/TutorialLayer"]
+[node name="MainLayer" type="Control" parent="Camera3D/TutorialLayer" unique_id=1094621533]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -2850,7 +2838,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="ToastBG" type="Panel" parent="Camera3D/TutorialLayer/MainLayer"]
+[node name="ToastBG" type="Panel" parent="Camera3D/TutorialLayer/MainLayer" unique_id=1183436638]
 material = SubResource("ShaderMaterial_xgma8")
 layout_mode = 0
 offset_left = 1019.0
@@ -2858,7 +2846,7 @@ offset_top = 602.0
 offset_right = 1019.0
 offset_bottom = 638.0
 
-[node name="ToastText" type="Label" parent="Camera3D/TutorialLayer/MainLayer"]
+[node name="ToastText" type="Label" parent="Camera3D/TutorialLayer/MainLayer" unique_id=489666184]
 layout_mode = 0
 offset_left = 908.0
 offset_top = 604.0
@@ -2871,10 +2859,10 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="TutorialUILayer" type="CanvasLayer" parent="Camera3D"]
+[node name="TutorialUILayer" type="CanvasLayer" parent="Camera3D" unique_id=648344254]
 layer = 120
 
-[node name="MainLayer" type="Control" parent="Camera3D/TutorialUILayer"]
+[node name="MainLayer" type="Control" parent="Camera3D/TutorialUILayer" unique_id=741003124]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -2883,7 +2871,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BG" type="ColorRect" parent="Camera3D/TutorialUILayer/MainLayer"]
+[node name="BG" type="ColorRect" parent="Camera3D/TutorialUILayer/MainLayer" unique_id=137422562]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2892,7 +2880,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.30980393)
 
-[node name="Label" type="Label" parent="Camera3D/TutorialUILayer/MainLayer"]
+[node name="Label" type="Label" parent="Camera3D/TutorialUILayer/MainLayer" unique_id=1111599657]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -2914,7 +2902,7 @@ text = "WASD to move
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Camera3D/TutorialUILayer/MainLayer"]
+[node name="Label2" type="Label" parent="Camera3D/TutorialUILayer/MainLayer" unique_id=1386579401]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -2933,12 +2921,12 @@ text = "[ESC] to close"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PauseLayer" type="CanvasLayer" parent="Camera3D"]
+[node name="PauseLayer" type="CanvasLayer" parent="Camera3D" unique_id=247952520]
 process_mode = 3
 layer = 10
 script = ExtResource("29_dxot6")
 
-[node name="BG" type="Panel" parent="Camera3D/PauseLayer"]
+[node name="BG" type="Panel" parent="Camera3D/PauseLayer" unique_id=542911999]
 material = ExtResource("28_c857x")
 anchors_preset = 8
 anchor_left = 0.5
@@ -2952,7 +2940,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1u3bp")
 
-[node name="Title" type="Label" parent="Camera3D/PauseLayer"]
+[node name="Title" type="Label" parent="Camera3D/PauseLayer" unique_id=1875445183]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -2972,7 +2960,7 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="ContinueButton" type="Button" parent="Camera3D/PauseLayer"]
+[node name="ContinueButton" type="Button" parent="Camera3D/PauseLayer" unique_id=1196885430]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -2989,7 +2977,7 @@ focus_mode = 0
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("27_1u3bp")
 
-[node name="OptionsButton" type="Button" parent="Camera3D/PauseLayer"]
+[node name="OptionsButton" type="Button" parent="Camera3D/PauseLayer" unique_id=1426964575]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -3006,7 +2994,7 @@ focus_mode = 0
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("27_1u3bp")
 
-[node name="QuitButton" type="Button" parent="Camera3D/PauseLayer"]
+[node name="QuitButton" type="Button" parent="Camera3D/PauseLayer" unique_id=639789545]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -3023,7 +3011,7 @@ focus_mode = 0
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("27_1u3bp")
 
-[node name="ContinueText" type="Label" parent="Camera3D/PauseLayer"]
+[node name="ContinueText" type="Label" parent="Camera3D/PauseLayer" unique_id=525008257]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -3043,7 +3031,7 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="OptionsText" type="Label" parent="Camera3D/PauseLayer"]
+[node name="OptionsText" type="Label" parent="Camera3D/PauseLayer" unique_id=1126924437]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -3063,7 +3051,7 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="QuitText" type="Label" parent="Camera3D/PauseLayer"]
+[node name="QuitText" type="Label" parent="Camera3D/PauseLayer" unique_id=611948366]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -3083,10 +3071,10 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="OverlayLayer" type="CanvasLayer" parent="Camera3D"]
+[node name="OverlayLayer" type="CanvasLayer" parent="Camera3D" unique_id=127549994]
 layer = 120
 
-[node name="BlackOverlay" type="ColorRect" parent="Camera3D/OverlayLayer"]
+[node name="BlackOverlay" type="ColorRect" parent="Camera3D/OverlayLayer" unique_id=818010630]
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -3096,10 +3084,10 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="EndGameLayer" type="CanvasLayer" parent="Camera3D"]
+[node name="EndGameLayer" type="CanvasLayer" parent="Camera3D" unique_id=1295591493]
 layer = 128
 
-[node name="MainLayer" type="Control" parent="Camera3D/EndGameLayer"]
+[node name="MainLayer" type="Control" parent="Camera3D/EndGameLayer" unique_id=419121756]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
@@ -3109,7 +3097,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="BG" type="ColorRect" parent="Camera3D/EndGameLayer/MainLayer"]
+[node name="BG" type="ColorRect" parent="Camera3D/EndGameLayer/MainLayer" unique_id=1326698954]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -3119,7 +3107,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="Camera3D/EndGameLayer/MainLayer"]
+[node name="Label" type="Label" parent="Camera3D/EndGameLayer/MainLayer" unique_id=1784775993]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3137,7 +3125,7 @@ text = "TO BE CONTINUED . . ."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Camera3D/EndGameLayer/MainLayer"]
+[node name="Label2" type="Label" parent="Camera3D/EndGameLayer/MainLayer" unique_id=1789963266]
 modulate = Color(1, 1, 1, 0.39215687)
 layout_mode = 1
 anchors_preset = 8
@@ -3156,11 +3144,11 @@ text = "Thank you for playing."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="StartGameNoticeLayer" type="CanvasLayer" parent="Camera3D"]
+[node name="StartGameNoticeLayer" type="CanvasLayer" parent="Camera3D" unique_id=1745232386]
 layer = 128
 visible = false
 
-[node name="MainLayer" type="Control" parent="Camera3D/StartGameNoticeLayer"]
+[node name="MainLayer" type="Control" parent="Camera3D/StartGameNoticeLayer" unique_id=1753714890]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -3169,13 +3157,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="StartGameNoticeAnimation" type="AnimationPlayer" parent="Camera3D/StartGameNoticeLayer/MainLayer"]
+[node name="StartGameNoticeAnimation" type="AnimationPlayer" parent="Camera3D/StartGameNoticeLayer/MainLayer" unique_id=1856162970]
 root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_kftxd")
-}
+libraries/ = SubResource("AnimationLibrary_kftxd")
 
-[node name="BG" type="ColorRect" parent="Camera3D/StartGameNoticeLayer/MainLayer"]
+[node name="BG" type="ColorRect" parent="Camera3D/StartGameNoticeLayer/MainLayer" unique_id=1173047999]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -3185,7 +3171,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="NoticeTitle" type="Label" parent="Camera3D/StartGameNoticeLayer/MainLayer"]
+[node name="NoticeTitle" type="Label" parent="Camera3D/StartGameNoticeLayer/MainLayer" unique_id=550584479]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3206,7 +3192,7 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="Notice" type="Label" parent="Camera3D/StartGameNoticeLayer/MainLayer"]
+[node name="Notice" type="Label" parent="Camera3D/StartGameNoticeLayer/MainLayer" unique_id=1034675817]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3226,218 +3212,218 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="IslandComponents" type="Node" parent="."]
+[node name="IslandComponents" type="Node" parent="." unique_id=1613840858]
 
-[node name="island" parent="IslandComponents" instance=ExtResource("1_scctx")]
+[node name="island" parent="IslandComponents" unique_id=1748936765 instance=ExtResource("1_scctx")]
 transform = Transform3D(3.2622, 0, 0, 0, 3.2622, 0, 0, 0, 3.2622, 0, 0.685446, 0)
 
-[node name="IslandCollision" type="StaticBody3D" parent="IslandComponents/island"]
+[node name="IslandCollision" type="StaticBody3D" parent="IslandComponents/island" unique_id=1577773299]
 transform = Transform3D(0.30654156, 0, 0, 0, 0.30654156, 0, 0, 0, 0.30654156, 0, -0.2101177, 0)
 
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=68485904]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -48.372696, 33.490253, 7.2535477)
 shape = SubResource("BoxShape3D_mgnnu")
 debug_color = Color(1, 0, 0, 1)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=601747913]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.590042, -1.9399033, 13.564869)
 shape = SubResource("SphereShape3D_kftxd")
 debug_color = Color(1, 0, 0, 1)
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=517702320]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.782986, 35.145203, 7.882695)
 shape = SubResource("BoxShape3D_kftxd")
 debug_color = Color(1, 0, 0, 1)
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=1017002488]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -43.267464, 35.94513, 11.225624)
 shape = SubResource("BoxShape3D_1j151")
 debug_color = Color(1, 0, 0, 1)
 
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=619810329]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -47.685753, 35.94513, 13.122332)
 shape = SubResource("BoxShape3D_igp1d")
 debug_color = Color(1, 0, 0, 1)
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=1354397460]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -48.449905, 36.006958, 3.623415)
 shape = SubResource("BoxShape3D_tdn2i")
 debug_color = Color(1, 0, 0, 1)
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=826348710]
 transform = Transform3D(-0.9955043, 0, -0.09471636, 0, 1, 0, 0.09471636, 0, -0.9955043, -41.25677, 36.742218, 7.8638167)
 shape = SubResource("BoxShape3D_kftxd")
 debug_color = Color(1, 0, 0, 1)
 
-[node name="CollisionShape3D8" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=823523748]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.614134, 10.532329, 2.1221828)
 shape = SubResource("BoxShape3D_xeacm")
 
-[node name="CollisionShape3D9" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=155040128]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.120441, 10.532329, 0.7450219)
 shape = SubResource("BoxShape3D_xeacm")
 
-[node name="CollisionShape3D10" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=273735359]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.65137, 9.250313, -6.293948)
 shape = SubResource("BoxShape3D_xeacm")
 
-[node name="CollisionShape3D11" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=1345854844]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.974459, 6.9492574, -9.949834)
 shape = SubResource("BoxShape3D_xeacm")
 
-[node name="CollisionShape3D12" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=144726022]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.753596, 6.629766, -6.3400383)
 shape = SubResource("BoxShape3D_xeacm")
 
-[node name="CollisionShape3D13" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=736046806]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.583294, 9.162932, -11.868908)
 shape = SubResource("BoxShape3D_xeacm")
 
-[node name="CollisionShape3D14" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=1842869922]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.884134, 9.162932, -12.342982)
 shape = SubResource("BoxShape3D_xeacm")
 
-[node name="CollisionShape3D15" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=902597564]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8438597, 5.8985987, -34.213615)
 shape = SubResource("BoxShape3D_xeacm")
 
-[node name="CollisionShape3D16" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=1072255083]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.317175, 5.318818, -21.703512)
 shape = SubResource("BoxShape3D_xeacm")
 
-[node name="CollisionShape3D17" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=748796641]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89821, 5.0819583, -14.403981)
 shape = SubResource("BoxShape3D_xeacm")
 
-[node name="CollisionShape3D20" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=288748699]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0632125, 5.0819583, -24.754486)
 shape = SubResource("BoxShape3D_xeacm")
 
-[node name="CollisionShape3D21" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=655911273]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.57476, 5.0819583, -19.498545)
 shape = SubResource("BoxShape3D_xeacm")
 
-[node name="CollisionShape3D22" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D22" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=718250837]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.507128, 4.3691335, -24.946884)
 shape = SubResource("BoxShape3D_xeacm")
 
-[node name="CollisionShape3D23" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D23" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=488158810]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.553455, 8.025675, -33.534706)
 shape = SubResource("BoxShape3D_xeacm")
 
-[node name="CollisionShape3D24" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D24" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=474242616]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.64558, 8.025675, -42.718693)
 shape = SubResource("BoxShape3D_xeacm")
 
-[node name="CollisionShape3D25" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D25" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=79611028]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.84413, 8.025675, -34.83865)
 shape = SubResource("BoxShape3D_xeacm")
 
-[node name="CollisionShape3D26" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D26" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=1263566349]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.57582, 9.148285, -7.322417)
 shape = SubResource("BoxShape3D_xeacm")
 
-[node name="CollisionShape3D27" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D27" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=1636936673]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.150398, 8.634552, 13.983482)
 shape = SubResource("BoxShape3D_xeacm")
 
-[node name="CollisionShape3D18" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=1434071210]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6456513, 4.2113376, -13.416666)
 shape = SubResource("BoxShape3D_6yxpm")
 
-[node name="CollisionShape3D19" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision"]
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="IslandComponents/island/IslandCollision" unique_id=1057004681]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.217709, 2.7064488, -22.703917)
 shape = SubResource("BoxShape3D_ocj1o")
 
-[node name="ClimbMountainArea" type="Area3D" parent="IslandComponents"]
+[node name="ClimbMountainArea" type="Area3D" parent="IslandComponents" unique_id=217973002]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.682205, 0, 15.832413)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/ClimbMountainArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/ClimbMountainArea" unique_id=1176014732]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4179459, 8.136528, -2.6705399)
 shape = SubResource("SphereShape3D_igp1d")
 
-[node name="ClimbDownMountainArea" type="Area3D" parent="IslandComponents"]
+[node name="ClimbDownMountainArea" type="Area3D" parent="IslandComponents" unique_id=1196432896]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.682205, 0, 15.832413)
 
-[node name="CollisionShape3D8" type="CollisionShape3D" parent="IslandComponents/ClimbDownMountainArea"]
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="IslandComponents/ClimbDownMountainArea" unique_id=1123689255]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -10.0136795, 35.1452, -7.949718)
 shape = SubResource("BoxShape3D_nxijr")
 debug_color = Color(1, 0, 0, 1)
 
-[node name="CollisionShape3D9" type="CollisionShape3D" parent="IslandComponents/ClimbDownMountainArea"]
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="IslandComponents/ClimbDownMountainArea" unique_id=1246157849]
 transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 0.99999994, 0, 0.99999994, 0, -4.3711385e-08, 0.2663002, 35.945126, -4.7728662)
 shape = SubResource("BoxShape3D_rrs32")
 debug_color = Color(1, 0, 0, 1)
 
-[node name="CollisionShape3D10" type="CollisionShape3D" parent="IslandComponents/ClimbDownMountainArea"]
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="IslandComponents/ClimbDownMountainArea" unique_id=1474458213]
 transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 0.99999994, 0, 0.99999994, 0, -4.3711385e-08, -4.003544, 35.945126, -2.8339224)
 shape = SubResource("BoxShape3D_1ibu3")
 debug_color = Color(1, 0, 0, 1)
 
-[node name="CollisionShape3D11" type="CollisionShape3D" parent="IslandComponents/ClimbDownMountainArea"]
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="IslandComponents/ClimbDownMountainArea" unique_id=1144663681]
 transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 0.99999994, 0, 0.99999994, 0, -4.3711385e-08, -4.7676964, 36.006954, -12.057173)
 shape = SubResource("BoxShape3D_d1ok4")
 debug_color = Color(1, 0, 0, 1)
 
-[node name="CollisionShape3D12" type="CollisionShape3D" parent="IslandComponents/ClimbDownMountainArea"]
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="IslandComponents/ClimbDownMountainArea" unique_id=813999896]
 transform = Transform3D(-0.99550426, 0, -0.094716355, 0, 0.99999994, 0, 0.094716355, 0, -0.99550426, 2.2469826, 36.742214, -7.9516177)
 shape = SubResource("BoxShape3D_yhvva")
 debug_color = Color(1, 0, 0, 1)
 
-[node name="EndGameArea" type="Area3D" parent="IslandComponents"]
+[node name="EndGameArea" type="Area3D" parent="IslandComponents" unique_id=417781663]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/EndGameArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/EndGameArea" unique_id=1351362375]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.067757, 8.883502, -1.0849924)
 shape = SubResource("SphereShape3D_b351x")
 
-[node name="firepit" type="Node3D" parent="IslandComponents"]
+[node name="firepit" type="Node3D" parent="IslandComponents" unique_id=1740372953]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.0724, 35.5085, 6.89776)
 
-[node name="plate" type="MeshInstance3D" parent="IslandComponents/firepit"]
+[node name="plate" type="MeshInstance3D" parent="IslandComponents/firepit" unique_id=1924153082]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.036355097, 0)
 mesh = SubResource("ArrayMesh_4el25")
 skeleton = NodePath("")
 
-[node name="Stone1" parent="IslandComponents/firepit" instance=ExtResource("5_n7bfk")]
+[node name="Stone1" parent="IslandComponents/firepit" unique_id=75893956 instance=ExtResource("5_n7bfk")]
 transform = Transform3D(-0.000159501, 0.380828, 0, -0.380828, -0.000159501, 0, 0, 0, 0.380828, 0.09339905, -0.22559738, -1.3533697)
 
-[node name="Stone2" parent="IslandComponents/firepit" instance=ExtResource("5_n7bfk")]
+[node name="Stone2" parent="IslandComponents/firepit" unique_id=1350244784 instance=ExtResource("5_n7bfk")]
 transform = Transform3D(0.224017, -0.307971, 0, 0.307971, 0.224017, 0, 0, 0, 0.380828, -0.11439896, -0.42229843, -1.37111)
 
-[node name="Stone3" parent="IslandComponents/firepit" instance=ExtResource("5_n7bfk")]
+[node name="Stone3" parent="IslandComponents/firepit" unique_id=787348380 instance=ExtResource("5_n7bfk")]
 transform = Transform3D(-0.147384, 0.202619, -0.286799, 0.307971, 0.224017, 0, 0.168706, -0.231931, -0.250552, -1.3414993, -0.37649918, -0.7429099)
 
-[node name="Tinder" type="Node3D" parent="IslandComponents/firepit"]
+[node name="Tinder" type="Node3D" parent="IslandComponents/firepit" unique_id=1083262822]
 
-[node name="tinder" type="MeshInstance3D" parent="IslandComponents/firepit/Tinder"]
+[node name="tinder" type="MeshInstance3D" parent="IslandComponents/firepit/Tinder" unique_id=991368787]
 transform = Transform3D(0, 0.4873088, 0, -0.2575125, 0, 0, 0, 0, 0.2575125, -0.43358994, 0.20656967, -0.108707905)
 mesh = SubResource("ArrayMesh_gghvn")
 skeleton = NodePath("")
 
-[node name="tinder_001" type="MeshInstance3D" parent="IslandComponents/firepit/Tinder"]
+[node name="tinder_001" type="MeshInstance3D" parent="IslandComponents/firepit/Tinder" unique_id=1620365925]
 transform = Transform3D(-0.06661401, 0.37372807, 0.08485081, -0.21231802, -0.14062145, 0.0062725446, 0.033523932, -0.14798222, 0.2083296, 0.28638458, 0.19337463, -0.046002388)
 mesh = SubResource("ArrayMesh_t4i0x")
 skeleton = NodePath("")
 
-[node name="tinder_002" type="MeshInstance3D" parent="IslandComponents/firepit/Tinder"]
+[node name="tinder_002" type="MeshInstance3D" parent="IslandComponents/firepit/Tinder" unique_id=1024777766]
 transform = Transform3D(-0.060813703, 0.31728095, 0.13722584, -0.16162638, -0.24605592, 0.08723851, 0.14428733, -0.14189813, 0.15555944, 0.16862488, 0.113227844, -0.4511671)
 mesh = SubResource("ArrayMesh_vdcfj")
 skeleton = NodePath("")
 
-[node name="tinder_003" type="MeshInstance3D" parent="IslandComponents/firepit/Tinder"]
+[node name="tinder_003" type="MeshInstance3D" parent="IslandComponents/firepit/Tinder" unique_id=939155285]
 transform = Transform3D(0.092776, -0.16722767, 0.3285876, -0.3257239, 0.14273949, 0.11225311, -0.09840175, -0.6301552, -0.061772056, -0.018482208, 0.01455307, -0.11485386)
 mesh = SubResource("ArrayMesh_08qjk")
 skeleton = NodePath("")
 
-[node name="tinder_004" type="MeshInstance3D" parent="IslandComponents/firepit/Tinder"]
+[node name="tinder_004" type="MeshInstance3D" parent="IslandComponents/firepit/Tinder" unique_id=1627472413]
 transform = Transform3D(-0.06661399, 0.37372807, 0.08485083, -0.03435271, 0.14743206, -0.2083035, -0.21218552, -0.14119817, 0.0070859557, -0.41630173, 0.053344727, 0.26891422)
 mesh = SubResource("ArrayMesh_6y0uv")
 skeleton = NodePath("")
 
-[node name="FireParticles" parent="IslandComponents/firepit" instance=ExtResource("25_lkofv")]
+[node name="FireParticles" parent="IslandComponents/firepit" unique_id=262831564 instance=ExtResource("25_lkofv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115802765, 0.31510162, -0.12651014)
 
-[node name="InteractableComponent" type="Node3D" parent="IslandComponents/firepit" node_paths=PackedStringArray("Contents_Node", "UI_Sprite_Node", "SubViewport_Node")]
+[node name="InteractableComponent" type="Node3D" parent="IslandComponents/firepit" unique_id=51098750 node_paths=PackedStringArray("Contents_Node", "UI_Sprite_Node", "SubViewport_Node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.46057796)
 script = ExtResource("36_44kkc")
 Contents_Node = NodePath("Contents")
@@ -3445,21 +3431,21 @@ UI_Sprite_Node = NodePath("Contents/UI")
 SubViewport_Node = NodePath("Contents/UI/SubViewport")
 ActionToPress = SubResource("InputEventAction_igp1d")
 
-[node name="Contents" type="Node3D" parent="IslandComponents/firepit/InteractableComponent"]
+[node name="Contents" type="Node3D" parent="IslandComponents/firepit/InteractableComponent" unique_id=750955668]
 
-[node name="UI" type="Sprite3D" parent="IslandComponents/firepit/InteractableComponent/Contents"]
+[node name="UI" type="Sprite3D" parent="IslandComponents/firepit/InteractableComponent/Contents" unique_id=519147636]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.080207825, 0, 0.2677045)
 billboard = 1
 no_depth_test = true
 render_priority = 1
 texture = SubResource("ViewportTexture_igp1d")
 
-[node name="SubViewport" type="SubViewport" parent="IslandComponents/firepit/InteractableComponent/Contents/UI"]
+[node name="SubViewport" type="SubViewport" parent="IslandComponents/firepit/InteractableComponent/Contents/UI" unique_id=2084080646]
 transparent_bg = true
 gui_disable_input = true
 size = Vector2i(1805, 1150)
 
-[node name="Key" type="Label" parent="IslandComponents/firepit/InteractableComponent/Contents/UI/SubViewport"]
+[node name="Key" type="Label" parent="IslandComponents/firepit/InteractableComponent/Contents/UI/SubViewport" unique_id=1748342744]
 offset_left = 500.0
 offset_top = 500.0
 offset_right = 629.0
@@ -3471,605 +3457,603 @@ text = "[F] to place wood"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlayerAreaBox" type="Area3D" parent="IslandComponents/firepit/InteractableComponent/Contents"]
+[node name="PlayerAreaBox" type="Area3D" parent="IslandComponents/firepit/InteractableComponent/Contents" unique_id=1171657431]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/firepit/InteractableComponent/Contents/PlayerAreaBox"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/firepit/InteractableComponent/Contents/PlayerAreaBox" unique_id=1989279640]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04447174, 0.77944565, 0.32035732)
 shape = SubResource("BoxShape3D_5kn0p")
 debug_color = Color(0, 1, 0, 1)
 
-[node name="MimicRaycastBox" type="Area3D" parent="IslandComponents/firepit/InteractableComponent/Contents"]
+[node name="MimicRaycastBox" type="Area3D" parent="IslandComponents/firepit/InteractableComponent/Contents" unique_id=1398390343]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/firepit/InteractableComponent/Contents/MimicRaycastBox"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/firepit/InteractableComponent/Contents/MimicRaycastBox" unique_id=1228969753]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04650879, 0, 0.35115814)
 shape = SubResource("BoxShape3D_b351x")
 
-[node name="Wood Planks" type="Node" parent="IslandComponents"]
+[node name="Wood Planks" type="Node" parent="IslandComponents" unique_id=1775789159]
 
-[node name="WoodPlank1" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+[node name="WoodPlank1" parent="IslandComponents/Wood Planks" unique_id=1829403406 instance=ExtResource("46_igp1d")]
 transform = Transform3D(0.25963587, 0, 0, 0, 0.25963587, 0, 0, 0, 0.25963587, 34.94912, 8.255346, 7.7322264)
 
-[node name="WoodPlank2" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+[node name="WoodPlank2" parent="IslandComponents/Wood Planks" unique_id=1036513517 instance=ExtResource("46_igp1d")]
 transform = Transform3D(0.25522938, -0.047631186, 0, 0.04750211, 0.25453776, -0.019101128, 0.0035041748, 0.01877695, 0.25893226, 26.421406, 8.614018, 4.361233)
 
-[node name="WoodPlank3" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+[node name="WoodPlank3" parent="IslandComponents/Wood Planks" unique_id=1660955019 instance=ExtResource("46_igp1d")]
 transform = Transform3D(0.25398687, -0.05375785, -0.0033909895, 0.05385372, 0.25310186, 0.021213472, -0.0010866174, -0.021455294, 0.2587455, 24.01833, 8.50844, -2.7042718)
 
-[node name="WoodPlank4" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+[node name="WoodPlank4" parent="IslandComponents/Wood Planks" unique_id=1512094151 instance=ExtResource("46_igp1d")]
 transform = Transform3D(0.2566216, -0.039419003, -0.001489956, 0.03939981, 0.25565082, 0.022385098, -0.0019315114, -0.022351334, 0.25866467, 22.078493, 4.244511, -20.662956)
 
-[node name="WoodPlank5" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+[node name="WoodPlank5" parent="IslandComponents/Wood Planks" unique_id=1365321228 instance=ExtResource("46_igp1d")]
 transform = Transform3D(0.2566216, -0.039419003, -0.001489956, 0.03939981, 0.25565082, 0.022385098, -0.0019315114, -0.022351334, 0.25866467, 14.644488, 3.5923395, -24.858246)
 
-[node name="WoodPlank6" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+[node name="WoodPlank6" parent="IslandComponents/Wood Planks" unique_id=1144237897 instance=ExtResource("46_igp1d")]
 transform = Transform3D(0.04575145, -0.0035078805, 0.25554886, 0.004039541, 0.25958893, 0.0028401294, -0.25554103, 0.0034754835, 0.045797754, 12.331528, 3.616506, -24.735888)
 
-[node name="WoodPlank7" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+[node name="WoodPlank7" parent="IslandComponents/Wood Planks" unique_id=1301289205 instance=ExtResource("46_igp1d")]
 transform = Transform3D(0.04575145, -0.0035078805, 0.25554886, 0.004039541, 0.25958893, 0.0028401294, -0.25554103, 0.0034754835, 0.045797754, -3.3051105, 4.1173253, -25.117344)
 
-[node name="WoodPlank8" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+[node name="WoodPlank8" parent="IslandComponents/Wood Planks" unique_id=1440747629 instance=ExtResource("46_igp1d")]
 transform = Transform3D(0.045886505, 0.030508779, 0.25372106, -0.0019852018, 0.25781375, -0.030641854, -0.25554103, 0.0034754835, 0.045797758, -8.522011, 4.7635627, -25.117344)
 
-[node name="WoodPlank9" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+[node name="WoodPlank9" parent="IslandComponents/Wood Planks" unique_id=1288149056 instance=ExtResource("46_igp1d")]
 transform = Transform3D(0.045886498, 0.030508773, 0.25372103, 0.08343, 0.24186575, -0.044171877, -0.2415462, 0.08933612, 0.0329424, -8.522011, 4.6240754, -32.160316)
 
-[node name="WoodPlank10" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+[node name="WoodPlank10" parent="IslandComponents/Wood Planks" unique_id=622824842 instance=ExtResource("46_igp1d")]
 transform = Transform3D(0.25963572, 0, 0, 0, 0.24621734, 0.082387924, 0, -0.08238795, 0.24621722, -8.522011, 6.3854995, 13.926651)
 
-[node name="WoodPlank11" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+[node name="WoodPlank11" parent="IslandComponents/Wood Planks" unique_id=1837420742 instance=ExtResource("46_igp1d")]
 transform = Transform3D(0.2592352, 0.014231705, 0.002299935, -0.01399804, 0.25839508, -0.021137461, -0.0034475753, 0.020980876, 0.25876358, -8.522011, 5.4122944, 25.925112)
 
-[node name="WoodPlank12" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+[node name="WoodPlank12" parent="IslandComponents/Wood Planks" unique_id=53350008 instance=ExtResource("46_igp1d")]
 transform = Transform3D(0.2592352, 0.014231705, 0.002299935, -0.01399804, 0.25839508, -0.021137461, -0.0034475753, 0.020980876, 0.25876358, 4.264736, 3.8783588, 28.80381)
 
-[node name="WoodPlank13" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+[node name="WoodPlank13" parent="IslandComponents/Wood Planks" unique_id=1149117396 instance=ExtResource("46_igp1d")]
 transform = Transform3D(-0.10516277, -0.009784987, 0.23718295, -0.023562778, 0.25856432, 0.00021976007, -0.23621248, -0.021436121, -0.10561675, 6.285211, 3.8783588, 28.80381)
 
-[node name="WoodPlank14" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+[node name="WoodPlank14" parent="IslandComponents/Wood Planks" unique_id=1173236818 instance=ExtResource("46_igp1d")]
 transform = Transform3D(-0.10516277, -0.009784987, 0.23718295, -0.023562778, 0.25856432, 0.00021976007, -0.23621248, -0.021436121, -0.10561675, 12.741247, 4.0960956, 28.80381)
 
-[node name="WoodPlank15" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+[node name="WoodPlank15" parent="IslandComponents/Wood Planks" unique_id=206152443 instance=ExtResource("46_igp1d")]
 transform = Transform3D(0.091941155, -0.043717302, 0.2388437, -0.0053699925, 0.25496438, 0.048735075, -0.24275239, -0.022197826, 0.08938267, 18.980427, 5.066613, 27.580551)
 
-[node name="WoodPlank16" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+[node name="WoodPlank16" parent="IslandComponents/Wood Planks" unique_id=92828549 instance=ExtResource("46_igp1d")]
 transform = Transform3D(0.25842616, -0.024844518, 0.0030729736, 0.025033843, 0.2564718, -0.031722534, 0, 0.03187103, 0.25767234, 24.386673, 6.9309363, 13.586582)
 
-[node name="WoodPlank17" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+[node name="WoodPlank17" parent="IslandComponents/Wood Planks" unique_id=1592735272 instance=ExtResource("46_igp1d")]
 transform = Transform3D(0.08220347, -0.018414395, 0.24558988, 0.015700618, 0.2587744, 0.0141477, -0.2457782, 0.010371914, 0.08304422, 22.970509, 6.8102603, 13.153491)
 
-[node name="WoodPlank18" parent="IslandComponents/Wood Planks" instance=ExtResource("46_igp1d")]
+[node name="WoodPlank18" parent="IslandComponents/Wood Planks" unique_id=1275552886 instance=ExtResource("46_igp1d")]
 transform = Transform3D(-0.021144541, 0.10377817, 0.23705252, 0.0021422554, 0.23790453, -0.10396012, -0.25876468, -0.0065104933, -0.020231005, 10.384741, 4.766264, 13.153491)
 
-[node name="PalmTree1" parent="IslandComponents" instance=ExtResource("2_goh21")]
+[node name="PalmTree1" parent="IslandComponents" unique_id=279841454 instance=ExtResource("2_goh21")]
 transform = Transform3D(0.698707, 0.138905, 0, -0.138905, 0.698707, 0, 0, 0, 0.71238, 52.0267, 5.65167, -3.76445)
 
-[node name="PalmTree2" parent="IslandComponents" instance=ExtResource("2_goh21")]
+[node name="PalmTree2" parent="IslandComponents" unique_id=1251539897 instance=ExtResource("2_goh21")]
 transform = Transform3D(0.14002, 0, 0.990149, -0.186163, 0.982166, 0.0263259, -0.972491, -0.188016, 0.137523, 52.1349, 5.9146, 6.9612)
 
-[node name="PalmTree3" parent="IslandComponents" instance=ExtResource("2_goh21")]
+[node name="PalmTree3" parent="IslandComponents" unique_id=116900519 instance=ExtResource("2_goh21")]
 transform = Transform3D(0.824447, 0, 0, 0, 0.824447, 0, 0, 0, 0.824447, 49.3632, 3.53873, -19.9985)
 
-[node name="Tree4" parent="IslandComponents" instance=ExtResource("3_n4qwq")]
+[node name="Tree4" parent="IslandComponents" unique_id=138964222 instance=ExtResource("3_n4qwq")]
 transform = Transform3D(0.605412, 0, 0, 0, 0.605412, 0, 0, 0, 0.605412, 11.3401, 4.01064, 25.156)
 
-[node name="Tree8" parent="IslandComponents" instance=ExtResource("4_mbfot")]
+[node name="Tree8" parent="IslandComponents" unique_id=877517836 instance=ExtResource("4_mbfot")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.82495, 4.18054, 18.9247)
 
-[node name="Stone1" parent="IslandComponents" instance=ExtResource("5_n7bfk")]
+[node name="Stone1" parent="IslandComponents" unique_id=1667002187 instance=ExtResource("5_n7bfk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.789, 5.48567, 4.32332)
 
-[node name="Grass1" parent="IslandComponents" instance=ExtResource("6_hnkfv")]
+[node name="Grass1" parent="IslandComponents" unique_id=994294042 instance=ExtResource("6_hnkfv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.3261, 5.6614, 9.10911)
 
-[node name="Grass3" parent="IslandComponents" instance=ExtResource("6_hnkfv")]
+[node name="Grass3" parent="IslandComponents" unique_id=457753282 instance=ExtResource("6_hnkfv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.3261, 5.27231, -2.69135)
 
-[node name="Grass4" parent="IslandComponents" instance=ExtResource("6_hnkfv")]
+[node name="Grass4" parent="IslandComponents" unique_id=1109108178 instance=ExtResource("6_hnkfv")]
 transform = Transform3D(-0.160674, 0, -0.987008, 0, 1, 0, 0.987008, 0, -0.160674, 52.6435, 5.27231, -2.69135)
 
-[node name="Grass5" parent="IslandComponents" instance=ExtResource("6_hnkfv")]
+[node name="Grass5" parent="IslandComponents" unique_id=309484857 instance=ExtResource("6_hnkfv")]
 transform = Transform3D(-0.160674, 0, -0.987008, 0, 1, 0, 0.987008, 0, -0.160674, 52.6435, 3.17098, -15.4911)
 
-[node name="Grass6" parent="IslandComponents" instance=ExtResource("6_hnkfv")]
+[node name="Grass6" parent="IslandComponents" unique_id=211287804 instance=ExtResource("6_hnkfv")]
 transform = Transform3D(0.657507, 0, -0.753449, 0, 1, 0, 0.753449, 0, 0.657507, 50.8607, 3.17098, -15.4911)
 
-[node name="Grass7" parent="IslandComponents" instance=ExtResource("6_hnkfv")]
+[node name="Grass7" parent="IslandComponents" unique_id=1753257502 instance=ExtResource("6_hnkfv")]
 transform = Transform3D(0.657507, 0, -0.753449, 0, 1, 0, 0.753449, 0, 0.657507, 50.8607, 3.17098, -17.6066)
 
-[node name="Grass8" parent="IslandComponents" instance=ExtResource("6_hnkfv")]
+[node name="Grass8" parent="IslandComponents" unique_id=666731576 instance=ExtResource("6_hnkfv")]
 transform = Transform3D(0.657507, 0, -0.753449, 0, 1, 0, 0.753449, 0, 0.657507, 32.2661, 7.29146, -6.41716)
 
-[node name="Grass9" parent="IslandComponents" instance=ExtResource("6_hnkfv")]
+[node name="Grass9" parent="IslandComponents" unique_id=644944688 instance=ExtResource("6_hnkfv")]
 transform = Transform3D(0.405693, 0, -0.464891, 0, 0.617017, 0, 0.464891, 0, 0.405693, 32.2661, 8.51551, -0.461681)
 
-[node name="Grass10" parent="IslandComponents" instance=ExtResource("6_hnkfv")]
+[node name="Grass10" parent="IslandComponents" unique_id=264467827 instance=ExtResource("6_hnkfv")]
 transform = Transform3D(0.405693, 0, -0.464891, 0, 0.617017, 0, 0.464891, 0, 0.405693, 30.8183, 8.51551, 1.15263)
 
-[node name="Grass11" parent="IslandComponents" instance=ExtResource("6_hnkfv")]
+[node name="Grass11" parent="IslandComponents" unique_id=1905910367 instance=ExtResource("6_hnkfv")]
 transform = Transform3D(0.405693, 0, -0.464891, 0, 0.617017, 0, 0.464891, 0, 0.405693, 27.921, 8.51551, 2.896)
 
-[node name="Grass2" parent="IslandComponents" instance=ExtResource("6_hnkfv")]
+[node name="Grass2" parent="IslandComponents" unique_id=1880904690 instance=ExtResource("6_hnkfv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.3201, 5.6614, 8.00601)
 
-[node name="GrassClump1" parent="IslandComponents" instance=ExtResource("7_yj2oh")]
+[node name="GrassClump1" parent="IslandComponents" unique_id=807433512 instance=ExtResource("7_yj2oh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7871, 5.99076, 6.57583)
 
-[node name="Bush1" parent="IslandComponents" instance=ExtResource("10_n7bfk")]
+[node name="Bush1" parent="IslandComponents" unique_id=1031015216 instance=ExtResource("10_n7bfk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.8293, 7.70428, 1.3831)
 
-[node name="Bush5" parent="IslandComponents" instance=ExtResource("11_hnkfv")]
+[node name="Bush5" parent="IslandComponents" unique_id=888456008 instance=ExtResource("11_hnkfv")]
 transform = Transform3D(-0.1574, 0, 0.987535, 0, 1, 0, -0.987535, 0, -0.1574, 28.8498, 6.93145, 10.4983)
 
-[node name="Bush3" parent="IslandComponents" instance=ExtResource("12_hnkfv")]
+[node name="Bush3" parent="IslandComponents" unique_id=1771516747 instance=ExtResource("12_hnkfv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0443, 3.20058, -22.8298)
 
-[node name="Bush2" parent="IslandComponents" instance=ExtResource("10_n7bfk")]
+[node name="Bush2" parent="IslandComponents" unique_id=1212778030 instance=ExtResource("10_n7bfk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.1349, 3.66128, -23.87)
 
-[node name="Tree10" parent="IslandComponents" instance=ExtResource("13_yj2oh")]
+[node name="Tree10" parent="IslandComponents" unique_id=1584935535 instance=ExtResource("13_yj2oh")]
 transform = Transform3D(0.845206, 0, 0, 0, 0.845206, 0, 0, 0, 0.845206, -8.86057, 3.84376, -28.0837)
 
-[node name="Shack2" type="Node3D" parent="IslandComponents"]
+[node name="Shack2" type="Node3D" parent="IslandComponents" unique_id=217131881]
 transform = Transform3D(0.16131492, 0.039173987, 0.2794063, -0.052349225, 0.3204192, -0.014700405, -0.27724004, -0.037708648, 0.16535115, 31.9128, 8.27881, -5.47141)
 
-[node name="Cube_004" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_004" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=2049565533]
 transform = Transform3D(0.05715296, 0, 0, 0, 0, -0.2064268, 0, 2.4474509, 0, -7.109329, 2.281745, -4.1868505)
 mesh = SubResource("ArrayMesh_6q5ah")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_004"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_004" unique_id=1692864534]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_004/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_004/StaticBody3D" unique_id=1634137077]
 shape = SubResource("ConcavePolygonShape3D_mgnnu")
 
-[node name="Cube_008" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_008" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=426406554]
 transform = Transform3D(8.276104, 0, 0, 0, 0.18320198, 0, 0, 0, 1, 1.3409026, 9.137886, 1.015564)
 mesh = SubResource("ArrayMesh_dmekl")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_008"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_008" unique_id=541074893]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_008/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_008/StaticBody3D" unique_id=1960009963]
 shape = SubResource("ConcavePolygonShape3D_nxijr")
 
-[node name="Cube" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=1233753785]
 transform = Transform3D(0.1568859, 0.7224354, -0.4546665, -0.08836898, 2.4073033, -0.24144451, 0.07390716, 1.3448092, 0.6764509, 7.308235, 2.3071256, -3.1090994)
 mesh = SubResource("ArrayMesh_den5s")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube" unique_id=1549375152]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube/StaticBody3D" unique_id=1073066023]
 shape = SubResource("ConcavePolygonShape3D_rrs32")
 
-[node name="Cube_001" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_001" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=1628697029]
 transform = Transform3D(0.08698822, 1.4239174, 0.0961404, -0.15931834, -0.38595635, 0.11893917, 0.1468489, -1.2622087, 0.07208845, -5.8014617, 8.678856, -9.892777)
 mesh = SubResource("ArrayMesh_fjpxh")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_001"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_001" unique_id=1380879228]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_001/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_001/StaticBody3D" unique_id=98100816]
 shape = SubResource("ConcavePolygonShape3D_1ibu3")
 
-[node name="Cube_002" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_002" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=1487446943]
 transform = Transform3D(-0.12462837, -1.5623218, -0.02830317, 0.05810719, 0.08240886, -0.16311148, 0.19639793, -1.0157856, 0.030298544, 7.55627, 0.6441361, -11.12174)
 mesh = SubResource("ArrayMesh_qo4cy")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_002"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_002" unique_id=1652402218]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_002/StaticBody3D" unique_id=1218074456]
 shape = SubResource("ConcavePolygonShape3D_d1ok4")
 
-[node name="Cube_003" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_003" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=1266329901]
 transform = Transform3D(0.19688612, 0, 0, 0, 1.9061979, 0, 0, 0, 0.19421902, 9.288763, 4.0048304, -6.6099668)
 mesh = SubResource("ArrayMesh_1letv")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_003"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_003" unique_id=1264953017]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_003/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_003/StaticBody3D" unique_id=2098677188]
 shape = SubResource("ConcavePolygonShape3D_yhvva")
 
-[node name="Cube_005" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_005" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=7943328]
 transform = Transform3D(0.19688612, 0, 0, 0, 1.892493, 0.028458906, 0, -0.2811274, 0.19157961, 9.162801, 6.9608436, -4.1579156)
 mesh = SubResource("ArrayMesh_0elsa")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_005"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_005" unique_id=2018696190]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_005/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_005/StaticBody3D" unique_id=2137118482]
 shape = SubResource("ConcavePolygonShape3D_xeacm")
 
-[node name="Cube_006" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_006" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=193676629]
 transform = Transform3D(0.19337839, -0.20751539, 0.0100807035, 0.0338105, 1.2117469, -0.039893337, -0.0031642402, 0.26571235, 0.18980123, 6.299685, 6.695583, -11.586438)
 mesh = SubResource("ArrayMesh_fxarc")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_006"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_006" unique_id=1669596656]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_006/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_006/StaticBody3D" unique_id=435036288]
 shape = SubResource("ConcavePolygonShape3D_6yxpm")
 
-[node name="Cube_007" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_007" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=551242088]
 transform = Transform3D(0.18846215, -0.68523836, 0.0023827173, 0.07306367, 1.7675592, 0.0008032547, -0.0026145745, 0.0010964633, 0.19419633, -2.3761535, 5.5651436, -11.799727)
 mesh = SubResource("ArrayMesh_kjjsq")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_007"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_007" unique_id=358669111]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_007/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_007/StaticBody3D" unique_id=1525176678]
 shape = SubResource("ConcavePolygonShape3D_ocj1o")
 
-[node name="Cube_009" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_009" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=1135438423]
 transform = Transform3D(0.19396903, -0.005193146, 0.052080676, -0.017936306, 1.8324223, 0.06010957, -0.052744932, -0.6422265, 0.17108552, -7.0065584, 5.6512394, -8.287103)
 mesh = SubResource("ArrayMesh_j7cb4")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_009"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_009" unique_id=1707101080]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_009/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_009/StaticBody3D" unique_id=1089685171]
 shape = SubResource("ConcavePolygonShape3D_l2pve")
 
-[node name="Cube_010" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_010" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=1406173704]
 transform = Transform3D(0.19652763, 0.025646586, -0.017690865, -0.011142723, 1.7371062, -0.0896956, 0.015064913, 0.9502764, 0.1644411, -6.899321, 7.4521027, 2.610756)
 mesh = SubResource("ArrayMesh_xymt5")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_010"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_010" unique_id=225802618]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_010/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_010/StaticBody3D" unique_id=691387850]
 shape = SubResource("ConcavePolygonShape3D_6e2r5")
 
-[node name="Cube_011" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_011" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=1339028017]
 transform = Transform3D(7.704782, -0.016799476, -0.0008302243, -0.016235614, 0.005575236, -0.31373954, 0.3118636, 0.41533163, 0.0041779256, 1.0570108, 9.361974, -11.117185)
 mesh = SubResource("ArrayMesh_ufgbg")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_011"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_011" unique_id=1129245489]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_011/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_011/StaticBody3D" unique_id=1762134986]
 shape = SubResource("ConcavePolygonShape3D_xwjjr")
 
-[node name="Cube_012" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_012" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=433438777]
 transform = Transform3D(0.18590032, 0.67418915, 0.03238169, -0.07304916, 1.7676102, 0.0008474508, -0.031112822, -0.121829286, 0.19149214, 0.8111113, 3.470315, -12.3279705)
 mesh = SubResource("ArrayMesh_5uwxc")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_012"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_012" unique_id=177103536]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_012/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_012/StaticBody3D" unique_id=89075955]
 shape = SubResource("ConcavePolygonShape3D_2a71l")
 
-[node name="Cube_014" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_014" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=1077746246]
 transform = Transform3D(-0.06431329, 10.283629, -0.040534094, -0.25835258, -2.307645, -0.20585342, -0.24997833, -0.26077443, 0.2231779, -0.03225404, 6.570839, 7.123286)
 mesh = SubResource("ArrayMesh_4grgm")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_014"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_014" unique_id=324217031]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_014/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_014/StaticBody3D" unique_id=357644005]
 shape = SubResource("ConcavePolygonShape3D_b356b")
 
-[node name="Cube_024" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_024" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=400488559]
 transform = Transform3D(0.022833835, 3.8653567, -0.013358675, -0.099681735, 0.16984169, -0.078379884, -0.090806626, 0.78552437, 0.082681336, -4.101781, 6.4685907, 6.445379)
 mesh = SubResource("ArrayMesh_4grgm")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_024"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_024" unique_id=811418055]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_024/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_024/StaticBody3D" unique_id=1397040208]
 transform = Transform3D(1, 9.536743e-07, -1.3411045e-07, 6.519258e-09, 1, -3.7252903e-09, 2.9802322e-08, -9.536743e-07, 1, -3.406372, -0.020498276, -3.9025574)
 shape = SubResource("ConcavePolygonShape3D_3hefd")
 
-[node name="Cube_015" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_015" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=1888627524]
 transform = Transform3D(-0.005073045, 8.082972, -0.18622032, -0.19456987, -0.22165197, -0.00012800675, -0.0011690329, 1.8147612, 0.82941234, 0.86775106, 9.401452, -0.76302373)
 mesh = SubResource("ArrayMesh_5u8aj")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_015"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_015" unique_id=1650280620]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_015/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_015/StaticBody3D" unique_id=69898906]
 shape = SubResource("ConcavePolygonShape3D_s6f4r")
 
-[node name="Cube_016" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_016" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=1373555316]
 transform = Transform3D(-0.20781177, 2.3280113, 0.09603558, -0.074855156, -6.6825933, -0.16519575, 0.009695666, -1.695443, 0.78298587, -4.227371, 3.0855076, -6.381255)
 mesh = SubResource("ArrayMesh_aftw7")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_016"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_016" unique_id=1124818965]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_016/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_016/StaticBody3D" unique_id=2056705420]
 shape = SubResource("ConcavePolygonShape3D_oyq1r")
 
-[node name="Cube_017" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_017" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=2124647482]
 transform = Transform3D(-0.0051186318, 8.28293, 0.22553049, -0.19457226, -0.22563834, -0.00018071916, 0.00094979804, -1.5852764, 1.1784028, 0.65016115, 9.244128, -6.6083856)
 mesh = SubResource("ArrayMesh_o8bff")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_017"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_017" unique_id=2028455797]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_017/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_017/StaticBody3D" unique_id=310455823]
 shape = SubResource("ConcavePolygonShape3D_oqai1")
 
-[node name="Cube_018" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_018" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=1371825208]
 transform = Transform3D(0.013445232, -1.50752e-07, -0.5240105, -0.11977843, -0.10330533, -0.058619846, -0.007009998, 1.7651573, -0.0034307546, 7.2689, 4.2208066, 2.403317)
 mesh = SubResource("ArrayMesh_vavo2")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_018"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_018" unique_id=1747067959]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_018/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_018/StaticBody3D" unique_id=1407642657]
 shape = SubResource("ConcavePolygonShape3D_t7av8")
 
-[node name="Cube_019" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_019" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=1387999212]
 transform = Transform3D(0.013445232, -1.50752e-07, -0.5240105, -0.11977843, -0.10330533, -0.058619846, -0.007009998, 1.7651573, -0.0034307546, 7.314793, 4.2208066, 2.403317)
 mesh = SubResource("ArrayMesh_evix8")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_019"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_019" unique_id=1030002902]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_019/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_019/StaticBody3D" unique_id=1868037164]
 shape = SubResource("ConcavePolygonShape3D_33mtb")
 
-[node name="Cube_020" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_020" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=1735245377]
 transform = Transform3D(0.013445232, -1.50752e-07, -0.5240105, -0.11977843, -0.10330533, -0.058619846, -0.007009998, 1.7651573, -0.0034307546, 7.314793, 4.2208066, 2.403317)
 mesh = SubResource("ArrayMesh_bs8e6")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_020"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_020" unique_id=1004614567]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_020/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_020/StaticBody3D" unique_id=1564276738]
 shape = SubResource("ConcavePolygonShape3D_43xds")
 
-[node name="Cube_021" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_021" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=139810634]
 transform = Transform3D(0.013445232, -1.50752e-07, -0.5240105, -0.11977843, -0.10330533, -0.058619846, -0.007009998, 1.7651573, -0.0034307546, 7.314793, 4.2208066, 2.403317)
 mesh = SubResource("ArrayMesh_eayp7")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_021"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_021" unique_id=150059472]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_021/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_021/StaticBody3D" unique_id=1055781366]
 shape = SubResource("ConcavePolygonShape3D_hjala")
 
-[node name="Cube_022" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_022" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=41516792]
 transform = Transform3D(0.020697126, 0.006275819, -0.51948136, -0.11874038, -0.103114374, -0.09034603, -0.007009988, 1.7651573, -0.0034307442, 7.3040156, 5.248679, 2.5082982)
 mesh = SubResource("ArrayMesh_g8djs")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_022"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_022" unique_id=914478005]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_022/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_022/StaticBody3D" unique_id=1153096619]
 shape = SubResource("ConcavePolygonShape3D_tiirr")
 
-[node name="Cube_023" type="MeshInstance3D" parent="IslandComponents/Shack2"]
+[node name="Cube_023" type="MeshInstance3D" parent="IslandComponents/Shack2" unique_id=209933228]
 transform = Transform3D(0.01582038, -0.14149782, -0.52103806, -0.11965117, 0.02810457, -0.069973774, 0.0031784314, 1.7622826, -0.040719442, 7.161159, 6.2598653, 2.5698185)
 mesh = SubResource("ArrayMesh_laj78")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_023"]
+[node name="StaticBody3D" type="StaticBody3D" parent="IslandComponents/Shack2/Cube_023" unique_id=62572110]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_023/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IslandComponents/Shack2/Cube_023/StaticBody3D" unique_id=392458798]
 shape = SubResource("ConcavePolygonShape3D_jegvh")
 
-[node name="Rock1" parent="IslandComponents" instance=ExtResource("15_ibte4")]
+[node name="Rock1" parent="IslandComponents" unique_id=463948323 instance=ExtResource("15_ibte4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.0496, 8.33514, -1.41609)
 
-[node name="Stone2" parent="IslandComponents" instance=ExtResource("5_n7bfk")]
+[node name="Stone2" parent="IslandComponents" unique_id=1923745250 instance=ExtResource("5_n7bfk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.9227, 8.36942, -2.72335)
 
-[node name="Log1" parent="IslandComponents" instance=ExtResource("14_4s85u")]
+[node name="Log1" parent="IslandComponents" unique_id=2115397682 instance=ExtResource("14_4s85u")]
 transform = Transform3D(0.999103, -0.0423465, 0, 0.0423465, 0.999103, 0, 0, 0, 1, 29.8426, 8.5258, 6.32359)
 
-[node name="PineTree1" parent="IslandComponents" instance=ExtResource("15_b4j44")]
+[node name="PineTree1" parent="IslandComponents" unique_id=1882149945 instance=ExtResource("15_b4j44")]
 transform = Transform3D(0.704658, 0, 0, 0, 0.704658, 0, 0, 0, 0.704658, 31.1232, 8.98021, 0.603044)
 
-[node name="PineTree3" parent="IslandComponents" instance=ExtResource("16_n0lbn")]
+[node name="PineTree3" parent="IslandComponents" unique_id=1757609747 instance=ExtResource("16_n0lbn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.4012, 6.50457, -7.50995)
 
-[node name="PineTree5" parent="IslandComponents" instance=ExtResource("17_ybo0d")]
+[node name="PineTree5" parent="IslandComponents" unique_id=517244992 instance=ExtResource("17_ybo0d")]
 transform = Transform3D(0.720116, 0, 0, 0, 0.720116, 0, 0, 0, 0.720116, 26.6687, 8.37481, 2.05424)
 
-[node name="PalmTree4" parent="IslandComponents" instance=ExtResource("2_goh21")]
+[node name="PalmTree4" parent="IslandComponents" unique_id=2087441959 instance=ExtResource("2_goh21")]
 transform = Transform3D(0.865092, 0, 0, 0, 0.865092, 0, 0, 0, 0.865092, 45.2892, 5.05202, 18.7067)
 
-[node name="PalmTree5" parent="IslandComponents" instance=ExtResource("2_goh21")]
+[node name="PalmTree5" parent="IslandComponents" unique_id=1548933713 instance=ExtResource("2_goh21")]
 transform = Transform3D(-0.0347327, 0, -0.864394, 0, 0.865092, 0, 0.864394, 0, -0.0347327, 28.4767, 5.05202, 42.5383)
 
-[node name="PalmTree6" parent="IslandComponents" instance=ExtResource("2_goh21")]
+[node name="PalmTree6" parent="IslandComponents" unique_id=1627800498 instance=ExtResource("2_goh21")]
 transform = Transform3D(-0.203644, 0.754055, -0.235374, 0.228444, 0.672192, 0.264039, 0.272668, -1.59267e-08, -0.397006, 34.5524, 4.32882, -34.3422)
 
-[node name="Stone3" parent="IslandComponents" instance=ExtResource("5_n7bfk")]
+[node name="Stone3" parent="IslandComponents" unique_id=224457754 instance=ExtResource("5_n7bfk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8349, 4.01047, -32.5624)
 
-[node name="PalmTree7" parent="IslandComponents" instance=ExtResource("2_goh21")]
+[node name="PalmTree7" parent="IslandComponents" unique_id=525376604 instance=ExtResource("2_goh21")]
 transform = Transform3D(0.735527, 0.00185677, 0.230867, -0.00177155, 0.770908, -0.000556056, -0.230868, 5.30935e-09, 0.735529, 39.9648, 4.53391, -25.5923)
 
-[node name="Tree3" parent="IslandComponents" instance=ExtResource("20_n0lbn")]
+[node name="Tree3" parent="IslandComponents" unique_id=2048598927 instance=ExtResource("20_n0lbn")]
 transform = Transform3D(0.488549, 0, 0, 0, 0.488549, 0, 0, 0, 0.488549, 19.0854, 3.45392, 33.8537)
 
-[node name="Stone4" parent="IslandComponents" instance=ExtResource("5_n7bfk")]
+[node name="Stone4" parent="IslandComponents" unique_id=1824006366 instance=ExtResource("5_n7bfk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.1587, 4.92066, 42.0227)
 
-[node name="GlassClump" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump" parent="IslandComponents" unique_id=1838344257 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.987982, -0.153682, -0.0165558, 0.152881, 0.987353, -0.0419627, 0.0227953, 0.0389274, 0.998982, 20.9159, 4.85915, 33.5163)
 
-[node name="GlassClump2" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump2" parent="IslandComponents" unique_id=1291723544 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.691937, -0.0928871, 0.715958, 0.0714037, 0.995632, 0.0601635, -0.718419, 0.00949262, 0.695546, 14.3029, 3.93968, 33.5163)
 
-[node name="GlassClump3" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump3" parent="IslandComponents" unique_id=1278927371 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.697865, -0.0198749, 0.715953, 0.0554133, 0.998117, -0.0263055, -0.714082, 0.0580309, 0.697653, 9.79622, 3.73092, 27.9899)
 
-[node name="GlassClump4" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump4" parent="IslandComponents" unique_id=1016664356 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.995803, -0.091519, 0, 0.091519, 0.995803, 0, 0, 0, 1, 16.7815, 4.36129, 19.0606)
 
-[node name="GlassClump5" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump5" parent="IslandComponents" unique_id=1556106031 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(-0.035713, -0.429909, 0.902166, 0.16605, 0.88764, 0.429561, -0.98547, 0.165146, 0.0396863, 25.5086, 5.96465, 12.6282)
 
-[node name="GlassClump6" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump6" parent="IslandComponents" unique_id=1682060552 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.0304803, -0.0579116, 0.997856, 0.16709, 0.984568, 0.0520363, -0.98547, 0.165146, 0.0396863, 32.6695, 7.38493, 12.6282)
 
-[node name="GlassClump7" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump7" parent="IslandComponents" unique_id=811750530 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.483057, -0.0239054, 0.875262, 0.118094, 0.992273, -0.0380747, -0.867588, 0.121755, 0.482148, 32.6695, 6.62623, 19.633)
 
-[node name="GlassClump8" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump8" parent="IslandComponents" unique_id=1142184328 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.989006, -0.147878, 0, 0.147878, 0.989006, 0, 0, 0, 1, 24.193, 5.71867, 22.3857)
 
-[node name="PineTree6" parent="IslandComponents" instance=ExtResource("17_ybo0d")]
+[node name="PineTree6" parent="IslandComponents" unique_id=942974326 instance=ExtResource("17_ybo0d")]
 transform = Transform3D(0.873657, 0, 0, 0, 0.873657, 0, 0, 0, 0.873657, 23.2583, 6.26483, 13.9057)
 
-[node name="PineTree4" parent="IslandComponents" instance=ExtResource("16_n0lbn")]
+[node name="PineTree4" parent="IslandComponents" unique_id=953626959 instance=ExtResource("16_n0lbn")]
 transform = Transform3D(0.766139, 0, 0, 0, 0.763636, 0.06187, 0, -0.06187, 0.763636, 30.8994, 7.5444, -12.4913)
 
-[node name="PineTree8" parent="IslandComponents" instance=ExtResource("16_n0lbn")]
+[node name="PineTree8" parent="IslandComponents" unique_id=780167723 instance=ExtResource("16_n0lbn")]
 transform = Transform3D(0.766139, 0, 0, 0, 0.763636, 0.06187, 0, -0.06187, 0.763636, 23.604, 7.23013, -6.42459)
 
-[node name="PineTree9" parent="IslandComponents" instance=ExtResource("16_n0lbn")]
+[node name="PineTree9" parent="IslandComponents" unique_id=1826799759 instance=ExtResource("16_n0lbn")]
 transform = Transform3D(0.766139, 0, 0, 0, 0.763636, 0.06187, 0, -0.06187, 0.763636, 5.7322, 3.67514, -34.356)
 
-[node name="PineTree10" parent="IslandComponents" instance=ExtResource("16_n0lbn")]
+[node name="PineTree10" parent="IslandComponents" unique_id=1339759576 instance=ExtResource("16_n0lbn")]
 transform = Transform3D(0.766139, 0, 0, 0, 0.763636, 0.06187, 0, -0.06187, 0.763636, 5.7322, 4.29592, -6.52058)
 
-[node name="GlassClump9" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump9" parent="IslandComponents" unique_id=1746590773 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.998125, 0.0604282, -0.00977593, -0.0578475, 0.983359, 0.172218, 0.0200201, -0.171329, 0.98501, 37.8684, 5.63224, -14.5624)
 
-[node name="GlassClump10" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump10" parent="IslandComponents" unique_id=81746690 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.999535, 0.0304845, 0.00108052, -0.0304479, 0.99494, 0.0957424, 0.0018436, -0.0957308, 0.995406, 44.0109, 6.38905, -7.43261)
 
-[node name="GlassClump11" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump11" parent="IslandComponents" unique_id=1135523980 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.663825, 0.153092, 0.732052, -0.183667, 0.98222, -0.0388588, -0.724985, -0.108659, 0.68014, 38.9901, 6.65551, -6.74007)
 
-[node name="PineTree7" parent="IslandComponents" instance=ExtResource("16_n0lbn")]
+[node name="PineTree7" parent="IslandComponents" unique_id=2069689579 instance=ExtResource("16_n0lbn")]
 transform = Transform3D(0.669331, 0, 0, 0, 0.669331, 0, 0, 0, 0.669331, 24.385, 7.01647, -12.0434)
 
-[node name="PineTree11" parent="IslandComponents" instance=ExtResource("32_xgma8")]
+[node name="PineTree11" parent="IslandComponents" unique_id=984056407 instance=ExtResource("32_xgma8")]
 transform = Transform3D(0.826651, 0, 0, 0, 0.826651, 0, 0, 0, 0.826651, 11.9393, 5.14341, -9.91671)
 
-[node name="Tree9" parent="IslandComponents" instance=ExtResource("4_mbfot")]
+[node name="Tree9" parent="IslandComponents" unique_id=882578135 instance=ExtResource("4_mbfot")]
 transform = Transform3D(0.83708, 0, 0, 0, 0.83708, 0, 0, 0, 0.83708, 0.583749, 3.57887, -24.9161)
 
-[node name="Tree5" parent="IslandComponents" instance=ExtResource("33_s6je2")]
+[node name="Tree5" parent="IslandComponents" unique_id=792108765 instance=ExtResource("33_s6je2")]
 transform = Transform3D(0.0745791, 0, -0.722674, 0, 0.726512, 0, 0.722674, 0, 0.0745791, 11.4567, 3.53929, -21.8053)
 
-[node name="Tree6" parent="IslandComponents" instance=ExtResource("20_n0lbn")]
+[node name="Tree6" parent="IslandComponents" unique_id=860976648 instance=ExtResource("20_n0lbn")]
 transform = Transform3D(0.459641, -0.0102734, -0.00981086, 0.0105707, 0.459525, 0.0140543, 0.00948972, -0.0142731, 0.459541, 5.02872, 3.22306, -14.7001)
 
-[node name="GlassClump12" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump12" parent="IslandComponents" unique_id=1085632134 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.990955, -0.134194, -6.37788e-09, 0.12968, 0.957626, 0.257167, -0.0345101, -0.25484, 0.966367, 26.6317, 5.73053, -17.7372)
 
-[node name="GlassClump13" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump13" parent="IslandComponents" unique_id=1498847150 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.99544, 0.0934387, 0.0191862, -0.0930689, 0.995472, -0.0193377, -0.0209062, 0.017464, 0.999629, 33.0524, 4.6883, -24.6091)
 
-[node name="GlassClump14" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump14" parent="IslandComponents" unique_id=1350168485 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.990955, -0.134194, -5.55577e-09, 0.134088, 0.990174, -0.0396958, 0.00532693, 0.0393368, 0.999212, 20.9869, 3.87524, -24.6091)
 
-[node name="GlassClump15" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump15" parent="IslandComponents" unique_id=947035777 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.216426, 0.0098294, 0.97625, 0.134088, 0.990174, -0.0396958, -0.967047, 0.139495, 0.212982, 20.9869, 3.24354, -16.6569)
 
-[node name="GlassClump16" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump16" parent="IslandComponents" unique_id=1892438695 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(-0.875314, 0.0309082, 0.482566, -0.0769417, 0.976339, -0.202097, -0.477394, -0.214028, -0.852225, 29.8743, 5.59054, -16.6569)
 
-[node name="GlassClump17" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump17" parent="IslandComponents" unique_id=831294591 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.997018, 0.0765878, -0.00947301, -0.0771715, 0.989478, -0.122387, -4.65291e-10, 0.122753, 0.992437, -12.7248, 5.31619, -34.8843)
 
-[node name="GlassClump18" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump18" parent="IslandComponents" unique_id=1721938304 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.596224, 0.118885, 0.793967, 0.0225518, 0.986104, -0.164589, -0.802501, 0.116038, 0.585258, -5.13772, 4.38803, -34.8843)
 
-[node name="GlassClump19" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump19" parent="IslandComponents" unique_id=583582563 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.596224, 0.118885, 0.793967, -0.0457141, 0.992397, -0.114268, -0.801515, 0.0318339, 0.597126, -5.13772, 3.59882, -25.9343)
 
-[node name="GlassClump20" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump20" parent="IslandComponents" unique_id=1782812329 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.597898, 0.0267254, 0.801126, 0.00954453, 0.999136, -0.0404543, -0.801515, 0.0318339, 0.597126, 8.81602, 3.32761, -25.9343)
 
-[node name="GlassClump21" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump21" parent="IslandComponents" unique_id=1579545126 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.558229, -0.318149, 0.766265, 0.0867335, 0.940875, 0.327461, -0.825141, -0.116337, 0.552818, 18.3175, 5.5125, -6.7608)
 
-[node name="PalmTree8" parent="IslandComponents" instance=ExtResource("2_goh21")]
+[node name="PalmTree8" parent="IslandComponents" unique_id=1382507777 instance=ExtResource("2_goh21")]
 transform = Transform3D(0.795492, 0, 0, 0, 0.795492, 0, 0, 0, 0.795492, 18.6258, 3.52552, -42.5679)
 
-[node name="PalmTree9" parent="IslandComponents" instance=ExtResource("2_goh21")]
+[node name="PalmTree9" parent="IslandComponents" unique_id=1342116274 instance=ExtResource("2_goh21")]
 transform = Transform3D(0.447701, 0, 0.227731, -0.0644429, 0.481762, 0.126689, -0.218423, -0.142137, 0.429402, 11.0293, 3.45565, -42.5679)
 
-[node name="PalmTree10" parent="IslandComponents" instance=ExtResource("2_goh21")]
+[node name="PalmTree10" parent="IslandComponents" unique_id=1893259977 instance=ExtResource("2_goh21")]
 transform = Transform3D(0.0713989, -0.0144684, 0.801697, -0.122237, 0.795265, 0.0252387, -0.792455, -0.123974, 0.0683384, 33.4609, 4.18286, -41.7665)
 
-[node name="Stone8" parent="IslandComponents" instance=ExtResource("5_n7bfk")]
+[node name="Stone8" parent="IslandComponents" unique_id=31111 instance=ExtResource("5_n7bfk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7345, 4.73481, -7.05645)
 
-[node name="Stone9" parent="IslandComponents" instance=ExtResource("5_n7bfk")]
+[node name="Stone9" parent="IslandComponents" unique_id=847295926 instance=ExtResource("5_n7bfk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7717, 2.7077, -13.5214)
 
-[node name="Stone10" parent="IslandComponents" instance=ExtResource("5_n7bfk")]
+[node name="Stone10" parent="IslandComponents" unique_id=703616499 instance=ExtResource("5_n7bfk")]
 transform = Transform3D(1, 0, 0, 0, 0.321539, 0.946896, 0, -0.946896, 0.321539, 53.7137, 5.31733, -0.179038)
 
-[node name="Tree1" parent="IslandComponents" instance=ExtResource("34_4nspm")]
+[node name="Tree1" parent="IslandComponents" unique_id=2088764983 instance=ExtResource("34_4nspm")]
 transform = Transform3D(0.496978, 0, 0, 0, 0.496978, 0, 0, 0, 0.496978, 9.49547, 4.93129, 42.5169)
 
-[node name="Tree7" parent="IslandComponents" instance=ExtResource("3_n4qwq")]
+[node name="Tree7" parent="IslandComponents" unique_id=525628379 instance=ExtResource("3_n4qwq")]
 transform = Transform3D(0.810194, 0, 0, 0, 0.810194, 0, 0, 0, 0.810194, -6.99188, 4.28139, 40.3825)
 
-[node name="GlassClump22" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump22" parent="IslandComponents" unique_id=1278296676 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.963798, 0.263945, -0.0377624, -0.266633, 0.954083, -0.1365, -9.26687e-10, 0.141627, 0.98992, 0.167473, 4.58265, 26.3332)
 
-[node name="GlassClump23" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump23" parent="IslandComponents" unique_id=1510708725 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.991646, 0.128986, 0, -0.128422, 0.987314, 0.0933785, 0.0120445, -0.0925984, 0.995631, 3.46437, 3.99497, 35.4407)
 
-[node name="GlassClump24" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump24" parent="IslandComponents" unique_id=1899908790 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.996924, -0.0783721, 0, 0.0783721, 0.996924, 0, 0, 0, 1, 5.32944, 5.12505, 49.3278)
 
-[node name="PineTree2" parent="IslandComponents" instance=ExtResource("15_b4j44")]
+[node name="PineTree2" parent="IslandComponents" unique_id=765608451 instance=ExtResource("15_b4j44")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5351, 4.00048, -19.804)
 
-[node name="PineTree12" parent="IslandComponents" instance=ExtResource("16_n0lbn")]
+[node name="PineTree12" parent="IslandComponents" unique_id=1648886732 instance=ExtResource("16_n0lbn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5929, 2.75619, -25.1425)
 
-[node name="PineTree13" parent="IslandComponents" instance=ExtResource("32_xgma8")]
+[node name="PineTree13" parent="IslandComponents" unique_id=298785765 instance=ExtResource("32_xgma8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9327, 6.42062, -34.9478)
 
-[node name="PineTree14" parent="IslandComponents" instance=ExtResource("32_xgma8")]
+[node name="PineTree14" parent="IslandComponents" unique_id=1188262538 instance=ExtResource("32_xgma8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.7616, 7.01628, -33.5938)
 
-[node name="PineTree15" parent="IslandComponents" instance=ExtResource("17_ybo0d")]
+[node name="PineTree15" parent="IslandComponents" unique_id=1216848948 instance=ExtResource("17_ybo0d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.6721, 6.10466, -42.8509)
 
-[node name="log1" parent="IslandComponents" instance=ExtResource("14_4s85u")]
+[node name="log1" parent="IslandComponents" unique_id=478830674 instance=ExtResource("14_4s85u")]
 transform = Transform3D(0.67194, 0, 0.740605, 0, 1, 0, -0.740605, 0, 0.67194, 9.97925, 4.96495, -1.46464)
 
-[node name="log2" parent="IslandComponents" instance=ExtResource("14_4s85u")]
+[node name="log2" parent="IslandComponents" unique_id=415903137 instance=ExtResource("14_4s85u")]
 transform = Transform3D(0.470719, 0, 0.882283, 0, 1, 0, -0.882283, 0, 0.470719, 0.28091, 4.19844, -26.8017)
 
-[node name="GlassClump25" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump25" parent="IslandComponents" unique_id=2075881134 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.97651, 5.84755, -11.6057)
 
-[node name="GlassClump26" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump26" parent="IslandComponents" unique_id=2023226581 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.991736, -0.128185, 0.00527842, 0.128294, 0.990896, -0.0408032, 0, 0.0411432, 0.999153, -6.4782, 5.98045, -3.53025)
 
-[node name="GlassClump27" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump27" parent="IslandComponents" unique_id=2061798766 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.614904, 0.142624, -0.775597, -0.00221588, 0.983818, 0.179157, 0.788599, -0.108446, 0.60527, -2.57117, 5.95911, -12.7133)
 
-[node name="GlassClump28" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump28" parent="IslandComponents" unique_id=1136658143 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.425574, 0, -0.904924, 0, 1, 0, 0.904924, 0, 0.425574, -1.92181, 5.48237, 6.002)
 
-[node name="GlassClump29" parent="IslandComponents" instance=ExtResource("21_ybo0d")]
+[node name="GlassClump29" parent="IslandComponents" unique_id=1647242358 instance=ExtResource("21_ybo0d")]
 transform = Transform3D(0.425574, 0, -0.904924, 0, 1, 0, 0.904924, 0, 0.425574, -1.92181, 6.12681, 19.1854)
 
-[node name="ConchUseCutscene" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_tchnu")
-}
+[node name="ConchUseCutscene" type="AnimationPlayer" parent="." unique_id=968383510]
+libraries/ = SubResource("AnimationLibrary_tchnu")
 
-[node name="Camera3D" type="Camera3D" parent="ConchUseCutscene"]
+[node name="Camera3D" type="Camera3D" parent="ConchUseCutscene" unique_id=1578574492]
 transform = Transform3D(0.822768, 0.08544227, 0.5619184, -0.12599494, 0.99145705, 0.0337277, -0.55423635, -0.09854893, 0.8265047, 34.0194, 10.1239, -0.458998)
 fov = 100.0
 near = 0.001
 
-[node name="FirstMeetingCutscene" type="AnimationPlayer" parent="."]
+[node name="FirstMeetingCutscene" type="AnimationPlayer" parent="." unique_id=2071018882]
 
-[node name="Head" type="Node3D" parent="FirstMeetingCutscene"]
+[node name="Head" type="Node3D" parent="FirstMeetingCutscene" unique_id=566555577]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 0.99999994, 35.46132, 9.70226, -0.05899012)
 
-[node name="Camera3D" type="Camera3D" parent="FirstMeetingCutscene/Head"]
+[node name="Camera3D" type="Camera3D" parent="FirstMeetingCutscene/Head" unique_id=2081137549]
 transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000004, 0, 0, 0)
 fov = 100.0
 
